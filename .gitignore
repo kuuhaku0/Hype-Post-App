@@ -7,6 +7,8 @@ build/
 DerivedData/
 
 ## Various settings
+.DS_Store
+*.DS_Store
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -45,7 +47,7 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
 
 # Carthage
 #

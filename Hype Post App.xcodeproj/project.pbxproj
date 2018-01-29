@@ -13,6 +13,7 @@
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
 		8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFB201FCAE1005BED8E /* Assets.xcassets */; };
 		8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */; };
+		8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8190FAFB201FCAE1005BED8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8190FAFE201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8190FB00201FCAE1005BED8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				8190FAFB201FCAE1005BED8E /* Assets.xcassets */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FB00201FCAE1005BED8E /* Info.plist */,
+				8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */,
 			);
 			path = "Hype Post App";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */,
+				8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */,
 				8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */,
 				8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */,
 			);

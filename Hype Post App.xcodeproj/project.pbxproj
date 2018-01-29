@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
+		8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
-		8190FAF7201FCAE1005BED8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF6201FCAE1005BED8E /* ViewController.swift */; };
+		8190FAF7201FCAE1005BED8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF6201FCAE1005BED8E /* LoginViewController.swift */; };
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
 		8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFB201FCAE1005BED8E /* Assets.xcassets */; };
 		8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */; };
@@ -18,9 +19,10 @@
 /* Begin PBXFileReference section */
 		52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hype_Post_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
+		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8190FAF1201FCAE1005BED8E /* Hype Post App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hype Post App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8190FAF4201FCAE1005BED8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8190FAF6201FCAE1005BED8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8190FAF6201FCAE1005BED8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8190FAF9201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8190FAFB201FCAE1005BED8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8190FAFE201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,8 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				8190FAF4201FCAE1005BED8E /* AppDelegate.swift */,
-				8190FAF6201FCAE1005BED8E /* ViewController.swift */,
+				8190FAF6201FCAE1005BED8E /* LoginViewController.swift */,
 				8190FAF8201FCAE1005BED8E /* Main.storyboard */,
+				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				8190FAFB201FCAE1005BED8E /* Assets.xcassets */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FB00201FCAE1005BED8E /* Info.plist */,
@@ -229,7 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8190FAF7201FCAE1005BED8E /* ViewController.swift in Sources */,
+				8190FAF7201FCAE1005BED8E /* LoginViewController.swift in Sources */,
+				8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

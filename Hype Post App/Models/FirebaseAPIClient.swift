@@ -19,7 +19,7 @@ struct FirebaseAPIClient {
             Auth.auth().signIn(withEmail: email, password: password, completion: completion)
         }
         else {
-            //TODO: NOTIFY USER TO VERIFY EMAIL
+            
         }
     }
     

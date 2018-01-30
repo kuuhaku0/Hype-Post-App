@@ -67,6 +67,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		813CE9C12020E7E60066D7E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
+				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8190FAE8201FCAE1005BED8E = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +99,7 @@
 			children = (
 				8190FAF4201FCAE1005BED8E /* AppDelegate.swift */,
 				8190FB0A201FD6B4005BED8E /* Models */,
-				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
-				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
+				813CE9C12020E7E60066D7E5 /* ViewControllers */,
 				8190FAFB201FCAE1005BED8E /* Assets.xcassets */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FAF8201FCAE1005BED8E /* Main.storyboard */,

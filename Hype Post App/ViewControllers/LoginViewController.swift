@@ -25,23 +25,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func logInPressed(_ sender: UIButton) {
         //TODO: CHECK FOR NILS, CHECK FOR SPACE, ERROR MESSAGE FOR INVALID EMAILS OR PASSWORD
-        
         login(withEmail: emailField.text!, password: passwordField.text!)
-        
     }
     
-  
-   
- 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

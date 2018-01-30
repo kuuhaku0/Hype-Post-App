@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/c4q/Documents/Hype-Post-App/Hype Post App/ViewControllers/CreateAccountViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Hype Post App.xcodeproj">
    </FileRef>
    <FileRef

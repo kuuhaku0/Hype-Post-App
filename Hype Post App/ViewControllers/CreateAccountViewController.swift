@@ -1,15 +1,16 @@
 //
 //  CreateAccountViewController.swift
-//  Hype Post App
+//  
 //
 //  Created by C4Q on 1/30/18.
-//  Copyright © 2018 C4Q. All rights reserved.
 //
 
 import UIKit
 
 class CreateAccountViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +21,18 @@ class CreateAccountViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

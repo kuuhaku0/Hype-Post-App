@@ -110,11 +110,18 @@
                                 <rect key="frame" x="118" y="404" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountButtonPressed:" destination="gJ4-Ju-cD1" eventType="touchUpInside" id="Nbb-pd-Thc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GfP-6A-osY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="cwD-xe-PVm" id="NxW-Vs-ke2"/>
+                        <outlet property="passwordTextField" destination="QD1-GI-Ovu" id="Iny-ft-ZSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLv-4z-U6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

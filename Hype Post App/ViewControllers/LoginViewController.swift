@@ -30,9 +30,7 @@ class LoginViewController: UIViewController {
     
   
    
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +65,7 @@ extension LoginViewController {
     }
     
     func login(withEmail email: String, password pass: String) {
+
         SVProgressHUD.show()
         
         FirebaseAPIClient.manager.login(withEmail: email, and: pass) { (user, error) in

@@ -37,11 +37,13 @@ extension CreateAccountViewController {
                 return
             }
             if Auth.auth().currentUser != nil {
+                print("In currentUser != nil")
                 FirebaseAPIClient.manager.sendVerificationEmail {(error) in
                     if error != nil {
                         print(error!)
                     } else {
                         //TODO: NOTIFY USER EMAIL VERIFICATION HAS BEEN SENT
+                        print("Verification email sent")
                     }
                 }
             }

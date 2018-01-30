@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     
     //button functions
     
+    @IBAction func resetPasswordButtonPressed(_ sender: Any) {
+    }
     
     @IBAction func logInPressed(_ sender: UIButton) {
         //TODO: CHECK FOR NILS, CHECK FOR SPACE, ERROR MESSAGE FOR INVALID EMAILS OR PASSWORD
@@ -46,31 +48,12 @@ class LoginViewController: UIViewController {
 //MARK: -FIREBASE METHODS EXTENSION
 extension LoginViewController {
     
-    func signUp(withEmail email: String, password pass: String, passwordsMatch bothPassMatch: Bool) {
-        FirebaseAPIClient.manager.createAccount(withEmail: email, and: pass) {(user, error) in
-            guard bothPassMatch == true else {
-                //TODO: ALERT USER PASSWORDS DON'T MATCH
-                return
-            }
-            if Auth.auth().currentUser != nil {
-                FirebaseAPIClient.manager.sendVerificationEmail {(error) in
-                    if error != nil {
-                        print(error!)
-                    } else {
-                        //TODO: NOTIFY USER EMAIL VERIFICATION HAS BEEN SENT
-                    }
-                }
-            }
-        }
-    }
-    
     func login(withEmail email: String, password pass: String) {
-
         SVProgressHUD.show()
-        
         FirebaseAPIClient.manager.login(withEmail: email, and: pass) { (user, error) in
             if error != nil {
                 SVProgressHUD.dismiss()
+                print("No Error Signing in")
                 //TODO: NOTIFY USER OF SIGN IN PROBLEM
                 
             } else {

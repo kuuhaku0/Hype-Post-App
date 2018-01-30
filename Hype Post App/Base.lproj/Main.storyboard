@@ -140,6 +140,9 @@
                                 <rect key="frame" x="164" y="341" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendPassResetButtonPressed:" destination="Bsu-My-Rdh" eventType="touchUpInside" id="VBr-LD-qN7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-Gq-qFq">
                                 <rect key="frame" x="69" y="280" width="236" height="30"/>
@@ -159,6 +162,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Im3-ei-gYd"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Wa1-Gq-qFq" id="XhT-Fk-DTR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKM-ZK-cGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

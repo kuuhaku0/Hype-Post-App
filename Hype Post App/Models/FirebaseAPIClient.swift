@@ -14,7 +14,7 @@ struct FirebaseAPIClient {
     static let manager = FirebaseAPIClient()
     
     func login(withEmail email: String, and password: String,
-               completion: @escaping (User?, Error?) -> Void) {
+               completion: @escaping (AuthResultCallback)) {
         if Auth.auth().currentUser?.isEmailVerified == true {
             Auth.auth().signIn(withEmail: email, password: password, completion: completion)
         }

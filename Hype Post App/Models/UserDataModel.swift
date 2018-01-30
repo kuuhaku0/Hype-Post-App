@@ -20,6 +20,8 @@ class UserDataModel {
     private init() {}
     static let manager = UserDataModel()
     static var refPosts: DatabaseReference!
+    
+   
   
     //TO DO implement Firebase
 }

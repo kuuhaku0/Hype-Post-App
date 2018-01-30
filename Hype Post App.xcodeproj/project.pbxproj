@@ -10,13 +10,15 @@
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
 		8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
+
+		817180AA20210D15006D99E7 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817180A920210D15006D99E7 /* CreateAccountViewController.swift */; };
+		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
 		8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFB201FCAE1005BED8E /* Assets.xcassets */; };
 		8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */; };
 		8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */; };
 		8190FB09201FD24C005BED8E /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FB08201FD24C005BED8E /* FirebaseAPIClient.swift */; };
-		81AB1AF020211212001386D2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		81C5D8FE202022B7004E2A16 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FD202022B7004E2A16 /* Post.swift */; };
 		81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FF2020294B004E2A16 /* UserDataModel.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
@@ -27,7 +29,9 @@
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8152AD952020D7EC00E1AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		8152AD992020DF1B00E1AD03 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+
+		817180A920210D15006D99E7 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = "/Users/c4q/Documents/Hype-Post-App/Hype Post App/ViewControllers/CreateAccountViewController.swift"; sourceTree = "<absolute>"; };
+		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		8190FAF1201FCAE1005BED8E /* Hype Post App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hype Post App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8190FAF4201FCAE1005BED8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8190FAF9201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,16 +83,9 @@
 				81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */,
 				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				8152AD952020D7EC00E1AD03 /* CommentViewController.swift */,
-				8152AD992020DF1B00E1AD03 /* ResetPasswordViewController.swift */,
+				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		817180A820210A18006D99E7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8190FAE8201FCAE1005BED8E = {
@@ -114,7 +111,6 @@
 			children = (
 				8190FAF4201FCAE1005BED8E /* AppDelegate.swift */,
 				8190FB0A201FD6B4005BED8E /* Models */,
-				817180A820210A18006D99E7 /* Views */,
 				8152AD942020D6BC00E1AD03 /* ViewControllers */,
 				8190FAFB201FCAE1005BED8E /* Assets.xcassets */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
@@ -279,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,

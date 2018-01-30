@@ -13,13 +13,14 @@ struct FirebaseAPIClient {
     private init() {}
     static let manager = FirebaseAPIClient()
     
-    func login(withEmail email: String, and password: String, completion: @escaping (User?, Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
-    }
-    
-    func createAccount(withEmail email: String, and password: String,
-                       completion: @escaping AuthResultCallback) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+    func login(withEmail email: String, and password: String,
+               completion: @escaping (User?, Error?) -> Void) {
+        if Auth.auth().currentUser?.isEmailVerified == true {
+            Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+        }
+        else {
+            //TODO: NOTIFY USER TO VERIFY EMAIL
+        }
     }
     
     func logOutCurrentUser() {
@@ -29,5 +30,19 @@ struct FirebaseAPIClient {
         catch {
             print("Error Signing out")
         }
+    }
+    
+    func createAccount(withEmail email: String, and password: String,
+                       completion: @escaping AuthResultCallback) {
+        Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+    }
+    
+    func sendVerificationEmail(completion: @escaping (SendPasswordResetCallback)) {
+        Auth.auth().currentUser?.sendEmailVerification(completion: completion)
+    }
+    
+    func resetPassword(withEmail email: String,
+                       completion: @escaping (SendPasswordResetCallback)) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: completion)
     }
 }

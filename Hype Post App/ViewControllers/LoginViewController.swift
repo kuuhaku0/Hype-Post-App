@@ -9,9 +9,30 @@
 import UIKit
 import Firebase
 import Kingfisher
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
+    //outlets
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    //button functions
+    
+    
+    @IBAction func logInPressed(_ sender: UIButton) {
+        //TODO: CHECK FOR NILS, CHECK FOR SPACE, ERROR MESSAGE FOR INVALID EMAILS OR PASSWORD
+        
+        login(withEmail: emailField.text!, password: passwordField.text!)
+        
+    }
+    
+  
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,14 +67,17 @@ extension LoginViewController {
     }
     
     func login(withEmail email: String, password pass: String) {
-        //SHOW LOADING INDICATOR HERE
+        SVProgressHUD.show()
         
         FirebaseAPIClient.manager.login(withEmail: email, and: pass) { (user, error) in
             if error != nil {
-                //TODO: NOTIFY USER OF SIGN IN PROBLEM, DISMISS INDICATOR
+                SVProgressHUD.dismiss()
+                //TODO: NOTIFY USER OF SIGN IN PROBLEM
+                
             } else {
                 print("LOGIN SUCCESSFUL")
-                //TODO: SEGUE USER TO MAIN PAGE, DISMISS INDICATOR
+                SVProgressHUD.dismiss()
+                //TODO: SEGUE USER TO MAIN PAGE
             }
         }
     }

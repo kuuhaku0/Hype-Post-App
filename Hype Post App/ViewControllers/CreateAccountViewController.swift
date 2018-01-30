@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController {
 
@@ -23,16 +24,27 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        signUp(withEmail: emailTextField.text!, password: passwordTextField.text!, passwordsMatch: true)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+
+extension CreateAccountViewController {
+    func signUp(withEmail email: String, password pass: String, passwordsMatch bothPassMatch: Bool) {
+        FirebaseAPIClient.manager.createAccount(withEmail: email, and: pass) {(user, error) in
+            guard bothPassMatch == true else {
+                //TODO: ALERT USER PASSWORDS DON'T MATCH
+                return
+            }
+            if Auth.auth().currentUser != nil {
+                FirebaseAPIClient.manager.sendVerificationEmail {(error) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        //TODO: NOTIFY USER EMAIL VERIFICATION HAS BEEN SENT
+                    }
+                }
+            }
+        }
     }
-    */
-
 }

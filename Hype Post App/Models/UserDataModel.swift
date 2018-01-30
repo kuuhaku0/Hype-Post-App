@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import FirebaseDatabase
 class User {
     let email: String
     let postCount: Int
@@ -19,6 +19,9 @@ class User {
 class UserDataModel {
     private init() {}
     static let manager = UserDataModel()
-    static let usersPostHistory: [String:Post] = [:]
+    static var refPosts: DatabaseReference!
+    
+   
+  
     //TO DO implement Firebase
 }

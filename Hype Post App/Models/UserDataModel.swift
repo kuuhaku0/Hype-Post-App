@@ -9,10 +9,10 @@
 import Foundation
 
 class User {
-    let userName: String
+    let email: String
     let postCount: Int
-    init(userName: String, postCount: Int) {
-        self.userName = userName; self.postCount = postCount
+    init(email: String, postCount: Int) {
+        self.email = email; self.postCount = postCount
     }
 }
 

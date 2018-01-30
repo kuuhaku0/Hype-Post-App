@@ -15,6 +15,7 @@ class Post {
     init(header: String, body: String) {
         self.header = header; self.body = body
     }
+    
 }
 
 

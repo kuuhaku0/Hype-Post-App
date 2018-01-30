@@ -10,8 +10,29 @@ import UIKit
 import Firebase
 import Kingfisher
 
+
 class LoginViewController: UIViewController {
 
+    //outlets
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    //button functions
+    
+    
+    @IBAction func logInPressed(_ sender: UIButton) {
+        //TODO: CHECK FOR NILS, CHECK FOR SPACE, ERROR MESSAGE FOR INVALID EMAILS OR PASSWORD
+        
+        login(withEmail: emailField.text!, password: passwordField.text!)
+        
+    }
+    
+  
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

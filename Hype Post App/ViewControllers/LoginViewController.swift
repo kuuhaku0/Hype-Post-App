@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import Kingfisher
-
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -67,14 +67,17 @@ extension LoginViewController {
     }
     
     func login(withEmail email: String, password pass: String) {
-        //SHOW LOADING INDICATOR HERE
+        SVProgressHUD.show()
         
         FirebaseAPIClient.manager.login(withEmail: email, and: pass) { (user, error) in
             if error != nil {
-                //TODO: NOTIFY USER OF SIGN IN PROBLEM, DISMISS INDICATOR
+                SVProgressHUD.dismiss()
+                //TODO: NOTIFY USER OF SIGN IN PROBLEM
+                
             } else {
                 print("LOGIN SUCCESSFUL")
-                //TODO: SEGUE USER TO MAIN PAGE, DISMISS INDICATOR
+                SVProgressHUD.dismiss()
+                //TODO: SEGUE USER TO MAIN PAGE
             }
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
+		812C7B7F20212E37007B25FF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };

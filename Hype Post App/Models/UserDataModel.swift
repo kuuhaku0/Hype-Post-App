@@ -29,6 +29,8 @@ class UserDataModel {
     static let manager = UserDataModel()
     static let rootRef = Database.database().reference()
     static let postsRef = UserDataModel.rootRef.child("Posts")
+
+
     
     static private var allPosts = [Post]()
     

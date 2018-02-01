@@ -38,6 +38,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xG2-Gu-FTV"/>
+                                    <segue destination="K12-Gm-x1k" kind="show" id="FTe-g8-t8m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tym-4V-IEk">
@@ -64,7 +65,6 @@
                     <connections>
                         <outlet property="emailField" destination="X8u-hv-YNZ" id="OcK-ZH-gJm"/>
                         <outlet property="passwordField" destination="rRw-mN-Kv5" id="KMY-yc-uHF"/>
-                        <segue destination="K12-Gm-x1k" kind="show" identifier="FeedSegue" id="72x-Fo-LB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1164" y="636.4317841079461"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="h2T-Fw-Cup">
             <objects>
-                <viewController id="uZd-BR-nsM" sceneMemberID="viewController">
+                <viewController id="uZd-BR-nsM" customClass="FeedViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7R-HT-Pig">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="2956" y="-169.56521739130437"/>
         </scene>
-        <!--View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="k1r-1E-qFx">
             <objects>
-                <viewController id="sQ1-Lf-ZQ5" sceneMemberID="viewController">
+                <viewController id="sQ1-Lf-ZQ5" customClass="CommentViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qVd-Ky-gfJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

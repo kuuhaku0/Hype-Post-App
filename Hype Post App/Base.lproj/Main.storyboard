@@ -38,6 +38,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xG2-Gu-FTV"/>
+                                    <segue destination="K12-Gm-x1k" kind="show" id="FTe-g8-t8m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tym-4V-IEk">
@@ -64,7 +65,6 @@
                     <connections>
                         <outlet property="emailField" destination="X8u-hv-YNZ" id="OcK-ZH-gJm"/>
                         <outlet property="passwordField" destination="rRw-mN-Kv5" id="KMY-yc-uHF"/>
-                        <segue destination="K12-Gm-x1k" kind="show" identifier="FeedSegue" id="72x-Fo-LB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -179,10 +179,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8w2-if-hJo">
-                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uZZ-EK-hLK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCell" id="uZZ-EK-hLK" customClass="FeedTableViewCell" customModule="Hype_Post_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZZ-EK-hLK" id="ZaR-Pi-JIw">
@@ -198,16 +198,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8w2-if-hJo" firstAttribute="centerX" secondItem="hFc-hj-ZXq" secondAttribute="centerX" id="438-iN-JL3"/>
-                            <constraint firstItem="8w2-if-hJo" firstAttribute="width" secondItem="s7R-HT-Pig" secondAttribute="width" id="Av6-jL-2xa"/>
-                            <constraint firstItem="8w2-if-hJo" firstAttribute="centerY" secondItem="hFc-hj-ZXq" secondAttribute="centerY" id="HQm-Iy-eps"/>
-                            <constraint firstItem="8w2-if-hJo" firstAttribute="height" secondItem="s7R-HT-Pig" secondAttribute="height" id="Qz4-cl-rT8"/>
+                            <constraint firstItem="8w2-if-hJo" firstAttribute="leading" secondItem="hFc-hj-ZXq" secondAttribute="leading" id="4qk-WW-luY"/>
+                            <constraint firstItem="8w2-if-hJo" firstAttribute="top" secondItem="hFc-hj-ZXq" secondAttribute="top" id="X7i-8U-sBO"/>
+                            <constraint firstItem="8w2-if-hJo" firstAttribute="trailing" secondItem="hFc-hj-ZXq" secondAttribute="trailing" id="ePz-uF-Bk2"/>
+                            <constraint firstAttribute="bottom" secondItem="8w2-if-hJo" secondAttribute="bottom" id="vbv-zY-jjY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFc-hj-ZXq"/>
                     </view>
                     <navigationItem key="navigationItem" id="AoT-GB-dML">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="sp7-YK-l4N"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedTableView" destination="8w2-if-hJo" id="omu-dU-2S5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMZ-3m-Zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
+		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
 		8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hype_Post_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
+		8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8152AD952020D7EC00E1AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		8190FAF3201FCAE1005BED8E /* Hype Post App */ = {
 			isa = PBXGroup;
 			children = (
+				8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */,
 				8190FAF4201FCAE1005BED8E /* AppDelegate.swift */,
 				8190FB0A201FD6B4005BED8E /* Models */,
 				8152AD942020D6BC00E1AD03 /* ViewControllers */,
@@ -229,7 +232,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -248,6 +251,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -260,6 +265,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -286,6 +293,7 @@
 				8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81C5D8FE202022B7004E2A16 /* Post.swift in Sources */,
+				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

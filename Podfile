@@ -14,7 +14,7 @@ pod 'GoogleSignIn'
 pod 'Kingfisher', '~> 4.0'
 pod 'SnapKit', '~> 4.0.0'
 pod 'SVProgressHUD'
-pod 'Material', '~> 2.0'
+pod 'Material', '~> 2.13.5'
 
 
  swift4pods = ['Material']
@@ -25,7 +25,7 @@ pod 'Material', '~> 2.0'
        target.build_configurations.each do |config|
          config.build_settings['SWIFT_VERSION'] = '4.0'
 
-end
+	end
      end
    end
  end

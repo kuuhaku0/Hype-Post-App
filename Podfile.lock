@@ -74,7 +74,7 @@ DEPENDENCIES:
   - Firebase/Database
   - GoogleSignIn
   - Kingfisher (~> 4.0)
-  - Material (~> 2.0)
+  - Material (~> 2.13.5)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
 
@@ -98,6 +98,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: dfda218e6dba5912be325c067cef9ceceb989f93
+PODFILE CHECKSUM: 42a48bd82beb4f724d64501512956e20c206b42a
 
 COCOAPODS: 1.4.0

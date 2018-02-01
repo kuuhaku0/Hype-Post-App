@@ -25,10 +25,14 @@ class ResetPasswordViewController: UIViewController {
                 print(error!)
             } else {
                 SVProgressHUD.dismiss()
-                //TODO: ALERT USER PASS RESET IS SENT
                 print("password reset sent")
+                let alert = UIAlertController(title: "Sent", message: "Password reset email has been sent", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default) { (complete) in
+                    //TODO: SEGUE BACK TO LOGIN!
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
                 self.resignFirstResponder()
-                
             }
         }
     }

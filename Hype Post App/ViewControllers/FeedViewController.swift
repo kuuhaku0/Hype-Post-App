@@ -32,6 +32,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return 10
     }
     
+    public static func storyboardInstance() -> FeedViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        return feedViewController
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2I-09-XmN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,7 +38,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xG2-Gu-FTV"/>
-                                    <segue destination="K12-Gm-x1k" kind="show" id="FTe-g8-t8m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tym-4V-IEk">
@@ -173,13 +172,13 @@
         <!--Feed View Controller-->
         <scene sceneID="h2T-Fw-Cup">
             <objects>
-                <viewController id="uZd-BR-nsM" customClass="FeedViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" id="uZd-BR-nsM" customClass="FeedViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7R-HT-Pig">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8w2-if-hJo">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCell" id="uZZ-EK-hLK" customClass="FeedTableViewCell" customModule="Hype_Post_App" customModuleProvider="target">
@@ -214,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMZ-3m-Zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="-169.56521739130437"/>
+            <point key="canvasLocation" x="2106" y="-170"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="k1r-1E-qFx">
@@ -246,12 +245,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhE-4j-ERY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4072.8000000000002" y="-130.88455772113943"/>
+            <point key="canvasLocation" x="3033" y="-170"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="K0N-aF-M09">
             <objects>
-                <viewController id="44B-CM-fCV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntryViewController" id="44B-CM-fCV" customClass="EntryViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fXY-aL-C8i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,24 +301,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nme-Ie-wKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-127.2" y="-131.78410794602701"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xEc-Go-1m6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K12-Gm-x1k" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gu5-4i-UPo">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uZd-BR-nsM" kind="relationship" relationship="rootViewController" id="060-7x-IHB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qNZ-Pc-zZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="-180.35982008995504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mWt-pq-wLh">

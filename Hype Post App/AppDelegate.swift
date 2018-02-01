@@ -23,13 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var viewController: UIViewController!
         
         if let _ = AuthUserService.getCurrentUser() {
-            let feedVC = FeedViewController()
-            viewController = feedVC
+            let feedVC = FeedViewController.storyboardInstance()
+            let navController = UINavigationController(rootViewController: feedVC)
+            viewController = navController
         } else {
-            let loginVC = LoginViewController()
-            viewController = loginVC
+            let loginVC = EntryViewController.storyboardINstance()
+            let navController =  UINavigationController(rootViewController: loginVC)
+            viewController = navController
         }
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
@@ -53,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  
     }
 
 

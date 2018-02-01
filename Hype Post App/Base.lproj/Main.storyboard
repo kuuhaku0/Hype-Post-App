@@ -38,6 +38,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xG2-Gu-FTV"/>
+                                    <segue destination="K12-Gm-x1k" kind="show" id="FTe-g8-t8m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tym-4V-IEk">
@@ -64,7 +65,6 @@
                     <connections>
                         <outlet property="emailField" destination="X8u-hv-YNZ" id="OcK-ZH-gJm"/>
                         <outlet property="passwordField" destination="rRw-mN-Kv5" id="KMY-yc-uHF"/>
-                        <segue destination="K12-Gm-x1k" kind="show" identifier="FeedSegue" id="72x-Fo-LB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

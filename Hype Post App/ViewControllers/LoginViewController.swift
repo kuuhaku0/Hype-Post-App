@@ -50,6 +50,7 @@ extension LoginViewController {
                 let feedVC = FeedViewController()
                 let navigationController = UINavigationController(rootViewController: feedVC)
                 self.present(navigationController, animated: true, completion: nil)
+
             }
         }
     }

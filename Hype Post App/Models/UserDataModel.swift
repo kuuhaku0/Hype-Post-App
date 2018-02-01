@@ -20,7 +20,7 @@ class User {
     }
     convenience init(email: String, userID: String, firstName: String, lastName: String) {
         self.init(email: email, userID: userID, firstName: firstName, lastName: lastName)
-        
+        //This crashes for some reason 
     }
 }
 
@@ -28,12 +28,12 @@ class UserDataModel {
     private init() {}
     static let manager = UserDataModel()
     static let rootRef = Database.database().reference()
-    
+    static let postsRef = UserDataModel.rootRef.child("Posts")  
     static private var allPosts = [Post]()
     
     static func addNewPost(post: Post, by user: User) {
         let postToAdd = Post(header: post.header, body: post.body, byUser: user.userName, postID: post.postID)
-        let postRef = rootRef.child(postToAdd.postID)
+        let postRef = postsRef.child(postToAdd.postID)
         postRef.setValue(postToAdd.toAnyObject())
         
         

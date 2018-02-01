@@ -19,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        var viewController: UIViewController!
+        
+        if let _ = AuthUserService.getCurrentUser() {
+            let feedVC = FeedViewController()
+            viewController = feedVC
+        } else {
+            let loginVC = LoginViewController()
+            viewController = loginVC
+        }
+        
         return true
     }
 

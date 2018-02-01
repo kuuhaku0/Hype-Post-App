@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
-		8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
@@ -18,10 +17,12 @@
 		8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */; };
 		8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */; };
 		8190FB09201FD24C005BED8E /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FB08201FD24C005BED8E /* FirebaseAPIClient.swift */; };
+		81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		81C5D8FE202022B7004E2A16 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FD202022B7004E2A16 /* Post.swift */; };
 		81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FF2020294B004E2A16 /* UserDataModel.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
+		81F41C672022E11300BC4286 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41C662022E11300BC4286 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		81C5D8FD202022B7004E2A16 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		81C5D8FF2020294B004E2A16 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		81F41C662022E11300BC4286 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				8190FB08201FD24C005BED8E /* FirebaseAPIClient.swift */,
 				81C5D8FD202022B7004E2A16 /* Post.swift */,
 				81C5D8FF2020294B004E2A16 /* UserDataModel.swift */,
+				81F41C662022E11300BC4286 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,13 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
 				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
+				81F41C672022E11300BC4286 /* Comment.swift in Sources */,
 				8190FB09201FD24C005BED8E /* FirebaseAPIClient.swift in Sources */,
-				8152AD91201FCE9100E1AD03 /* FeedViewController.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81C5D8FE202022B7004E2A16 /* Post.swift in Sources */,
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,

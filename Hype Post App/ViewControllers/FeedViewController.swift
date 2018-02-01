@@ -19,6 +19,8 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
+
         postsRef = Database.database().reference().child("posts")
         addNewPost()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")

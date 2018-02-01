@@ -29,7 +29,6 @@ class UserDataModel {
     static let manager = UserDataModel()
     static let rootRef = Database.database().reference()
     
-    
     static private var allPosts = [Post]()
     
     static func addNewPost(post: Post, by user: User) {

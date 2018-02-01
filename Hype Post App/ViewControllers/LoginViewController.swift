@@ -12,7 +12,7 @@ import Kingfisher
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
-
+    
     //outlets
     
     @IBOutlet weak var emailField: UITextField!
@@ -30,8 +30,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -43,15 +41,16 @@ extension LoginViewController {
         FirebaseAPIClient.manager.login(withEmail: email, and: pass) { (user, error) in
             if error != nil {
                 SVProgressHUD.dismiss()
-                print("No Error Signing in")
+                print("Error Signing in")
                 //TODO: NOTIFY USER OF SIGN IN PROBLEM
-                
             } else {
                 print("LOGIN SUCCESSFUL")
                 SVProgressHUD.dismiss()
                 //TODO: SEGUE USER TO MAIN PAGE
-                
-                
+                let feedVC = FeedViewController()
+                let navigationController = UINavigationController(rootViewController: feedVC)
+                self.present(navigationController, animated: true, completion: nil)
+
             }
         }
     }

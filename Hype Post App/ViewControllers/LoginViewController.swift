@@ -48,7 +48,8 @@ extension LoginViewController {
                 SVProgressHUD.dismiss()
                 //TODO: SEGUE USER TO MAIN PAGE
                 let feedVC = FeedViewController()
-                self.present(feedVC, animated: true, completion: nil)
+                let navigationController = UINavigationController(rootViewController: feedVC)
+                self.present(navigationController, animated: true, completion: nil)
             }
         }
     }

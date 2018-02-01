@@ -11,6 +11,9 @@ import Firebase
 
 class FeedViewController: UIViewController {
     
+    @IBOutlet weak var feedTableView: UITableView!
+    
+    
     var posts = [Post]()
     var postsRef: DatabaseReference!
 
@@ -18,6 +21,24 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         postsRef = Database.database().reference().child("posts")
         addNewPost()
+        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+        feedTableView.dataSource = self
+        feedTableView.delegate = self
+        feedTableView.separatorStyle = .none
+        feedTableView.backgroundColor = .white
+    }
+}
+
+extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+        return cell
     }
 }
 

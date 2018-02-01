@@ -17,11 +17,6 @@ class CreateAccountViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
         signUp(withEmail: emailTextField.text!, password: passwordTextField.text!, passwordsMatch: true)

@@ -9,12 +9,12 @@
 import Foundation
 class Comment {
     let commentID: String
-    let byUser: String
+    let uID: String
     let postID: String
     let text: String
     var upVotes: Int = 0
     var downVotes: Int = 0
-    init (commentID: String, byUser: String, postID: String, text: String) {
-        self.commentID = commentID; self.byUser = byUser; self.postID = postID; self.text = text
+    init (commentID: String, uID: String, postID: String, text: String) {
+        self.commentID = commentID; self.uID = uID; self.postID = postID; self.text = text
     }
 }

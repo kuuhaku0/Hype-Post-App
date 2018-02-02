@@ -19,15 +19,15 @@ class FeedTableViewCell: UITableViewCell {
     var content: UILabel!
     
     /// Bottom Bar views.
-    fileprivate var bottomBar: Bar!
-    fileprivate var dateFormatter: DateFormatter!
-    fileprivate var dateLabel: UILabel!
-    fileprivate var favoriteButton: IconButton!
-    fileprivate var shareButton: IconButton!
+    var bottomBar: Bar!
+    var dateFormatter: DateFormatter!
+    var dateLabel: UILabel!
+    var favoriteButton: IconButton!
+    var shareButton: IconButton!
     
     /// Toolbar views.
     fileprivate var toolbar: Toolbar!
-    fileprivate var moreButton: IconButton!
+     var moreButton: IconButton!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "FeedCell")
@@ -40,6 +40,7 @@ class FeedTableViewCell: UITableViewCell {
     
     public func setupViews() {
         self.backgroundColor = Color.grey.lighten5
+        self.selectionStyle = .none
         
         preparePresenterView()
         prepareDateFormatter()
@@ -122,7 +123,7 @@ extension  FeedTableViewCell {
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
         
-        self.layout(card).vertically(top: 0, bottom: 0).centerVertically()
+        self.layout(card).vertically(top: -4, bottom: -4).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
 

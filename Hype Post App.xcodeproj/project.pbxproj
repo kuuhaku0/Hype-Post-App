@@ -11,6 +11,9 @@
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
 		813E7E592024F84E00FEA457 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E7E582024F84E00FEA457 /* StorageService.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
+		817C8BD82025047200660FA8 /* tabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BD72025047200660FA8 /* tabController.swift */; };
+		817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */; };
+		817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDD20250D8E00660FA8 /* TabViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		813E7E582024F84E00FEA457 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8152AD952020D7EC00E1AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		817C8BD72025047200660FA8 /* tabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabController.swift; sourceTree = "<group>"; };
+		817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		817C8BDD20250D8E00660FA8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		8190FAF1201FCAE1005BED8E /* Hype Post App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hype Post App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8190FAF4201FCAE1005BED8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,12 +98,15 @@
 		8152AD942020D6BC00E1AD03 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				817C8BDD20250D8E00660FA8 /* TabViewController.swift */,
 				81B73A052023D5040033F706 /* EntryViewController.swift */,
 				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
 				81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */,
 				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				8152AD952020D7EC00E1AD03 /* CommentViewController.swift */,
 				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
+				817C8BD72025047200660FA8 /* tabController.swift */,
+				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -306,6 +316,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -328,8 +339,10 @@
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				813E7E592024F84E00FEA457 /* StorageService.swift in Sources */,
 				81B73A062023D5040033F706 /* EntryViewController.swift in Sources */,
+				817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */,
 				81B73A002023D0010033F706 /* DBService+Post.swift in Sources */,
 				CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */,
+				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
 				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
 				81B739FC2023CE8E0033F706 /* AuthUserService.swift in Sources */,
 				81F41C672022E11300BC4286 /* Comment.swift in Sources */,
@@ -338,6 +351,7 @@
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81C5D8FE202022B7004E2A16 /* Post.swift in Sources */,
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
+				817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

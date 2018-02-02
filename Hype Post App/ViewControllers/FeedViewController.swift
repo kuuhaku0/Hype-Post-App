@@ -19,15 +19,10 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-
-        postsRef = Database.database().reference().child("posts")
-        addNewPost()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
-        feedTableView.backgroundColor = .white
     }
 }
 
@@ -37,6 +32,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return 10
     }
     
+    public static func storyboardInstance() -> FeedViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        return feedViewController
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
@@ -46,28 +46,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension FeedViewController {
     
-    func addNewPost() {
-        let key = postsRef.childByAutoId().key
-        let post = ["id" : key, "title": "Test Post", "body": "test text", "user": "this user"]
-        
-        postsRef.child(key).setValue(post)
-        
-        postsRef.observe(DataEventType.value) { (snapshot) in
-            if snapshot.childrenCount > 0 {
-                self.posts.removeAll()
-                for posts in snapshot.children.allObjects as! [DataSnapshot] {
-                    let postObj = posts.value as? [String: AnyObject]
-                    let postTitle = postObj?["title"]
-                    let postBody = postObj?["body"]
-                    let postedBy = postObj?["user"]
-                    let postID = postObj?["id"]
-                    let post = Post.init(header: postTitle as! String, body: postBody as! String, byUser: postedBy as! String, postID: postID as! String)
-                    
-                    self.posts.append(post)
-                }
-                //RELOAD TABLEVIEW
-            }
-        }
-    }
+    
 }
 

@@ -73,6 +73,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.2)
+  - Toucan (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -85,6 +86,7 @@ DEPENDENCIES:
   - Material (~> 2.13.5)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
+  - Toucan
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -106,7 +108,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  Toucan: 61867fb10948c02e9804280a95eb183e98eac97a
 
-PODFILE CHECKSUM: 87972b817c35fa7bfc8549262fa101fd5bf6548c
+PODFILE CHECKSUM: 8cd692d5ad637ffbdd859d6eddbbc75c34966e52
 
 COCOAPODS: 1.4.0

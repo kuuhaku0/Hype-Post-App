@@ -22,10 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var viewController: UIViewController!
         
+        let tabBar = TabViewController()
+        
+        
         if let _ = AuthUserService.getCurrentUser() {
-            let feedVC = FeedViewController.storyboardInstance()
-            let navController = UINavigationController(rootViewController: feedVC)
-            viewController = navController
+            
+            viewController = tabBar
         } else {
             let loginVC = EntryViewController.storyboardINstance()
             let navController =  UINavigationController(rootViewController: loginVC)

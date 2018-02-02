@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     //button functions
     
     @IBAction func resetPasswordButtonPressed(_ sender: Any) {
+        resetPassword(withEmail: emailField.text!)
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -30,6 +31,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (alert) in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -42,15 +50,12 @@ extension LoginViewController {
             if error != nil {
                 SVProgressHUD.dismiss()
                 print("Error Signing in")
-                //TODO: NOTIFY USER OF SIGN IN PROBLEM
+                self.showAlert(title: "Error", message: "\(error!)")
             } else {
                 print("LOGIN SUCCESSFUL")
                 SVProgressHUD.dismiss()
-                //TODO: SEGUE USER TO MAIN PAGE
-                let feedVC = FeedViewController()
-                let navigationController = UINavigationController(rootViewController: feedVC)
-                self.present(navigationController, animated: true, completion: nil)
-
+                let feedVC = FeedViewController.storyboardInstance()
+                self.present(feedVC, animated: true, completion: nil)
             }
         }
     }
@@ -59,9 +64,9 @@ extension LoginViewController {
         FirebaseAPIClient.manager.resetPassword(withEmail: email) { (error) in
             if error != nil {
                 print(error!)
-                //TODO: NOTIFY USER RESET PASSWORD FAILED
+                self.showAlert(title: "Error", message: "\(error!)")
             } else {
-                //TODO: NOTIFY USER PASSWORD RESET HAS BEEN SET TO EMAIL
+                self.showAlert(title: "Success", message: "Password reset has been sent to \(email)")
             }
         }
     }

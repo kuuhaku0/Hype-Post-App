@@ -38,7 +38,7 @@ class UserDataModel {
         let postToAdd = Post(header: post.header, body: post.body, byUser: user.userName, postID: post.postID)
         let postRef = postsRef.child(postToAdd.postID)
         postRef.setValue(postToAdd.toAnyObject())
-        
+        allPosts.append(postToAdd)
         
     }
     

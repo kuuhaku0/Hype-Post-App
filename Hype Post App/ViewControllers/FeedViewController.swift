@@ -8,8 +8,25 @@
 
 import UIKit
 import Firebase
+import Material
+import SnapKit
 
 class FeedViewController: UIViewController {
+    
+    lazy var createPostButton: FABButton = {
+        let button = FABButton(image: Icon.cm.add)
+        button.tintColor = .white
+        button.pulseColor = .white
+        button.backgroundColor = Color.red.base
+        return button
+    }()
+    
+    func setupCPB() {
+        createPostButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(view.snp.bottom).offset(-16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+    }
     
     @IBOutlet weak var feedTableView: UITableView!
     
@@ -18,6 +35,9 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(createPostButton)
+        view.layout(createPostButton).width(55).height(55)
+        setupCPB()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self

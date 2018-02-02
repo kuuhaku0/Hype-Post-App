@@ -22,10 +22,10 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-//        signUp(withEmail: emailTextField.text!,
-//               password: passwordTextField.text!,
-//               passwordsMatch: checkPasswordsMatch(),
-//               user: AppUser.init(email: emailTextField.text!, uID: "", userName: userName.text!))
+        signUp(withEmail: emailTextField.text!,
+               password: passwordTextField.text!,
+               passwordsMatch: checkPasswordsMatch(),
+               user: AppUser.init(email: emailTextField.text!, userName: userName.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text ?? ""))
     }
     
     func checkPasswordsMatch() -> Bool {
@@ -53,6 +53,7 @@ extension CreateAccountViewController {
             }
             if Auth.auth().currentUser != nil {
                 print("In currentUser != nil")
+                
                 FirebaseAPIClient.manager.sendVerificationEmail {(error) in
                     if error != nil {
                         print(error!)

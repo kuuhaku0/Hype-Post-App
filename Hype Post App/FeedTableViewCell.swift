@@ -19,15 +19,15 @@ class FeedTableViewCell: UITableViewCell {
     var content: UILabel!
     
     /// Bottom Bar views.
-    fileprivate var bottomBar: Bar!
-    fileprivate var dateFormatter: DateFormatter!
-    fileprivate var dateLabel: UILabel!
-    fileprivate var favoriteButton: IconButton!
-    fileprivate var shareButton: IconButton!
+    var bottomBar: Bar!
+    var dateFormatter: DateFormatter!
+    var dateLabel: UILabel!
+    var favoriteButton: IconButton!
+    var shareButton: IconButton!
     
     /// Toolbar views.
     fileprivate var toolbar: Toolbar!
-    fileprivate var moreButton: IconButton!
+     var moreButton: IconButton!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "FeedCell")

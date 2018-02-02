@@ -39,10 +39,11 @@ extension DBService {
                 guard let header = postObject["header"] as? String,
                 let body = postObject["body"] as? String,
                 let uID = postObject["uID"] as? String,
+                let userEmail = postObject["userEmail"] as? String,
                 let postID = postObject["postID"] as? String
                     else { print("error getting posts");return}
                 
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID)
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, userEmail: userEmail)
                 posts.append(thisPost)
             }
             completion(posts)
@@ -53,6 +54,13 @@ extension DBService {
         getAllPosts { (allPosts) in
             let userPosts = allPosts.filter({$0.uID == uID})
             self.delegate?.getPostsFromUsers?(self, posts: userPosts)
+        }
+    }
+    
+    func getPostsByEmail(from userEmail: String) {
+        getAllPosts { (allPosts) in
+            let usersPosts = allPosts.filter({$0.userEmail == userEmail})
+            self.delegate?.getPostsFromUsers?(self, posts: usersPosts)
         }
     }
     
@@ -86,6 +94,7 @@ extension DBService {
                                 "body": body,
                                 "uID": AuthUserService.getCurrentUser()?.uid,
                                 "user" : user.userName,
+                                "userEmail:" :user.email,
                                 "postID": childByAutoID.key]) {(error, ref) in
                                     if let error = error {
                                         print("addPostError error \(error)")

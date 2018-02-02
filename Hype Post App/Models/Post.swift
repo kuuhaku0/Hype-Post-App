@@ -11,13 +11,14 @@ import FirebaseDatabase
 class Post: NSObject, Codable {
     var header: String = ""
     var body: String = ""
+    let userEmail: String
     let uID: String
     let upVotes: Int = 0
     let downVotes: Int = 0
     
     let postID: String
-    init(header: String, body: String, postID: String, uID: String) {
-        self.header = header; self.body = body;  self.postID = postID; self.uID = uID
+    init(header: String, body: String, postID: String, uID: String, userEmail: String) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.userEmail = userEmail
     }
 //     init(snapShot: DataSnapshot) {
 //        let snapShotValue = snapShot.value as! [String: AnyObject]

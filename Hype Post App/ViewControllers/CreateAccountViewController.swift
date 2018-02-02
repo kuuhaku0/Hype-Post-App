@@ -12,21 +12,43 @@ class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordConfirmTF: UITextField!
+    @IBOutlet weak var FirstNameTF: UITextField!
+    @IBOutlet weak var LastNameTF: UITextField!
+    @IBOutlet weak var userName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        signUp(withEmail: emailTextField.text!, password: passwordTextField.text!, passwordsMatch: true)
+//        signUp(withEmail: emailTextField.text!,
+//               password: passwordTextField.text!,
+//               passwordsMatch: checkPasswordsMatch(),
+//               user: AppUser.init(email: emailTextField.text!, uID: "", userName: userName.text!))
     }
-
+    
+    func checkPasswordsMatch() -> Bool {
+        if passwordTextField.text == passwordConfirmTF.text {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (alert) in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension CreateAccountViewController {
-    func signUp(withEmail email: String, password pass: String, passwordsMatch bothPassMatch: Bool) {
+    func signUp(withEmail email: String, password pass: String, passwordsMatch bothPassMatch: Bool, user: AppUser) {
         FirebaseAPIClient.manager.createAccount(withEmail: email, and: pass) {(user, error) in
             guard bothPassMatch == true else {
-                //TODO: ALERT USER PASSWORDS DON'T MATCH
+                self.showAlert(title: "Error", message: "Passwords must match")
                 return
             }
             if Auth.auth().currentUser != nil {
@@ -35,7 +57,7 @@ extension CreateAccountViewController {
                     if error != nil {
                         print(error!)
                     } else {
-                        //TODO: NOTIFY USER EMAIL VERIFICATION HAS BEEN SENT
+                        self.showAlert(title: "Success", message: "Verification email sent to \(email)")
                         print("Verification email sent")
                     }
                 }

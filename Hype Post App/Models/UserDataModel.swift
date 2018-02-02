@@ -28,10 +28,12 @@ class UserDataModel {
     private init() {}
     static let manager = UserDataModel()
     static let rootRef = Database.database().reference()
+
     static let postsRef = UserDataModel.rootRef.child("Posts")
 
 
-    
+
+
     static private var allPosts = [Post]()
     
     static func addNewPost(post: Post, by user: User) {

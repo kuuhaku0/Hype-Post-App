@@ -43,10 +43,7 @@ extension DBService {
                 posts.append(thisPost)
             }
             completion(posts)
-    
-    
         }
-        
 }
     //func below gets posts from a certain user using filter by ID
     func getPostsByID(from uID: String) {

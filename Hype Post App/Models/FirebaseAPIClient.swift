@@ -30,6 +30,7 @@ struct FirebaseAPIClient {
     func createAccount(withEmail email: String, and password: String,
                        completion: @escaping AuthResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+        
     }
     
     func sendVerificationEmail(completion: @escaping (SendPasswordResetCallback)) {

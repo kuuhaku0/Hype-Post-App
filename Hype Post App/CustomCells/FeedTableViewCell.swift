@@ -54,9 +54,8 @@ class FeedTableViewCell: UITableViewCell {
         preparePresenterCard()
     }
     
-    public func configureCell(post: Post, user: AppUser) {
+    public func configureCell(post: Post) {
         content.text = post.body
-        toolbar.title = user.email
         toolbar.detail = post.header
     }
 }

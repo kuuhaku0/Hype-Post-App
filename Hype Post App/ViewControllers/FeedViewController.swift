@@ -23,14 +23,18 @@ class FeedViewController: UIViewController {
     
     func setupCPB() {
         createPostButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.snp.bottom).offset(-16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
     }
     
     @IBOutlet weak var feedTableView: UITableView!
     
-    var posts = [Post]()
+    var posts = [Post]() {
+        didSet {
+            feedTableView.reloadData()
+        }
+    }
     var postsRef: DatabaseReference!
 
     override func viewDidLoad() {
@@ -42,13 +46,21 @@ class FeedViewController: UIViewController {
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
+        DBService.manager.newPost(header: "sadfasdf", body: "sdfgsdfg", by: AppUser.init(email: "asdfasdfd", userName: "sdfgsdfg", firstName: "sdfgdsfg", lastName: "dsfgsdf"))
+        loadData()
+    }
+    
+    func loadData() {
+        DBService.manager.getAllPosts { (posts) in
+            self.posts = posts
+        }
     }
 }
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     public static func storyboardInstance() -> FeedViewController {
@@ -59,7 +71,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        
+        let post = posts[indexPath.row]
+        cell.configureCell(post: post)
         //TO DO: CREATE A FUNCTION TO SET UP CELL
         return cell
     }

@@ -122,7 +122,7 @@ extension  FeedTableViewCell {
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
         
-        self.layout(card).vertically(top: 0, bottom: 0).centerVertically()
+        self.layout(card).vertically(top: -4, bottom: -4).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
 

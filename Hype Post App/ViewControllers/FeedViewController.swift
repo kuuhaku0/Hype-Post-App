@@ -13,7 +13,6 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView!
     
-    
     var posts = [Post]()
     var postsRef: DatabaseReference!
 

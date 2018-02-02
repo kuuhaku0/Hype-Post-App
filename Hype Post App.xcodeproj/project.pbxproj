@@ -24,9 +24,9 @@
 		81B73A062023D5040033F706 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B73A052023D5040033F706 /* EntryViewController.swift */; };
 		81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		81C5D8FE202022B7004E2A16 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FD202022B7004E2A16 /* Post.swift */; };
-		81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FF2020294B004E2A16 /* UserDataModel.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81F41C672022E11300BC4286 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41C662022E11300BC4286 /* Comment.swift */; };
+		81F41CC12024152900BC4286 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41CC02024152900BC4286 /* AppUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +50,9 @@
 		81B739FF2023D0010033F706 /* DBService+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Post.swift"; sourceTree = "<group>"; };
 		81B73A052023D5040033F706 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		81C5D8FD202022B7004E2A16 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		81C5D8FF2020294B004E2A16 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81F41C662022E11300BC4286 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		81F41CC02024152900BC4286 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,9 +136,9 @@
 		8190FB0A201FD6B4005BED8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81F41CC02024152900BC4286 /* AppUser.swift */,
 				8190FB08201FD24C005BED8E /* FirebaseAPIClient.swift */,
 				81C5D8FD202022B7004E2A16 /* Post.swift */,
-				81C5D8FF2020294B004E2A16 /* UserDataModel.swift */,
 				81F41C662022E11300BC4286 /* Comment.swift */,
 			);
 			path = Models;
@@ -308,9 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
+				81F41CC12024152900BC4286 /* AppUser.swift in Sources */,
 				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
-				81C5D9002020294B004E2A16 /* UserDataModel.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81B73A062023D5040033F706 /* EntryViewController.swift in Sources */,
 				81B73A002023D0010033F706 /* DBService+Post.swift in Sources */,

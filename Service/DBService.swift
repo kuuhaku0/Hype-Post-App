@@ -9,30 +9,33 @@
 import Foundation
 import FirebaseDatabase
 
-class DBService {
+@objc protocol DBServiceDelegate: class {
+    @objc optional func getPostsFromUsers(_ DBService:DBService, posts: [Post])
     
-    private init() {
-        // Reference to the root of the Firebase database
-        dbRef = Database.database().reference()
+    @objc optional func didFailGettingUserPosts(_ databaseService: DBService, error: String)
+}
+
+
+class DBService: NSObject {
+    
+    private override init() {
         
-        // Children of root database node
-        usersRef = dbRef.child("users")
-        jobsRef = dbRef.child("jobs")
-        imagesRef = dbRef.child("images")
-        categoriesRef = dbRef.child("categories")
+        rootRef = Database.database().reference()
+        usersRef = rootRef.child("users")
+        postsRef = rootRef.child("posts")
+        commentsRef = rootRef.child("comments")
+        super.init()
+    
     }
     
     static let manager = DBService()
     
-    private var dbRef: DatabaseReference!
-    private var usersRef: DatabaseReference!
-    private var jobsRef: DatabaseReference!
-    private var imagesRef: DatabaseReference!
-    private var categoriesRef: DatabaseReference!
+     var rootRef: DatabaseReference!
+     var usersRef: DatabaseReference!
+     var postsRef: DatabaseReference!
+     var commentsRef: DatabaseReference!
+ 
+    public weak var delegate: DBServiceDelegate?
     
-    public func getDB() -> DatabaseReference { return dbRef }
-    public func getUsers() -> DatabaseReference { return usersRef }
-    public func getJobs() -> DatabaseReference { return jobsRef }
-    public func getImages() -> DatabaseReference { return imagesRef }
-    public func getCategories() -> DatabaseReference { return categoriesRef }
+
 }

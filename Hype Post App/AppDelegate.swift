@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if let _ = AuthUserService.getCurrentUser() {
-
-            let feedVC = FeedViewController.storyboardInstance()
-            viewController = feedVC
-
             
             viewController = tabBar
 

@@ -13,9 +13,13 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let feedVC = FeedViewController.storyboardInstance()
+        let popVc = PoppinViewController()
         let profileVC = ProfileViewController()
-        feedVC.tabBarItem = UITabBarItem(title: "Feed", image: nil, tag: 0)
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 1)
-        self.setViewControllers([feedVC, profileVC], animated: true)
+        let tab = tabController(viewControllers: [feedVC, popVc])
+        tab.tabBarItem = UITabBarItem(title: "f e e d", image: nil, tag: 0)
+        profileVC.tabBarItem = UITabBarItem(title: "p r o f i l e", image: nil, tag: 1)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.red], for: .selected)
+    
+        self.setViewControllers([tab, profileVC], animated: true)
     }
 }

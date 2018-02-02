@@ -12,8 +12,6 @@ class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     public static func storyboardINstance() -> EntryViewController {

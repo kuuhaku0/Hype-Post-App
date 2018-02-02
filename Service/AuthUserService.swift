@@ -24,6 +24,7 @@ import Firebase
     @objc optional func didSignIn(_ userService: AuthUserService, user: User)
 }
 
+
 class AuthUserService: NSObject {
     
     weak var delegate: AuthUserServiceDelegate?

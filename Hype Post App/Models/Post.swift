@@ -26,8 +26,6 @@ class Post: NSObject, Codable {
 //        
 //        postID = snapShotValue["postID"] as! String
 //    }
- 
-    
 }
 
 

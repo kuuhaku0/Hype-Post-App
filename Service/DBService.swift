@@ -15,7 +15,6 @@ import FirebaseDatabase
     @objc optional func didFailGettingUserPosts(_ databaseService: DBService, error: String)
 }
 
-
 class DBService: NSObject {
     
     private override init() {

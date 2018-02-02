@@ -14,6 +14,7 @@
 		817C8BD82025047200660FA8 /* tabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BD72025047200660FA8 /* tabController.swift */; };
 		817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */; };
 		817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDD20250D8E00660FA8 /* TabViewController.swift */; };
+		817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BE1202519AB00660FA8 /* PoppinViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		817C8BD72025047200660FA8 /* tabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabController.swift; sourceTree = "<group>"; };
 		817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		817C8BDD20250D8E00660FA8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		817C8BE1202519AB00660FA8 /* PoppinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinViewController.swift; sourceTree = "<group>"; };
 		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		8190FAF1201FCAE1005BED8E /* Hype Post App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hype Post App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8190FAF4201FCAE1005BED8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
 				817C8BD72025047200660FA8 /* tabController.swift */,
 				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
+				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
+				817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */,
 				81F41CC12024152900BC4286 /* AppUser.swift in Sources */,
 				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,

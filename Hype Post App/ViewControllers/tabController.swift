@@ -13,9 +13,9 @@ import Material
 class tabController: TabsController{
 open override func prepare() {
     super.prepare()
-    tabBar.setLineColor(Color.orange.base, for: .selected) // or tabBar.lineColor = Color.orange.base
+    tabBar.setLineColor(Color.red.base, for: .selected) // or tabBar.lineColor = Color.orange.base
     tabBar.setTabItemsColor(Color.grey.base, for: .normal)
-    tabBar.setTabItemsColor(Color.purple.base, for: .selected)
+    tabBar.setTabItemsColor(Color.red.base, for: .selected)
     tabBar.setTabItemsColor(Color.green.base, for: .highlighted)
     tabBar.translatesAutoresizingMaskIntoConstraints = false
     tabBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true

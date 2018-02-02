@@ -42,6 +42,7 @@ class FeedViewController: UIViewController {
         view.addSubview(createPostButton)
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
+        prepareTabItem()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
@@ -79,7 +80,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FeedViewController {
-    
-    
+        fileprivate func prepareTabItem() {
+            tabItem.title = "r e c e n t"
+            
+        }
 }
 

@@ -27,6 +27,7 @@
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81F41C672022E11300BC4286 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41C662022E11300BC4286 /* Comment.swift */; };
 		81F41CC12024152900BC4286 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41CC02024152900BC4286 /* AppUser.swift */; };
+		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81F41C662022E11300BC4286 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		81F41CC02024152900BC4286 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +122,7 @@
 		8190FAF3201FCAE1005BED8E /* Hype Post App */ = {
 			isa = PBXGroup;
 			children = (
-				8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */,
+				CF7CE94B2024FECC00677448 /* CustomCells */,
 				8190FAF4201FCAE1005BED8E /* AppDelegate.swift */,
 				8190FB0A201FD6B4005BED8E /* Models */,
 				8152AD942020D6BC00E1AD03 /* ViewControllers */,
@@ -152,6 +154,15 @@
 				81B739FF2023D0010033F706 /* DBService+Post.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CF7CE94B2024FECC00677448 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */,
+				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81B73A062023D5040033F706 /* EntryViewController.swift in Sources */,
 				81B73A002023D0010033F706 /* DBService+Post.swift in Sources */,
+				CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */,
 				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
 				81B739FC2023CE8E0033F706 /* AuthUserService.swift in Sources */,
 				81F41C672022E11300BC4286 /* Comment.swift in Sources */,
@@ -462,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "Hype Post App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tyzhaoac.Hype-Post-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "Hype Post App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tyzhaoac.Hype-Post-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";

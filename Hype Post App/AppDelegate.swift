@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let _ = AuthUserService.getCurrentUser() {
             let feedVC = FeedViewController.storyboardInstance()
-            let navController = UINavigationController(rootViewController: feedVC)
-            viewController = navController
+            viewController = feedVC
         } else {
             let loginVC = EntryViewController.storyboardINstance()
             let navController =  UINavigationController(rootViewController: loginVC)

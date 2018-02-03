@@ -23,6 +23,7 @@ class FeedTableViewCell: UITableViewCell {
     var dateFormatter: DateFormatter!
     var dateLabel: UILabel!
     var favoriteButton: IconButton!
+    var hypeAmount: UILabel!
     var shareButton: IconButton!
     
     /// Toolbar views.
@@ -78,11 +79,15 @@ extension  FeedTableViewCell {
         dateLabel.font = RobotoFont.regular(with: 12)
         dateLabel.textColor = Color.blueGrey.base
         dateLabel.textAlignment = .center
-        dateLabel.text = dateFormatter.string(from: Date.distantFuture)
+        dateLabel.text = dateFormatter.string(from: Date())
     }
     
     fileprivate func prepareFavoriteButton() {
         favoriteButton = IconButton(image: Icon.favorite, tintColor: Color.red.base)
+        hypeAmount = UILabel()
+        hypeAmount.text = "12"
+        hypeAmount.font = RobotoFont.regular(with: 14)
+
     }
     
     fileprivate func prepareShareButton() {
@@ -91,15 +96,35 @@ extension  FeedTableViewCell {
     
     fileprivate func prepareMoreButton() {
         moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
+        moreButton.addTarget(self, action: #selector(moreMenu), for: .touchUpInside)
     }
+    
+    
+    @objc fileprivate func moreMenu(){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        })
+        
+        alert.addAction(UIAlertAction(title: "Flag Post", style: .destructive) { _ in
+        })
+      
+        alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in
+        })
+        
+        alert.show()
+        
+    }
+    
+    
     
     fileprivate func prepareToolbar() {
         toolbar = Toolbar(rightViews: [moreButton])
         
-        toolbar.title = "Material"
+        toolbar.title = "Username"
         toolbar.titleLabel.textAlignment = .left
         
-        toolbar.detail = "Build Beautiful Software"
+        toolbar.detail = dateLabel.text
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Color.blueGrey.base
     }
@@ -107,12 +132,12 @@ extension  FeedTableViewCell {
     private func prepareContentView() {
         content = UILabel()
         content.numberOfLines = 0
-        content.text = "Material is an animation and graphics framework that is used to create beautiful applications."
+        content.text = "yo pokemon is awesome!!!!"
         content.font = RobotoFont.regular(with: 14)
     }
     
     fileprivate func prepareBottomBar() {
-        bottomBar = Bar(leftViews: [favoriteButton], rightViews: [shareButton], centerViews: [dateLabel])
+        bottomBar = Bar(leftViews: [favoriteButton,hypeAmount], rightViews: [shareButton], centerViews: [])
     }
     
     fileprivate func preparePresenterCard() {
@@ -133,4 +158,14 @@ extension  FeedTableViewCell {
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
 
+}
+
+extension UIAlertController {
+    func show() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIViewController()
+        window.windowLevel = UIWindowLevelAlert
+        window.makeKeyAndVisible()
+        window.rootViewController?.present(self, animated: true, completion: nil)
+    }
 }

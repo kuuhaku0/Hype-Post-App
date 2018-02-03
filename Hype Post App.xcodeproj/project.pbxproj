@@ -27,6 +27,8 @@
 		81B73A002023D0010033F706 /* DBService+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B739FF2023D0010033F706 /* DBService+Post.swift */; };
 		81B73A062023D5040033F706 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B73A052023D5040033F706 /* EntryViewController.swift */; };
 		81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
+		81B8CDF620262B99001A7066 /* DBService+AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8CDF520262B99001A7066 /* DBService+AppUser.swift */; };
+		81B8CDF820262D8D001A7066 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8CDF720262D8D001A7066 /* DBService+Comment.swift */; };
 		81C5D8FE202022B7004E2A16 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D8FD202022B7004E2A16 /* Post.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81F41C672022E11300BC4286 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F41C662022E11300BC4286 /* Comment.swift */; };
@@ -58,6 +60,8 @@
 		81B739FD2023CFF90033F706 /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		81B739FF2023D0010033F706 /* DBService+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Post.swift"; sourceTree = "<group>"; };
 		81B73A052023D5040033F706 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		81B8CDF520262B99001A7066 /* DBService+AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+AppUser.swift"; sourceTree = "<group>"; };
+		81B8CDF720262D8D001A7066 /* DBService+Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		81C5D8FD202022B7004E2A16 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81F41C662022E11300BC4286 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				81B739FB2023CE8E0033F706 /* AuthUserService.swift */,
 				81B739FD2023CFF90033F706 /* DBService.swift */,
 				81B739FF2023D0010033F706 /* DBService+Post.swift */,
+				81B8CDF720262D8D001A7066 /* DBService+Comment.swift */,
+				81B8CDF520262B99001A7066 /* DBService+AppUser.swift */,
 				813E7E582024F84E00FEA457 /* StorageService.swift */,
 			);
 			path = Service;
@@ -333,11 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
+				81B8CDF820262D8D001A7066 /* DBService+Comment.swift in Sources */,
 				81F41CC12024152900BC4286 /* AppUser.swift in Sources */,
 				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				813E7E592024F84E00FEA457 /* StorageService.swift in Sources */,
+				81B8CDF620262B99001A7066 /* DBService+AppUser.swift in Sources */,
 				81B73A062023D5040033F706 /* EntryViewController.swift in Sources */,
 				817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */,
 				81B73A002023D0010033F706 /* DBService+Post.swift in Sources */,

@@ -25,7 +25,7 @@ class CreateAccountViewController: UIViewController {
         signUp(withEmail: emailTextField.text!,
                password: passwordTextField.text!,
                passwordsMatch: checkPasswordsMatch(),
-               user: AppUser.init(email: emailTextField.text!, userName: userName.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text ?? ""))
+               user: AppUser.init(email: emailTextField.text!, userName: userName.text!, uID: "", firstName: FirstNameTF.text!, lastName: LastNameTF.text ?? "", imageURL: nil))
     }
     
     func checkPasswordsMatch() -> Bool {

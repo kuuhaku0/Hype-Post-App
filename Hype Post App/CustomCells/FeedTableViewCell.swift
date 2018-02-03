@@ -17,6 +17,11 @@ class FeedTableViewCell: UITableViewCell {
     /// Conent area.
     var presenterView: UIImageView!
     var content: UILabel!
+    lazy var postTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        return label
+    }()
     
     /// Bottom Bar views.
     var bottomBar: Bar!
@@ -83,15 +88,13 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareToolBarButtons() {
-        upvoteButton = IconButton(image: #imageLiteral(resourceName: "upvote"), tintColor: Color.red.base)
+        upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-96"), tintColor: Color.red.base)
         hypeAmount = UILabel()
+        hypeAmount.textAlignment = .left
         hypeAmount.text = "12"
         hypeAmount.font = RobotoFont.regular(with: 14)
-        
-        downvoteButton = IconButton(image: #imageLiteral(resourceName: "downvote"), tintColor: Color.red.base)
-        
-        
-
+        hypeAmount.textColor = Color.grey.base
+        downvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-down-button-96"), tintColor: Color.red.base)
     }
     
     fileprivate func prepareShareButton() {
@@ -117,10 +120,7 @@ extension  FeedTableViewCell {
         })
         
         alert.show()
-        
     }
-    
-    
     
     fileprivate func prepareToolbar() {
         toolbar = Toolbar(rightViews: [moreButton])
@@ -158,10 +158,9 @@ extension  FeedTableViewCell {
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
         
-        self.layout(card).vertically(top: -4, bottom: -4).centerVertically()
+        self.layout(card).vertically(top: 0, bottom: 0).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
-
 }
 
 extension UIAlertController {

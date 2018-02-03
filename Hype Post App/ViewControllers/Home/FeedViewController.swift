@@ -35,6 +35,7 @@ class FeedViewController: UIViewController {
             feedTableView.reloadData()
         }
     }
+    
     var postsRef: DatabaseReference!
 
     override func viewDidLoad() {
@@ -42,17 +43,17 @@ class FeedViewController: UIViewController {
         view.addSubview(createPostButton)
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
+        loadData()
         prepareTabItem()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
-        
+        feedTableView.backgroundColor = Color.grey.lighten4
     }
+    
     override func viewDidLayoutSubviews() {
         constrainTableView()
-        DBService.manager.newPost(header: "sadfasdf", body: "sdfgsdfg", by: AppUser.init(email: "asdfasdfd", userName: "sdfgsdfg", firstName: "sdfgdsfg", lastName: "dsfgsdf"))
-        loadData()
     }
     
     func loadData() {
@@ -61,8 +62,6 @@ class FeedViewController: UIViewController {
         }
     }
 }
-
-
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -80,14 +79,13 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
-        //TO DO: CREATE A FUNCTION TO SET UP CELL
         return cell
     }
 }
 
 extension FeedViewController {
+    
     fileprivate func constrainTableView(){
-      
         feedTableView.snp.makeConstraints { (make) in
             make.top.equalTo((tabsController?.tabBar.snp.bottom)!)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
@@ -95,18 +93,11 @@ extension FeedViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
         
-        
-        
-        
-        
     }
     
-    
-    
-        fileprivate func prepareTabItem() {
-            tabItem.title = "recent"
-            
-        }
+    fileprivate func prepareTabItem() {
+        tabItem.title = "recent"
+    }
 }
 
 class NavigationImageView: UIImageView {

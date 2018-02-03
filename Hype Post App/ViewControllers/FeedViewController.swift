@@ -12,7 +12,7 @@ import Material
 import SnapKit
 
 class FeedViewController: UIViewController {
-    
+  
     lazy var createPostButton: FABButton = {
         let button = FABButton(image: Icon.cm.add)
         button.tintColor = .white
@@ -23,7 +23,7 @@ class FeedViewController: UIViewController {
     
     func setupCPB() {
         createPostButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.snp.bottom).offset(-16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
     }
@@ -43,8 +43,18 @@ class FeedViewController: UIViewController {
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
+        navigationController?.isNavigationBarHidden = false
+        let titleImageView = NavigationImageView()
+        titleImageView.image = #imageLiteral(resourceName: "HypePost")
+        navigationItem.titleView = titleImageView
+        
+    }
+    override func viewDidLayoutSubviews() {
+        constrainTableView()
     }
 }
+
+
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -67,9 +77,32 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FeedViewController {
+    fileprivate func constrainTableView(){
+      
+        feedTableView.snp.makeConstraints { (make) in
+            make.top.equalTo((tabsController?.tabBar.snp.bottom)!)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.width.equalTo(view.snp.width)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
         fileprivate func prepareTabItem() {
-            tabItem.title = "r e c e n t"
+            tabItem.title = "recent"
             
         }
+}
+
+class NavigationImageView: UIImageView {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: 50, height: 50)
+    }
 }
 

@@ -26,6 +26,6 @@ class PoppinViewController: UIViewController {
 
 extension PoppinViewController{
         fileprivate func prepareTabItem() {
-            tabItem.title = "p o p p i n"
+            tabItem.title = "poppin'"
         }
 }

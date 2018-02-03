@@ -17,8 +17,12 @@ open override func prepare() {
     tabBar.setTabItemsColor(Color.grey.base, for: .normal)
     tabBar.setTabItemsColor(Color.red.base, for: .selected)
     tabBar.setTabItemsColor(Color.green.base, for: .highlighted)
-    tabBar.translatesAutoresizingMaskIntoConstraints = false
-    tabBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    
+    tabBar.snp.makeConstraints { (make) in
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.centerX.equalTo(view.snp.centerX)
+    }
+    
     
     tabBarAlignment = .top
     tabBar.tabBarStyle = .auto

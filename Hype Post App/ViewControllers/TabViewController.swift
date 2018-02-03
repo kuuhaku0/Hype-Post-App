@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class TabViewController: UITabBarController {
 
@@ -16,8 +17,9 @@ class TabViewController: UITabBarController {
         let popVc = PoppinViewController()
         let profileVC = ProfileViewController()
         let tab = tabController(viewControllers: [feedVC, popVc])
-        tab.tabBarItem = UITabBarItem(title: "f e e d", image: nil, tag: 0)
-        profileVC.tabBarItem = UITabBarItem(title: "p r o f i l e", image: nil, tag: 1)
+        tab.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home").withRenderingMode(.alwaysOriginal))
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile").withRenderingMode(.alwaysOriginal))
+    
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.red], for: .selected)
     
         self.setViewControllers([tab, profileVC], animated: true)

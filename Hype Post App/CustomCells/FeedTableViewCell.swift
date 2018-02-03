@@ -22,7 +22,8 @@ class FeedTableViewCell: UITableViewCell {
     var bottomBar: Bar!
     var dateFormatter: DateFormatter!
     var dateLabel: UILabel!
-    var favoriteButton: IconButton!
+    var upvoteButton: IconButton!
+    var downvoteButton: IconButton!
     var hypeAmount: UILabel!
     var shareButton: IconButton!
     
@@ -46,7 +47,7 @@ class FeedTableViewCell: UITableViewCell {
         preparePresenterView()
         prepareDateFormatter()
         prepareDateLabel()
-        prepareFavoriteButton()
+        prepareToolBarButtons()
         prepareShareButton()
         prepareMoreButton()
         prepareToolbar()
@@ -82,11 +83,15 @@ extension  FeedTableViewCell {
         dateLabel.text = dateFormatter.string(from: Date())
     }
     
-    fileprivate func prepareFavoriteButton() {
-        favoriteButton = IconButton(image: Icon.favorite, tintColor: Color.red.base)
+    fileprivate func prepareToolBarButtons() {
+        upvoteButton = IconButton(image: #imageLiteral(resourceName: "upvote"), tintColor: Color.red.base)
         hypeAmount = UILabel()
         hypeAmount.text = "12"
         hypeAmount.font = RobotoFont.regular(with: 14)
+        
+        downvoteButton = IconButton(image: #imageLiteral(resourceName: "downvote"), tintColor: Color.red.base)
+        
+        
 
     }
     
@@ -137,7 +142,7 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareBottomBar() {
-        bottomBar = Bar(leftViews: [favoriteButton,hypeAmount], rightViews: [shareButton], centerViews: [])
+        bottomBar = Bar(leftViews: [upvoteButton,hypeAmount,downvoteButton], rightViews: [shareButton], centerViews: [])
     }
     
     fileprivate func preparePresenterCard() {

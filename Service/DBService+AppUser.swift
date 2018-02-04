@@ -17,6 +17,7 @@ extension DBService {
                       "lastName": appUser.lastName ])
     }
     
+    
     func getAppUser(with uID: String, completion: @escaping (_ user: AppUser) -> Void) {
         let userRef = usersRef.child(uID)
         

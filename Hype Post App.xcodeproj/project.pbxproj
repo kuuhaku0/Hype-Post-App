@@ -27,6 +27,9 @@
 		81B739FE2023CFFA0033F706 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B739FD2023CFF90033F706 /* DBService.swift */; };
 		81B73A002023D0010033F706 /* DBService+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B739FF2023D0010033F706 /* DBService+Post.swift */; };
 		81B73A062023D5040033F706 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B73A052023D5040033F706 /* EntryViewController.swift */; };
+		81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7973320277636001A002E /* ProfileInfoCell.swift */; };
+		81B7973620277651001A002E /* UserActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7973520277651001A002E /* UserActivityCell.swift */; };
+		81B7973820278009001A002E /* CreatePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B7973720278009001A002E /* CreatePost.storyboard */; };
 		81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		81BA30E320265DFA0097D3BF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA30E220265DFA0097D3BF /* ProfileView.storyboard */; };
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
@@ -62,6 +65,9 @@
 		81B739FD2023CFF90033F706 /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		81B739FF2023D0010033F706 /* DBService+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Post.swift"; sourceTree = "<group>"; };
 		81B73A052023D5040033F706 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		81B7973320277636001A002E /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
+		81B7973520277651001A002E /* UserActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityCell.swift; sourceTree = "<group>"; };
+		81B7973720278009001A002E /* CreatePost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePost.storyboard; sourceTree = "<group>"; };
 		81BA30E220265DFA0097D3BF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		81BA30E4202663180097D3BF /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		81C5D8FD202022B7004E2A16 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 				81BA30E220265DFA0097D3BF /* ProfileView.storyboard */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FAF8201FCAE1005BED8E /* Main.storyboard */,
+				81B7973720278009001A002E /* CreatePost.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 			children = (
 				8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
+				81B7973320277636001A002E /* ProfileInfoCell.swift */,
+				81B7973520277651001A002E /* UserActivityCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B7973820278009001A002E /* CreatePost.storyboard in Resources */,
 				8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */,
 				8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */,
 				8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */,
@@ -409,7 +419,9 @@
 				81B739FE2023CFFA0033F706 /* DBService.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
+				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,
 				81C5D8FE202022B7004E2A16 /* Post.swift in Sources */,
+				81B7973620277651001A002E /* UserActivityCell.swift in Sources */,
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
 				817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */,
 			);
@@ -551,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
-				INFOPLIST_FILE = "Hype Post App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tyzhaoac.Hype-Post-App";
@@ -568,7 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
-				INFOPLIST_FILE = "Hype Post App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tyzhaoac.Hype-Post-App";

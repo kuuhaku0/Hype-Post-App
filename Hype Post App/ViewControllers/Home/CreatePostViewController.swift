@@ -8,14 +8,37 @@
 
 import UIKit
 
-class CreatePostViewController: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class CreatePostViewController: UIViewController {
+    
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var postTitle: UITextField!
+    @IBOutlet weak var postBody: UITextField!
+    
+    @IBAction func openGallary(_ sender: UIBarButtonItem) {
     }
-    */
-
+    
+    @IBAction func openCamera(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        //TODO: Implement post
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        postBody.borderColor = UIColor.gray
+    }
+    
+    public static func storyboardInstance() -> CreatePostViewController {
+        let storyboard = UIStoryboard(name: "CreatePost", bundle: nil)
+        let createPostVC = storyboard.instantiateViewController(withIdentifier: "CreatePostViewController") as! CreatePostViewController
+        return createPostVC
+    }
+    
 }

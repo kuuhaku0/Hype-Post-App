@@ -311,6 +311,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HypePost" width="487" height="175"/>
+        <image name="HypePost" width="243" height="87"/>
     </resources>
 </document>

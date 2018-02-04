@@ -10,7 +10,7 @@ import Foundation
 import Material
 
 
-class tabController: TabsController{
+class tabController: TabsController {
 open override func prepare() {
     super.prepare()
     tabBar.setLineColor(Color.red.base, for: .selected) // or tabBar.lineColor = Color.orange.base
@@ -23,12 +23,11 @@ open override func prepare() {
         make.centerX.equalTo(view.snp.centerX)
     }
     
-    
     tabBarAlignment = .top
     tabBar.tabBarStyle = .auto
     tabBar.dividerColor = nil
     tabBar.lineHeight = 5.0
     tabBar.lineAlignment = .bottom
     //        tabBar.backgroundColor = Color.blue.darken2
-}
+    }
 }

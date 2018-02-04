@@ -10,10 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        profileTableView.register(ProfileInfoCell.self, forCellReuseIdentifier: "ProfileInfoCell")
     }
     
     public static func storyboardInstance() -> ProfileViewController {
@@ -22,4 +23,14 @@ class ProfileViewController: UIViewController {
         return profileViewController
     }
     
+    @IBAction func tempLogout(_ sender: UIButton) {
+        logout()
+    }
+    
+    func logout() {
+        FirebaseAPIClient.manager.logOutCurrentUser()
+        show(EntryViewController(), sender: self)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+

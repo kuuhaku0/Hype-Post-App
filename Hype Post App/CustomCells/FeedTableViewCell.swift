@@ -17,6 +17,7 @@ class FeedTableViewCell: UITableViewCell {
     /// Conent area.
     var presenterView: UIImageView!
     var content: UILabel!
+    
     lazy var postTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -133,11 +134,15 @@ extension  FeedTableViewCell {
         toolbar.detailLabel.textColor = Color.blueGrey.base
     }
     
-    private func prepareContentView() {
+    fileprivate func prepareContentView() {
         content = UILabel()
         content.numberOfLines = 0
         content.text = "yo pokemon is awesome!!!!"
         content.font = RobotoFont.regular(with: 14)
+    }
+    
+    fileprivate func preparePostTitle() {
+        
     }
     
     fileprivate func prepareBottomBar() {

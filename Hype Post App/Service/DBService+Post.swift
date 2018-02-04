@@ -84,8 +84,9 @@ extension DBService {
         let childByAutoID = DBService.manager.postsRef.childByAutoId()
         childByAutoID.setValue(["header": header,
                                 "body": body,
-                                "uID": AuthUserService.getCurrentUser()?.uid,
+                                "uID": AuthUserService.getCurrentUser()!.uid,
                                 "user" : user.userName,
+                                "time" : Date(),
                                 "postID": childByAutoID.key]) {(error, ref) in
                                     if let error = error {
                                         print("addPostError error \(error)")

@@ -18,14 +18,20 @@ class FeedViewController: UIViewController {
         button.tintColor = .white
         button.pulseColor = .white
         button.backgroundColor = Color.red.base
+        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
         return button
     }()
     
     func setupCPB() {
         createPostButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
+    }
+    
+    @objc func createPost() {
+        let createPostVC = CreatePostViewController.storyboardInstance()
+        self.present(createPostVC, animated: true, completion: nil)
     }
     
     @IBOutlet weak var feedTableView: UITableView!
@@ -92,7 +98,6 @@ extension FeedViewController {
             make.width.equalTo(view.snp.width)
             make.centerX.equalTo(view.snp.centerX)
         }
-        
     }
     
     fileprivate func prepareTabItem() {

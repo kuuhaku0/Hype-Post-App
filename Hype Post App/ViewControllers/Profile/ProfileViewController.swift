@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UITableViewController {
 
     @IBOutlet weak var profileTableView: UITableView!
     
@@ -29,8 +29,9 @@ class ProfileViewController: UIViewController {
     
     func logout() {
         FirebaseAPIClient.manager.logOutCurrentUser()
-        show(EntryViewController(), sender: self)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            self.present(EntryViewController.storyboardINstance(), animated: true)
+        })
     }
 }
 

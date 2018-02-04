@@ -39,10 +39,11 @@ extension DBService {
                 guard let header = postObject["header"] as? String,
                 let body = postObject["body"] as? String,
                 let uID = postObject["uID"] as? String,
+//                let time = postObject["time"] as? String,
                 let postID = postObject["postID"] as? String
                     else { print("error getting posts");return}
                 
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID)
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, time: "")
                 posts.append(thisPost)
             }
             completion(posts)
@@ -80,13 +81,13 @@ extension DBService {
         }
     }
     
-    func newPost(header: String, body: String, by user: AppUser) {
+    func newPost(header: String, body: String, by user: String) {
         let childByAutoID = DBService.manager.postsRef.childByAutoId()
         childByAutoID.setValue(["header": header,
                                 "body": body,
                                 "uID": AuthUserService.getCurrentUser()!.uid,
-                                "user" : user.userName,
-                                "time" : Date(),
+                                "user" : AuthUserService.getCurrentUser()?.displayName ?? "No display name",
+                                "time" : "\(Date())",
                                 "postID": childByAutoID.key]) {(error, ref) in
                                     if let error = error {
                                         print("addPostError error \(error)")

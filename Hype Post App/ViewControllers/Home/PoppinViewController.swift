@@ -10,15 +10,61 @@ import UIKit
 
 class PoppinViewController: UIViewController {
 
+    var posts = [Post]().sorted { (current, next) -> Bool in
+        current.upVotes > next.upVotes
+        } {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLayoutSubviews() {
+        constrainTableView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         prepareTabItem()
-        // Do any additional setup after loading the view.
+        loadData()
+        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "PopularCell")
     }
+    
+    
+    public static func storyboardInstance() -> PoppinViewController {
+        let storyboard = UIStoryboard(name: "PopularPosts", bundle: nil)
+        let poppinVC = storyboard.instantiateViewController(withIdentifier: "PoppinViewController") as! PoppinViewController
+        return poppinVC
+    }
+    
+    private func loadData() {
+        DBService.manager.getAllPosts { (posts) in
+            self.posts = posts
+        }
+    }
+    
+    fileprivate func constrainTableView(){
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo((tabsController?.tabBar.snp.bottom)!)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.width.equalTo(view.snp.width)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+    }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension PoppinViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath) as! FeedTableViewCell
+        let post = posts[indexPath.row]
+        cell.configureCell(post: post)
+        return cell
     }
 }
 

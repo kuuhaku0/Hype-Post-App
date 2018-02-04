@@ -5,24 +5,22 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Profile View Controller-->
-        <scene sceneID="aX2-aK-9bg">
+        <scene sceneID="Swd-rx-fN6">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="o4O-ha-Fon" customClass="ProfileViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hFB-KO-alz">
+                <tableViewController storyboardIdentifier="ProfileViewController" id="exh-IE-O9X" customClass="ProfileViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iB4-d6-bg9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JyM-of-Eci">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="W6v-CM-lwq">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileInfoCell" rowHeight="216" id="VyP-aX-ryk" customClass="ProfileInfoCell" customModule="Hype_Post_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VyP-aX-ryk" id="LaF-Df-s31">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
@@ -39,7 +37,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-Jl-eDx">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-Jl-eDx">
                                                     <rect key="frame" x="12" y="138" width="351" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +58,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Temp Logout "/>
                                                     <connections>
-                                                        <action selector="tempLogout:" destination="o4O-ha-Fon" eventType="touchUpInside" id="HYA-EE-HsJ"/>
+                                                        <action selector="tempLogout:" destination="exh-IE-O9X" eventType="touchUpInside" id="TCs-kK-eBo"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -72,7 +70,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserActivityCell" rowHeight="216" id="EFb-gO-fK7" customClass="UserActivityCell" customModule="Hype_Post_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="216" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EFb-gO-fK7" id="TgC-rK-dAt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
@@ -90,26 +88,21 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JyM-of-Eci" firstAttribute="leading" secondItem="wAX-po-qjw" secondAttribute="leading" id="Cbx-W0-xgA"/>
-                            <constraint firstItem="JyM-of-Eci" firstAttribute="trailing" secondItem="wAX-po-qjw" secondAttribute="trailing" id="QEg-4W-krY"/>
-                            <constraint firstItem="JyM-of-Eci" firstAttribute="top" secondItem="wAX-po-qjw" secondAttribute="top" id="QhZ-Q5-hTc"/>
-                            <constraint firstItem="JyM-of-Eci" firstAttribute="bottom" secondItem="wAX-po-qjw" secondAttribute="bottom" id="e11-LY-Cii"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wAX-po-qjw"/>
-                    </view>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="exh-IE-O9X" id="Or3-VU-kiA"/>
+                            <outlet property="delegate" destination="exh-IE-O9X" id="QIa-f2-EEb"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="profileTableView" destination="JyM-of-Eci" id="Z7C-3o-Hvq"/>
+                        <outlet property="profileTableView" destination="iB4-d6-bg9" id="Mks-fN-TZS"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wkl-Pw-XUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rte-vc-QDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="170.46476761619192"/>
+            <point key="canvasLocation" x="775" y="171"/>
         </scene>
     </scenes>
 </document>

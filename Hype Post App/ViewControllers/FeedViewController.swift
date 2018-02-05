@@ -109,9 +109,3 @@ extension FeedViewController {
         }
 }
 
-class NavigationImageView: UIImageView {
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: 50, height: 50)
-    }
-}
-

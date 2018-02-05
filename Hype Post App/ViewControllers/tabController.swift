@@ -29,6 +29,7 @@ open override func prepare() {
     tabBar.dividerColor = nil
     tabBar.lineHeight = 5.0
     tabBar.lineAlignment = .bottom
-    //        tabBar.backgroundColor = Color.blue.darken2
+//            tabBar.backgroundColor = Color.red.base
+    
 }
 }

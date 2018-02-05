@@ -15,6 +15,7 @@ class Post: NSObject, Codable {
     let uID: String //auth.auth.getcurrentUser.uid
     let upVotes: Int = 0
     let downVotes: Int = 0
+    var time  = "" 
 
     let postID: String
     var imageURL: String?
@@ -25,9 +26,7 @@ class Post: NSObject, Codable {
         self.header = header; self.body = body;  self.postID = postID; self.uID = uID
         self.imageURL = ""
     }
-    let time: String
-    let postID: String
-    
+  
 
 
 }

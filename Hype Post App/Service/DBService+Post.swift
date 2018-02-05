@@ -32,11 +32,14 @@ extension DBService {
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL )
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL)
+                posts.append(thisPost)
 
             }
+            
             completion(posts)
         }
+    }
 
     //func below gets posts from a certain user using filter by ID
     func getPostsByID(from uID: String) {
@@ -48,19 +51,21 @@ extension DBService {
     
     
 
-    func newPost(header: String, body: String, image: UIImage?) {
-        guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
-        let ref = postsRef.childByAutoId()
-        let post = Post(header: header, body: body, postID: ref.key, uID: currentUser.uid)
-        ref.setValue(["header": post.header,
-                      "body": post.body,
-                      "postID": post.postID,
-                      "uID": post.uID,
-                      "upVotes": post.upVotes,
-                      "downVotes": post.downVotes
-                     ])
+        func newPost(header: String, body: String, image: UIImage?) {
+            guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
+            let ref = postsRef.childByAutoId()
+            let post = Post(header: header, body: body, postID: ref.key, uID: currentUser.uid)
+            ref.setValue(["header": post.header,
+                          "body": post.body,
+                          "postID": post.postID,
+                          "uID": post.uID,
+                          "upVotes": post.upVotes,
+                          "downVotes": post.downVotes
+                ])
+            
+            
+            
+        }
         
-
-
-}
+    }
 

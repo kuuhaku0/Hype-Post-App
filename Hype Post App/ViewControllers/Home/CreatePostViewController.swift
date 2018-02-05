@@ -28,7 +28,7 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
         //TODO: Implement post
-        DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
+       DBService.manager.newPost(header: "Wooo", body: "This is my post", image: nil)
     }
     
     override func viewDidLoad() {

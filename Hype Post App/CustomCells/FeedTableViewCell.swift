@@ -18,11 +18,19 @@ class FeedTableViewCell: UITableViewCell {
     var presenterView: UIImageView!
     var content: UILabel!
     
+    lazy var postTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        return label
+    }()
+    
     /// Bottom Bar views.
     var bottomBar: Bar!
     var dateFormatter: DateFormatter!
     var dateLabel: UILabel!
-    var favoriteButton: IconButton!
+    var upvoteButton: IconButton!
+    var downvoteButton: IconButton!
+    var hypeAmount: UILabel!
     var shareButton: IconButton!
     
     /// Toolbar views.
@@ -45,7 +53,7 @@ class FeedTableViewCell: UITableViewCell {
         preparePresenterView()
         prepareDateFormatter()
         prepareDateLabel()
-        prepareFavoriteButton()
+        prepareToolBarButtons()
         prepareShareButton()
         prepareMoreButton()
         prepareToolbar()
@@ -54,9 +62,8 @@ class FeedTableViewCell: UITableViewCell {
         preparePresenterCard()
     }
     
-    public func configureCell(post: Post, user: AppUser) {
+    public func configureCell(post: Post) {
         content.text = post.body
-        toolbar.title = user.email
         toolbar.detail = post.header
     }
 }
@@ -78,11 +85,17 @@ extension  FeedTableViewCell {
         dateLabel.font = RobotoFont.regular(with: 12)
         dateLabel.textColor = Color.blueGrey.base
         dateLabel.textAlignment = .center
-        dateLabel.text = dateFormatter.string(from: Date.distantFuture)
+        dateLabel.text = dateFormatter.string(from: Date())
     }
     
-    fileprivate func prepareFavoriteButton() {
-        favoriteButton = IconButton(image: Icon.favorite, tintColor: Color.red.base)
+    fileprivate func prepareToolBarButtons() {
+        upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-96"), tintColor: Color.red.base)
+        hypeAmount = UILabel()
+        hypeAmount.textAlignment = .left
+        hypeAmount.text = "12"
+        hypeAmount.font = RobotoFont.regular(with: 14)
+        hypeAmount.textColor = Color.grey.base
+        downvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-down-button-96"), tintColor: Color.red.base)
     }
     
     fileprivate func prepareShareButton() {
@@ -91,28 +104,49 @@ extension  FeedTableViewCell {
     
     fileprivate func prepareMoreButton() {
         moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
+        moreButton.addTarget(self, action: #selector(moreMenu), for: .touchUpInside)
+    }
+    
+    
+    @objc fileprivate func moreMenu(){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        })
+        
+        alert.addAction(UIAlertAction(title: "Flag Post", style: .destructive) { _ in
+        })
+      
+        alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in
+        })
+        
+        alert.show()
     }
     
     fileprivate func prepareToolbar() {
         toolbar = Toolbar(rightViews: [moreButton])
         
-        toolbar.title = "Material"
+        toolbar.title = "Username"
         toolbar.titleLabel.textAlignment = .left
         
-        toolbar.detail = "Build Beautiful Software"
+        toolbar.detail = dateLabel.text
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Color.blueGrey.base
     }
     
-    private func prepareContentView() {
+    fileprivate func prepareContentView() {
         content = UILabel()
         content.numberOfLines = 0
-        content.text = "Material is an animation and graphics framework that is used to create beautiful applications."
+        content.text = "yo pokemon is awesome!!!!"
         content.font = RobotoFont.regular(with: 14)
     }
     
+    fileprivate func preparePostTitle() {
+        
+    }
+    
     fileprivate func prepareBottomBar() {
-        bottomBar = Bar(leftViews: [favoriteButton], rightViews: [shareButton], centerViews: [dateLabel])
+        bottomBar = Bar(leftViews: [upvoteButton,hypeAmount,downvoteButton], rightViews: [shareButton], centerViews: [])
     }
     
     fileprivate func preparePresenterCard() {
@@ -129,8 +163,17 @@ extension  FeedTableViewCell {
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
         
-        self.layout(card).vertically(top: -4, bottom: -4).centerVertically()
+        self.layout(card).vertically(top: 0, bottom: 0).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
+}
 
+extension UIAlertController {
+    func show() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIViewController()
+        window.windowLevel = UIWindowLevelAlert
+        window.makeKeyAndVisible()
+        window.rootViewController?.present(self, animated: true, completion: nil)
+    }
 }

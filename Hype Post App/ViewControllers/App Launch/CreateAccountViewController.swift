@@ -54,6 +54,8 @@ extension CreateAccountViewController {
             if Auth.auth().currentUser != nil {
                 print("In currentUser != nil")
                 
+                //TODO: MAKE DATABASE USER OBJECT
+                
                 FirebaseAPIClient.manager.sendVerificationEmail {(error) in
                     if error != nil {
                         print(error!)

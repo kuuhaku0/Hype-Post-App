@@ -8,12 +8,14 @@
 
 import Foundation
 import FirebaseDatabase
+
 class Post: NSObject, Codable {
     var header: String = ""
     var body: String = ""
     let uID: String //auth.auth.getcurrentUser.uid
     let upVotes: Int = 0
     let downVotes: Int = 0
+
     let postID: String
     var imageURL: String?
     init(header: String, body: String, postID: String, uID: String, imageURL: String?) {
@@ -23,6 +25,10 @@ class Post: NSObject, Codable {
         self.header = header; self.body = body;  self.postID = postID; self.uID = uID
         self.imageURL = ""
     }
+    let time: String
+    let postID: String
+    
+
 
 }
 

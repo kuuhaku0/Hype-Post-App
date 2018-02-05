@@ -54,9 +54,9 @@ extension LoginViewController {
             } else {
                 print("LOGIN SUCCESSFUL")
                 SVProgressHUD.dismiss()
-//                let feedVC = FeedViewController.storyboardInstance()
                 let tabVC = TabViewController()
                 self.present(tabVC, animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

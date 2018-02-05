@@ -10,15 +10,18 @@ import Foundation
 import Material
 
 
-class tabController: TabsController{
+class tabController: TabsController {
 open override func prepare() {
     super.prepare()
-    tabBar.setLineColor(Color.orange.base, for: .selected) // or tabBar.lineColor = Color.orange.base
+    tabBar.setLineColor(Color.red.base, for: .selected) // or tabBar.lineColor = Color.orange.base
     tabBar.setTabItemsColor(Color.grey.base, for: .normal)
-    tabBar.setTabItemsColor(Color.purple.base, for: .selected)
+    tabBar.setTabItemsColor(Color.red.base, for: .selected)
     tabBar.setTabItemsColor(Color.green.base, for: .highlighted)
-    tabBar.translatesAutoresizingMaskIntoConstraints = false
-    tabBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    
+    tabBar.snp.makeConstraints { (make) in
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.centerX.equalTo(view.snp.centerX)
+    }
     
     tabBarAlignment = .top
     tabBar.tabBarStyle = .auto
@@ -26,5 +29,5 @@ open override func prepare() {
     tabBar.lineHeight = 5.0
     tabBar.lineAlignment = .bottom
     //        tabBar.backgroundColor = Color.blue.darken2
-}
+    }
 }

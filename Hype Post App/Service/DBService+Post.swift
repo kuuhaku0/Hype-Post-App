@@ -26,17 +26,18 @@ extension DBService {
                 guard let header = postObject["header"] as? String,
                 let body = postObject["body"] as? String,
                 let uID = postObject["uID"] as? String,
+
                 
                 let postID = postObject["postID"] as? String
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String
                 let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL )
-                posts.append(thisPost)
+
             }
             completion(posts)
         }
-}
+
     //func below gets posts from a certain user using filter by ID
     func getPostsByID(from uID: String) {
         getAllPosts { (allPosts) in
@@ -46,6 +47,7 @@ extension DBService {
     }
     
     
+
     func newPost(header: String, body: String, image: UIImage?) {
         guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
         let ref = postsRef.childByAutoId()
@@ -58,6 +60,7 @@ extension DBService {
                       "downVotes": post.downVotes
                      ])
         
-    }
-    
+
+
 }
+

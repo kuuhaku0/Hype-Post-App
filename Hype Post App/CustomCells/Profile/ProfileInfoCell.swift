@@ -10,14 +10,15 @@ import UIKit
 import Material
 
 class ProfileInfoCell: UITableViewCell {
-    
+
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userDescription: UITextView!
-    
+
     @IBAction func editProfileButtonPressed(_ sender: UIButton) {
+        
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -26,3 +27,4 @@ class ProfileInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 }
+

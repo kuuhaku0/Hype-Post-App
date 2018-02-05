@@ -43,7 +43,6 @@ class AuthUserService: NSObject {
             if let error = error {
                 self.delegate?.didFailCreatingUser?(self, error: error)
             } else if let user = user {
-                //TODO: Add the authenticated user to the database
                 user.sendEmailVerification(completion: { (error) in
                     if let error = error {
                         self.delegate?.didFailEmailVerification?(self, user: user, error: error.localizedDescription)
@@ -51,6 +50,7 @@ class AuthUserService: NSObject {
                         self.delegate?.didSendEmailVerification?(self, user: user, message: "A verification email has been sent. Please check your email and verify your account before logging in.")
                     }
                 })
+                
                 let newAppUser = AppUser(email: email, userName: userName, uID: user.uid, firstName:firstName , lastName: lastName, imageURL: nil)
                 DBService.manager.addAppUser(newAppUser)
                 

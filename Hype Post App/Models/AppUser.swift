@@ -12,10 +12,12 @@ import FirebaseAuth
 class AppUser: NSObject {
     let email: String
     var userName: String
+    let uID: String
     let firstName: String
     let lastName: String?
-    init(email: String, userName: String, firstName: String, lastName: String?) {
-        self.email = email; self.userName = userName; self.firstName = firstName; self.lastName = lastName
+    var imageURL: String?
+    init(email: String, userName: String, uID: String, firstName: String, lastName: String?, imageURL: String?) {
+        self.email = email; self.userName = userName; self.uID = uID; self.firstName = firstName; self.lastName = lastName; self.imageURL = imageURL ?? ""
     }
 }
 

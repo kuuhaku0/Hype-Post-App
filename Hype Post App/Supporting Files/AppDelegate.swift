@@ -21,14 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         var viewController: UIViewController!
-        
         let tabBar = TabViewController()
         
-        
         if let _ = AuthUserService.getCurrentUser() {
-            
             viewController = tabBar
-
         } else {
             let loginVC = EntryViewController.storyboardINstance()
             let navController =  UINavigationController(rootViewController: loginVC)

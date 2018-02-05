@@ -18,23 +18,30 @@ class FeedViewController: UIViewController {
         button.tintColor = .white
         button.pulseColor = .white
         button.backgroundColor = Color.red.base
+        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
         return button
     }()
     
     func setupCPB() {
         createPostButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
     }
     
-    @IBOutlet weak var feedTableView: UITableView!
+    @objc func createPost() {
+        let createPostVC = CreatePostViewController.storyboardInstance()
+        self.present(createPostVC, animated: true, completion: nil)
+    }
     
+    @IBOutlet weak var feedTableView: UITableView!
+
     var posts = [Post]() {
         didSet {
             feedTableView.reloadData()
         }
     }
+    
     var postsRef: DatabaseReference!
 
     override func viewDidLoad() {
@@ -42,17 +49,17 @@ class FeedViewController: UIViewController {
         view.addSubview(createPostButton)
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
+        loadData()
         prepareTabItem()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
-        
+        feedTableView.backgroundColor = Color.grey.lighten4
     }
+    
     override func viewDidLayoutSubviews() {
         constrainTableView()
-        DBService.manager.newPost(header: "sadfasdf", body: "sdfgsdfg", by: AppUser.init(email: "asdfasdfd", userName: "sdfgsdfg", firstName: "sdfgdsfg", lastName: "dsfgsdf"))
-        loadData()
     }
     
     func loadData() {
@@ -61,8 +68,6 @@ class FeedViewController: UIViewController {
         }
     }
 }
-
-
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -80,32 +85,23 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
-        //TO DO: CREATE A FUNCTION TO SET UP CELL
         return cell
     }
 }
 
 extension FeedViewController {
+    
     fileprivate func constrainTableView(){
-      
         feedTableView.snp.makeConstraints { (make) in
             make.top.equalTo((tabsController?.tabBar.snp.bottom)!)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.width.equalTo(view.snp.width)
             make.centerX.equalTo(view.snp.centerX)
         }
-        
-        
-        
-        
-        
     }
     
-    
-    
-        fileprivate func prepareTabItem() {
-            tabItem.title = "recent"
-            
-        }
+    fileprivate func prepareTabItem() {
+        tabItem.title = "recent"
+    }
 }
 

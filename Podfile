@@ -17,7 +17,7 @@ pod 'SnapKit', '~> 4.0.0'
 pod 'SVProgressHUD'
 pod 'Material', '~> 2.13.5'
 pod 'Toucan'
-
+pod 'HMSegmentedControl'
 
  swift4pods = ['Material']
  
@@ -27,7 +27,7 @@ pod 'Toucan'
        target.build_configurations.each do |config|
          config.build_settings['SWIFT_VERSION'] = '4.0'
 
-	end
+       end
      end
    end
  end

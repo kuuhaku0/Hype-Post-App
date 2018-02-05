@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  RecentViewController.swift
 //  Hype Post App
 //
 //  Created by C4Q on 2/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class RecentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

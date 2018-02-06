@@ -71,9 +71,15 @@ extension DBService {
                           
                 ])
             
+            StorageService.manager.storePostImage(image: image, postID: post.postID)
             
             
-        }
-        
+            
     }
+    
+    public func addImageToPost(url: String, postID: String) {
+        addImage(url: url, ref: postsRef, id: postID)
+    }
+    
+}
 

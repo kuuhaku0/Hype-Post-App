@@ -31,4 +31,9 @@ extension DBService {
             completion(currentAppUser)
         }
     }
+    
+    public func addImageToAppUser(with url: String, uID: String) {
+        addImage(url: url, ref: usersRef, id: uID)
+    }
+    
 }

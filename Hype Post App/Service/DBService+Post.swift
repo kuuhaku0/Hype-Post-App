@@ -28,11 +28,16 @@ extension DBService {
                 let uID = postObject["uID"] as? String,
 
                 
-                let postID = postObject["postID"] as? String
+                let upVotes = postObject["upVotes"] as? Int,
+                let downVotes = postObject["downVotes"] as? Int,
+                let time = postObject["time"] as? Double,
+                let postID = postObject["postID"] as? String,
+                let flags = postObject["flags"] as? UInt
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL)
+               
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags)
                 posts.append(thisPost)
 
             }
@@ -60,7 +65,10 @@ extension DBService {
                           "postID": post.postID,
                           "uID": post.uID,
                           "upVotes": post.upVotes,
-                          "downVotes": post.downVotes
+                          "downVotes": post.downVotes,
+                          "flags": post.flags,
+                          "time": post.time
+                          
                 ])
             
             

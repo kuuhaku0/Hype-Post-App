@@ -19,13 +19,18 @@ extension DBService {
                 guard let commentID = commentObject["commentID"] as? String,
                     let postID = commentObject["postID"] as? String,
                     let text = commentObject["text"] as? String,
-                    let uID = commentObject["uID"] as? String
+                    let uID = commentObject["uID"] as? String,
+                    let time = commentObject["time"] as? Double,
+                    let upVotes = commentObject["upVotes"] as? Int,
+                   let downVotes = commentObject["downVotes"] as? Int,
+                  let flags = commentObject["flags"] as? UInt
+                    
                     else {return}
                 
                 if postID != certainPostID {
                     continue
                 }
-                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text)
+                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags)
                 comments.append(thisComment)
             }
             completion(comments)
@@ -40,7 +45,10 @@ extension DBService {
         ref.setValue(["postID": postID,
                       "commentID": comment.commentID,
                       "uID": comment.uID,
-                      "text": comment.text])
+                      "text": comment.text,
+                      "time": comment.time,
+                      "upVotes": comment.upVotes,
+                      "downVotes": comment.downVotes])
         print("new comment added")
     }
     

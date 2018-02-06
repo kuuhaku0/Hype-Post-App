@@ -32,6 +32,8 @@ class FeedTableViewCell: UITableViewCell {
     var downvoteButton: IconButton!
     var hypeAmount: UILabel!
     var shareButton: IconButton!
+    var addCommentButton: IconButton!
+    var spacing: UILabel!
     
     /// Toolbar views.
     fileprivate var toolbar: Toolbar!
@@ -89,9 +91,15 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareToolBarButtons() {
+        addCommentButton = IconButton(image: #imageLiteral(resourceName: "comment"), tintColor: Color.blueGrey.base)
+        spacing = UILabel()
+        spacing.text = " "
+        
         upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-96"), tintColor: Color.red.base)
+        upvoteButton.title = "12"
         hypeAmount = UILabel()
-        hypeAmount.textAlignment = .left
+        hypeAmount.textAlignment = .center
+        hypeAmount.sizeToFit()
         hypeAmount.text = "12"
         hypeAmount.font = RobotoFont.regular(with: 14)
         hypeAmount.textColor = Color.grey.base
@@ -146,24 +154,22 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareBottomBar() {
-        bottomBar = Bar(leftViews: [upvoteButton,hypeAmount,downvoteButton], rightViews: [shareButton], centerViews: [])
+        bottomBar = Bar(leftViews: [upvoteButton,downvoteButton], rightViews: [addCommentButton,shareButton], centerViews: [])
+        
     }
     
     fileprivate func preparePresenterCard() {
         card = PresenterCard()
-        
         card.toolbar = toolbar
         card.toolbarEdgeInsetsPreset = .wideRectangle2
         
         card.presenterView = presenterView
-        
         card.contentView = content
         card.contentViewEdgeInsetsPreset = .square3
-        
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
-        
-        self.layout(card).vertically(top: 0, bottom: 0).centerVertically()
+        card.bottomBar?.contentEdgeInsets = UIEdgeInsets(top: 0, left: -11, bottom: 0, right: -9)
+        self.layout(card).vertically(top: 11, bottom: 11).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
 }

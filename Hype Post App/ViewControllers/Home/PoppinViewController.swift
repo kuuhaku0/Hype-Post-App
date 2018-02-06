@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class PoppinViewController: UIViewController {
 
@@ -30,6 +31,8 @@ class PoppinViewController: UIViewController {
         prepareTabItem()
         loadData()
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "PopularCell")
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = Color.grey.lighten4
     }
     
     

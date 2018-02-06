@@ -12,22 +12,23 @@ import FirebaseDatabase
 class Post: NSObject, Codable {
     var header: String = ""
     var body: String = ""
-    let uID: String
+    let uID: String //auth.auth.getcurrentUser.uid
     let upVotes: Int = 0
     let downVotes: Int = 0
-    let time: String
+    var time  = "" 
+
     let postID: String
-    
-    init(header: String, body: String, postID: String, uID: String, time: String) {
-        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.time = time
+    var imageURL: String?
+    init(header: String, body: String, postID: String, uID: String, imageURL: String?) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.imageURL = imageURL ?? ""
     }
-//     init(snapShot: DataSnapshot) {
-//        let snapShotValue = snapShot.value as! [String: AnyObject]
-//        header = snapShotValue["header"] as! String
-//        body = snapShotValue["body"] as! String
-//        
-//        postID = snapShotValue["postID"] as! String
-//    }
+    init (header: String, body: String, postID: String, uID: String) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID
+        self.imageURL = ""
+    }
+  
+
+
 }
 
 

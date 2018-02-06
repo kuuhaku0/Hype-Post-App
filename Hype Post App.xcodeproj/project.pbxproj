@@ -47,6 +47,8 @@
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
 		81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C00C312027953B0055C061 /* PopularPosts.storyboard */; };
 		81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */; };
+		81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */; };
+		81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
@@ -98,6 +100,8 @@
 		81BA30E4202663180097D3BF /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		81C00C312027953B0055C061 /* PopularPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularPosts.storyboard; sourceTree = "<group>"; };
 		81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewCell.swift; sourceTree = "<group>"; };
+		81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewTableViewCell.swift; sourceTree = "<group>"; };
+		81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */,
+				81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */,
+				81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */,
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
 				816DCFCC2028241400D263D9 /* Profile */,
@@ -475,10 +481,12 @@
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
 				81AA207C202A43FC00E80BAC /* DBService+Post.swift in Sources */,
+				81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */,
 				81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */,
 				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,
 				816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */,
 				816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */,
+				81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */,
 				816DCFB32027D09B00D263D9 /* AllCommentsContainer.swift in Sources */,
 				81AA2081202A442B00E80BAC /* Comment.swift in Sources */,
 				81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */,

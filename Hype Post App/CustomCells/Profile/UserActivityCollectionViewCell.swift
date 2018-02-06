@@ -11,13 +11,9 @@ import SnapKit
 
 class UserActivityCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     let cellId = "UACell"
@@ -77,6 +73,10 @@ extension UserActivityCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return cellSpacing
+    }
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        collectionView.isScrollEnabled = false
+        
     }
 }
 

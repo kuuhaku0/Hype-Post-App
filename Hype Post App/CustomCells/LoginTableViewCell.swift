@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import Material
 
 class LoginTableViewCell: UITableViewCell {
 
@@ -79,8 +81,8 @@ class LoginTableViewCell: UITableViewCell {
     
     
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: "LoginCell")
         commonInit()
     }
     

@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import SnapKit
+import Material
+
 
 class EntryViewTableViewCell: UITableViewCell {
 
     let constant: CGFloat = 32
     
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: "EntryCell")
         commonInit()
     }
     
@@ -36,7 +39,7 @@ class EntryViewTableViewCell: UITableViewCell {
     }
     
     
-    lazy var image: UIImageView = {
+    lazy var imageLogo: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = #imageLiteral(resourceName: "HypePost")
@@ -56,7 +59,7 @@ class EntryViewTableViewCell: UITableViewCell {
     private func setupLabel() {
         addSubview(welcomeLabel)
         welcomeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(image.snp.bottom)
+            make.top.equalTo(imageLogo.snp.bottom)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             
         }
@@ -65,8 +68,8 @@ class EntryViewTableViewCell: UITableViewCell {
     
     
     private func setupImageView() {
-        addSubview(image)
-        image.snp.makeConstraints { (make) in
+        addSubview(imageLogo)
+        imageLogo.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(150)
             make.height.equalTo(safeAreaLayoutGuide.snp.height).multipliedBy(0.25)
             make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.9)

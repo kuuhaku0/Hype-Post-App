@@ -28,7 +28,6 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
         //TODO: Implement post
-<<<<<<< HEAD
         DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, image: userImage.image ?? nil)
         
         let alertController = UIAlertController(title: "Success!", message: "post sucessful!", preferredStyle: .alert)
@@ -37,10 +36,9 @@ class CreatePostViewController: UIViewController {
         }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
-        
-=======
-        DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
->>>>>>> 1206a9cd52bb29be42a64a493f5793759d265233
+     
+       // DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
+
     }
     
     override func viewDidLoad() {

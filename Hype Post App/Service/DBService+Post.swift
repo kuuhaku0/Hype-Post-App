@@ -7,24 +7,11 @@
 //
 
 import Foundation
+import UIKit
 import FirebaseDatabase
 
 extension DBService {
 
-    func getAppUser(with uID: String, completion: @escaping (_ user: AppUser) -> Void) {
-        let userRef = usersRef.child(uID)
-        
-        userRef.observeSingleEvent(of: .value) { (snapshot) in
-            guard let email = snapshot.childSnapshot(forPath: "email").value as? String else {return}
-            guard let userName = snapshot.childSnapshot(forPath: "userName").value as? String else {return}
-            guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else {return}
-            guard let lastName = snapshot.childSnapshot(forPath: "lastName").value as? String else {return}
-            
-            let currentAppUser = AppUser(email: email, userName: userName, firstName: firstName, lastName: lastName)
-            completion(currentAppUser)
-        }
-    }
-    
     //Func below gets all the posts using a completion handler
     public func getAllPosts(completion: @escaping (_ posts: [Post]) -> Void) {
         postsRef.observe(.value) { (dataSnapshot) in
@@ -39,16 +26,26 @@ extension DBService {
                 guard let header = postObject["header"] as? String,
                 let body = postObject["body"] as? String,
                 let uID = postObject["uID"] as? String,
-//                let time = postObject["time"] as? String,
-                let postID = postObject["postID"] as? String
+
+                
+                let upVotes = postObject["upVotes"] as? Int,
+                let downVotes = postObject["downVotes"] as? Int,
+                let time = postObject["time"] as? String,
+                let postID = postObject["postID"] as? String,
+                let flags = postObject["flags"] as? UInt
                     else { print("error getting posts");return}
                 
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, time: "")
+                let imageURL = postObject["imageURL"] as? String
+               
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags)
                 posts.append(thisPost)
+
             }
+            
             completion(posts)
         }
-}
+    }
+
     //func below gets posts from a certain user using filter by ID
     func getPostsByID(from uID: String) {
         getAllPosts { (allPosts) in
@@ -57,45 +54,26 @@ extension DBService {
         }
     }
     
-    func getComments(from certainPostID: String, completion: @escaping (_ comments: [Comment]) -> Void) {
-        commentsRef.observe(.value) { (dataSnapshots) in
-            guard let commentData = dataSnapshots.children.allObjects as? [DataSnapshot] else {return}
-            var comments = [Comment]()
-            for commentSnapshot in commentData {
-                guard let commentObject = commentSnapshot.value as? [String:Any] else {return}
-                
-                guard let commentID = commentObject["commentID"] as? String,
-                let postID = commentObject["postID"] as? String,
-                let text = commentObject["text"] as? String,
-                let uID = commentObject["uID"] as? String
-                else {return}
-                
-                if postID != certainPostID {
-                    continue
-                }
-                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text)
-                comments.append(thisComment)
-            }
-            completion(comments)
+    
+
+        func newPost(header: String, body: String, image: UIImage?) {
+            guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
+            let ref = postsRef.childByAutoId()
+            let post = Post(header: header, body: body, postID: ref.key, uID: currentUser.uid)
+            ref.setValue(["header": post.header,
+                          "body": post.body,
+                          "postID": post.postID,
+                          "uID": post.uID,
+                          "upVotes": post.upVotes,
+                          "downVotes": post.downVotes,
+                          "flags": post.flags,
+                          "time": post.time
+                          
+                ])
+            
+            
             
         }
+        
     }
-    
-    func newPost(header: String, body: String, by user: String) {
-        let childByAutoID = DBService.manager.postsRef.childByAutoId()
-        childByAutoID.setValue(["header": header,
-                                "body": body,
-                                "uID": AuthUserService.getCurrentUser()!.uid,
-                                "user" : AuthUserService.getCurrentUser()?.displayName ?? "No display name",
-                                "time" : "\(Date())",
-                                "postID": childByAutoID.key]) {(error, ref) in
-                                    if let error = error {
-                                        print("addPostError error \(error)")
-                                    } else {
-                                        print("reference \(ref)")
-                                    }
-                                    
-        }
-    }
-    
-}
+

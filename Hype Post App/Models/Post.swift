@@ -12,22 +12,21 @@ import FirebaseDatabase
 class Post: NSObject, Codable {
     var header: String = ""
     var body: String = ""
-    let uID: String
-    let upVotes: Int = 0
-    let downVotes: Int = 0
-    let time: String
+    let uID: String //auth.auth.getcurrentUser.uid
+    var upVotes: Int = 0
+    var downVotes: Int = 0
+    var time: Double  = Date.timeIntervalSinceReferenceDate
+    var flags: UInt = 0
+
     let postID: String
-    
-    init(header: String, body: String, postID: String, uID: String, time: String) {
-        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.time = time
+    var imageURL: String?
+    init(header: String, body: String, postID: String, uID: String, imageURL: String?, time: Double, downVotes: Int, upVotes: Int, flags: UInt) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.imageURL = imageURL ?? ""; self.time = time; self.upVotes = upVotes; self.downVotes = downVotes; self.flags = flags
     }
-//     init(snapShot: DataSnapshot) {
-//        let snapShotValue = snapShot.value as! [String: AnyObject]
-//        header = snapShotValue["header"] as! String
-//        body = snapShotValue["body"] as! String
-//        
-//        postID = snapShotValue["postID"] as! String
-//    }
+    init (header: String, body: String, postID: String, uID: String) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID
+        self.imageURL = ""
+    }
 }
 
 

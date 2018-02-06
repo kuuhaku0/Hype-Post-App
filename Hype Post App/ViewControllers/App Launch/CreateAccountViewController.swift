@@ -22,10 +22,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        signUp(withEmail: emailTextField.text!,
-               password: passwordTextField.text!,
-               passwordsMatch: checkPasswordsMatch(),
-               user: AppUser.init(email: emailTextField.text!, userName: userName.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text ?? ""))
+        AuthUserService.manager.createUser(withEmail: emailTextField.text!, userName: userName.text!, password: passwordConfirmTF.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text!)
     }
     
     func checkPasswordsMatch() -> Bool {

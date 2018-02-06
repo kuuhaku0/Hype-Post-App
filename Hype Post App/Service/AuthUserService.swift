@@ -19,7 +19,7 @@ import Firebase
     @objc optional func didFailSigningOut(_ userService: AuthUserService, error: Error)
     @objc optional func didSignOut(_ userService: AuthUserService)
     
-    //Sign in delegate protocols
+    //Sign in de()legate protocols
     @objc optional func didFailSigningIn(_ userService: AuthUserService, error: Error)
     @objc optional func didSignIn(_ userService: AuthUserService, user: AppUser)
     
@@ -31,9 +31,15 @@ import Firebase
 
 
 class AuthUserService: NSObject {
+    private override init() {
+        super.init()
+        self.auth = Auth.auth()
+    }
+    static let manager = AuthUserService()
     
-    weak var delegate: AuthUserServiceDelegate?
     
+    weak public var delegate: AuthUserServiceDelegate?
+    private var auth: Auth!
     public static func getCurrentUser() -> User? {
         return Auth.auth().currentUser
     }

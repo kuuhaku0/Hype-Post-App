@@ -30,7 +30,7 @@ extension DBService {
                 
                 let upVotes = postObject["upVotes"] as? Int,
                 let downVotes = postObject["downVotes"] as? Int,
-                let time = postObject["time"] as? Double,
+                let time = postObject["time"] as? String,
                 let postID = postObject["postID"] as? String,
                 let flags = postObject["flags"] as? UInt
                     else { print("error getting posts");return}

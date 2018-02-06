@@ -18,12 +18,6 @@ class CreateAccountViewController: UIViewController {
   
     var createCell = CreateAccountTableViewCell()
     
-
-
-    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        AuthUserService.manager.createUser(withEmail: emailTextField.text!, userName: userName.text!, password: passwordConfirmTF.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text!)
-    }
-    
     
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)

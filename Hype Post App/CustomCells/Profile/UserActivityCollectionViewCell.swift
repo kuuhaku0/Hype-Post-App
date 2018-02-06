@@ -42,6 +42,7 @@ class UserActivityCollectionViewCell: UICollectionViewCell, UICollectionViewDele
         }
     }
 }
+
 extension UserActivityCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

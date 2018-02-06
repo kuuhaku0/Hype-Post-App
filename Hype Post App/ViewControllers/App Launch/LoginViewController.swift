@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Material
 import Kingfisher
 import SVProgressHUD
 
@@ -15,8 +16,8 @@ class LoginViewController: UIViewController {
     
     //outlets
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: ErrorTextField!
+    @IBOutlet weak var passwordField: ErrorTextField!
     
     //button functions
     

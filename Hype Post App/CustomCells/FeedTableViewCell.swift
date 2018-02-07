@@ -10,7 +10,7 @@ import UIKit
 import Material
 import SnapKit
 
-class FeedTableViewCell: UITableViewCell {
+class FeedTableViewCell: TableViewCell {
 
     fileprivate var card: PresenterCard!
     
@@ -34,6 +34,15 @@ class FeedTableViewCell: UITableViewCell {
     var shareButton: IconButton!
     var addCommentButton: IconButton!
     var spacing: UILabel!
+    var profileImage: UIImageView!
+//    lazy var profileImage: UIImageView = {
+//        let iv = UIImageView()
+//        iv.clipsToBounds = true
+//        iv.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962")
+//        iv.contentMode = .scaleToFill
+//        iv.layer.cornerRadius = iv.bounds.height / 2
+//        return iv
+//    }()
     
     /// Toolbar views.
     fileprivate var toolbar: Toolbar!
@@ -52,6 +61,7 @@ class FeedTableViewCell: UITableViewCell {
         self.backgroundColor = Color.grey.lighten5
         self.selectionStyle = .none
         
+        prepareProfileImage()
         preparePresenterView()
         prepareDateFormatter()
         prepareDateLabel()
@@ -66,7 +76,8 @@ class FeedTableViewCell: UITableViewCell {
     
     public func configureCell(post: Post) {
         content.text = post.body
-        toolbar.detail = post.header
+        toolbar.title = post.header
+        toolbar.detail = post.time.components(separatedBy: "+0000").joined()
     }
 }
 
@@ -77,11 +88,18 @@ extension  FeedTableViewCell {
         presenterView.contentMode = .scaleAspectFill
     }
     
+    fileprivate func prepareProfileImage() {
+        profileImage = UIImageView()
+        profileImage.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962").resize(toWidth: 40)
+        profileImage.contentMode = .scaleAspectFill
+    }
+    
     fileprivate func prepareDateFormatter() {
         dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
     }
+    
     fileprivate func prepareDateLabel() {
         dateLabel = UILabel()
         dateLabel.font = RobotoFont.regular(with: 12)
@@ -91,23 +109,23 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareToolBarButtons() {
-        addCommentButton = IconButton(image: #imageLiteral(resourceName: "comment"), tintColor: Color.blueGrey.base)
+        addCommentButton = IconButton(image: #imageLiteral(resourceName: "icons8-topic-filled-50"), tintColor: Color.blueGrey.base)
         spacing = UILabel()
         spacing.text = " "
         
-        upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-96"), tintColor: Color.red.base)
-        upvoteButton.title = "12"
+        upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-filled-50"), tintColor: Color.red.base)
+        upvoteButton.title = " 12"
         hypeAmount = UILabel()
         hypeAmount.textAlignment = .center
         hypeAmount.sizeToFit()
         hypeAmount.text = "12"
         hypeAmount.font = RobotoFont.regular(with: 14)
         hypeAmount.textColor = Color.grey.base
-        downvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-down-button-96"), tintColor: Color.red.base)
+        downvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-down-button-filled-50"), tintColor: Color.red.base)
     }
     
     fileprivate func prepareShareButton() {
-        shareButton = IconButton(image: Icon.cm.share, tintColor: Color.blueGrey.base)
+        shareButton = IconButton(image: Icon.cm.share, tintColor: Color.grey.darken1)
     }
     
     fileprivate func prepareMoreButton() {
@@ -133,7 +151,6 @@ extension  FeedTableViewCell {
     
     fileprivate func prepareToolbar() {
         toolbar = Toolbar(rightViews: [moreButton])
-        
         toolbar.title = "Username"
         toolbar.titleLabel.textAlignment = .left
         
@@ -168,7 +185,7 @@ extension  FeedTableViewCell {
         card.bottomBar = bottomBar
         card.bottomBarEdgeInsetsPreset = .wideRectangle2
         card.bottomBar?.contentEdgeInsets = UIEdgeInsets(top: 0, left: -11, bottom: 0, right: -9)
-        self.layout(card).vertically(top: 11, bottom: 11).centerVertically()
+        self.layout(card).vertically(top: 4, bottom: 4).centerVertically()
         self.layout(card).horizontally(left: 0, right: 0).center()
     }
 }

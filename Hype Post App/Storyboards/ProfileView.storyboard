@@ -111,7 +111,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="484"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
-                                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.9882352941176471" green="0.12941176470588234" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -313,7 +313,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="ActivityCell" textLabel="6H4-R5-jv5" detailTextLabel="Gs1-Ai-Slj" rowHeight="140" style="IBUITableViewCellStyleSubtitle" id="SS5-qG-pLe" customClass="ActivityTableViewCell" customModule="Hype_Post_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="ActivityCell" textLabel="6H4-R5-jv5" detailTextLabel="Gs1-Ai-Slj" rowHeight="140" style="IBUITableViewCellStyleSubtitle" id="SS5-qG-pLe" customClass="TableViewCell" customModule="Material">
                                         <rect key="frame" x="0.0" y="279" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SS5-qG-pLe" id="olX-X5-v0V">
@@ -423,7 +423,7 @@
                                 <items>
                                     <navigationItem title="Edit Profile" id="gDC-3X-shB">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-cancel-100" id="Z4s-3P-Fu4">
-                                            <color key="tintColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="0.18431372549019609" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelButton:" destination="zac-Rr-CRg" id="6XN-Dj-qZf"/>
                                             </connections>
@@ -453,9 +453,9 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962" translatesAutoresizingMaskIntoConstraints="NO" id="At8-nV-Qsb">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h13-EW-x8S">
+                                                        <button alpha="0.80000000000000004" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h13-EW-x8S">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
-                                                            <state key="normal" image="ic_photo_camera_white"/>
+                                                            <state key="normal" image="icons8-google-images-filled-100 (1)"/>
                                                             <connections>
                                                                 <action selector="changeHeaderImageButton:" destination="i8p-nC-at5" eventType="touchUpInside" id="kfe-Ce-N9N"/>
                                                             </connections>
@@ -480,9 +480,9 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7-R5CLfl_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-2D-bVJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-Sg-EQ2">
+                                                        <button alpha="0.80000000000000004" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-Sg-EQ2">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                            <state key="normal" image="ic_photo_camera_white"/>
+                                                            <state key="normal" image="icons8-google-images-filled-100 (1)"/>
                                                             <connections>
                                                                 <action selector="changeProfileImageButton:" destination="i8p-nC-at5" eventType="touchUpInside" id="ome-Uj-l2w"/>
                                                             </connections>
@@ -506,7 +506,7 @@
                                                     <rect key="frame" x="16" y="250.5" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Username"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -518,7 +518,7 @@
                                                     <rect key="frame" x="16" y="320.5" width="154.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First name"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -530,7 +530,7 @@
                                                     <rect key="frame" x="204.5" y="320.5" width="154.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last name"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -542,7 +542,7 @@
                                                     <rect key="frame" x="16" y="390.5" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Website"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -554,7 +554,7 @@
                                                     <rect key="frame" x="16" y="460.5" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Bio"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -572,7 +572,7 @@
                                                     <rect key="frame" x="16" y="567.5" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="E-mail address"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -669,8 +669,8 @@
     <resources>
         <image name="7-R5CLfl_400x400" width="400" height="400"/>
         <image name="fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962" width="2250" height="1000"/>
-        <image name="ic_photo_camera_white" width="24" height="24"/>
         <image name="icons8-cancel-100" width="33" height="33"/>
+        <image name="icons8-google-images-filled-100 (1)" width="33" height="33"/>
         <image name="icons8-ok-100" width="33" height="33"/>
         <image name="profile" width="24" height="24"/>
     </resources>

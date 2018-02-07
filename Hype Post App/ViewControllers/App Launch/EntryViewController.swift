@@ -14,10 +14,10 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    public static func storyboardINstance() -> EntryViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarViewController = storyboard.instantiateViewController(withIdentifier: "EntryViewController") as! EntryViewController
-        return tabBarViewController
-    }
+//    public static func storyboardINstance() -> EntryViewController {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabBarViewController = storyboard.instantiateViewController(withIdentifier: "EntryViewController") as! EntryViewController
+//        return tabBarViewController
+//    }
     
 }

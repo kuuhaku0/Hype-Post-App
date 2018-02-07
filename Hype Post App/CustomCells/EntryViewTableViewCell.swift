@@ -32,10 +32,10 @@ class EntryViewTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        prepareSignInButton()
-        prepareCreateAccountButton()
+//        prepareSignInButton()
+//        prepareCreateAccountButton()
         setupImageView()
-        setupLabel()
+//        setupLabel()
     }
     
     
@@ -77,33 +77,33 @@ class EntryViewTableViewCell: UITableViewCell {
         }
     }
     
-    
-    private func prepareSignInButton() {
-        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
-        
-        
-        self.layout(btn).width(150).height(constant).bottom(300).center().left(40)
-    }
-    
-    /// Handle the resign responder button.
-    @objc
-    internal func handleSegueToLogInButton(button: UIButton) {
-        
-    }
-    
-    private func prepareCreateAccountButton() {
-        let btn = RaisedButton(title: "Create Account", titleColor: Color.blue.base)
-        btn.addTarget(self, action: #selector(handleSegueToCreateAccountButton(button:)), for: .touchUpInside)
-        
-        
-        self.layout(btn).width(150).height(constant).bottom(300).right(40)
-    }
-    
-    /// Handle the resign responder button.
-    @objc
-    internal func handleSegueToCreateAccountButton(button: UIButton) {
-        
-    }
+//    
+//    private func prepareSignInButton() {
+//        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
+//        btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
+//        
+//        
+//        self.layout(btn).width(150).height(constant).bottom(300).center().left(40)
+//    }
+//    
+//    /// Handle the resign responder button.
+//    @objc
+//    internal func handleSegueToLogInButton(button: UIButton) {
+//        
+//    }
+//    
+//    private func prepareCreateAccountButton() {
+//        let btn = RaisedButton(title: "Create Account", titleColor: Color.blue.base)
+//        btn.addTarget(self, action: #selector(handleSegueToCreateAccountButton(button:)), for: .touchUpInside)
+//        
+//        
+//        self.layout(btn).width(150).height(constant).bottom(300).right(40)
+//    }
+//    
+//    /// Handle the resign responder button.
+//    @objc
+//    internal func handleSegueToCreateAccountButton(button: UIButton) {
+//        
+//    }
 
 }

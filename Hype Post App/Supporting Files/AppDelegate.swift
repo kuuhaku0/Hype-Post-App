@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let _ = AuthUserService.getCurrentUser() {
             viewController = tabBar
         } else {
-            let loginVC = EntryViewController.storyboardINstance()
-            let navController =  UINavigationController(rootViewController: loginVC)
+            let entryVC = EntryTableViewController.storyboardInstance()
+            let navController =  UINavigationController(rootViewController: entryVC)
             viewController = navController
         }
         

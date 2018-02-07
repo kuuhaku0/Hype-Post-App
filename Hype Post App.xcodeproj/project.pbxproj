@@ -22,6 +22,7 @@
 		817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDD20250D8E00660FA8 /* TabViewController.swift */; };
 		817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BE1202519AB00660FA8 /* PoppinViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
+		818A576D202B659600761FE0 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A576C202B659600761FE0 /* EntryTableViewController.swift */; };
 		8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190FAF4201FCAE1005BED8E /* AppDelegate.swift */; };
 		8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAF8201FCAE1005BED8E /* Main.storyboard */; };
 		8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFB201FCAE1005BED8E /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		81BA30E320265DFA0097D3BF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA30E220265DFA0097D3BF /* ProfileView.storyboard */; };
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
 		81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C00C312027953B0055C061 /* PopularPosts.storyboard */; };
+		81C2C846202B63A3002BF0CE /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */; };
 		81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */; };
 		81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */; };
 		81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */; };
@@ -72,6 +74,7 @@
 		817C8BDD20250D8E00660FA8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		817C8BE1202519AB00660FA8 /* PoppinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinViewController.swift; sourceTree = "<group>"; };
 		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		818A576C202B659600761FE0 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 		8190FAF1201FCAE1005BED8E /* Hype Post App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hype Post App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8190FAF4201FCAE1005BED8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8190FAF9201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		81BA30E220265DFA0097D3BF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		81BA30E4202663180097D3BF /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		81C00C312027953B0055C061 /* PopularPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularPosts.storyboard; sourceTree = "<group>"; };
+		81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewCell.swift; sourceTree = "<group>"; };
 		81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewTableViewCell.swift; sourceTree = "<group>"; };
 		81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				81B73A052023D5040033F706 /* EntryViewController.swift */,
 				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
 				81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */,
+				81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */,
+				818A576C202B659600761FE0 /* EntryTableViewController.swift */,
 			);
 			path = "App Launch";
 			sourceTree = "<group>";
@@ -483,10 +489,12 @@
 				816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */,
 				81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */,
 				81AA2081202A442B00E80BAC /* Comment.swift in Sources */,
+				81C2C846202B63A3002BF0CE /* LoginTableViewController.swift in Sources */,
 				81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */,
 				816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */,
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
 				81AA2077202A43FC00E80BAC /* AuthUserService.swift in Sources */,
+				818A576D202B659600761FE0 /* EntryTableViewController.swift in Sources */,
 				81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */,
 				817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */,
 			);

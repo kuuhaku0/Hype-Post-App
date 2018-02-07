@@ -14,8 +14,6 @@ import SnapKit
 
 class LoginTableViewController: UITableViewController {
     
-
-    
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)
         button.tintColor = .white
@@ -47,12 +45,6 @@ class LoginTableViewController: UITableViewController {
 //        self.view.layout(btn).width(150).height(constant).bottom(300).center().left(40)
 //    }
     
-
-    
-
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "LoginCell")
@@ -61,7 +53,6 @@ class LoginTableViewController: UITableViewController {
         setupCPB()
 
     }
-
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height

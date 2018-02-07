@@ -20,7 +20,11 @@
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
 	<string>${PRODUCT_NAME} Camera Usage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>${PRODUCT_NAME} Location Usage</string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${PRODUCT_NAME} PhotoLibrary Usage</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>${PRODUCT_NAME} PhotoLibrary Usage</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

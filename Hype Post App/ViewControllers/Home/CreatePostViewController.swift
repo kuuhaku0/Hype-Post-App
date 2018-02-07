@@ -9,18 +9,8 @@
 import UIKit
 import ImagePicker
 
-class CreatePostViewController: UIViewController, ImagePickerDelegate {
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        return
-    }
+class CreatePostViewController: UIViewController {
     
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        return
-    }
-    
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        return
-    }
     
     
     @IBOutlet weak var userImage: UIImageView!
@@ -57,6 +47,8 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
        // DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
 
     }
+
+    
     let imagePickerController = ImagePickerController()
     
     override func viewDidLoad() {
@@ -78,4 +70,24 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
         
         
     }
+    private let imagePickerViewController = UIImagePickerController()
+
+}
+
+extension CreatePostViewController: ImagePickerDelegate{
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePickerController.dismiss(animated: true) {
+            
+        }
+    }
+    
+    
 }

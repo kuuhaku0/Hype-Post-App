@@ -21,7 +21,7 @@ class EntryTableViewController: UITableViewController {
         btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
         
         
-        self.view.layout(btn).width(100).height(constant).bottom(300).left(40).center() }
+        self.view.layout(btn).width(150).height(constant).bottom(300).left(40).center() }
     
     @objc
     internal func handleSegueToLogInButton(button: UIButton) {
@@ -32,12 +32,19 @@ class EntryTableViewController: UITableViewController {
         let btn = RaisedButton(title: "Create Account", titleColor: Color.blue.base)
         btn.addTarget(self, action: #selector(handleSegueToCreateAccountButton(button:)), for: .touchUpInside)
         
-        self.view.layout(btn).width(100).height(constant).bottom(300).right(40).center()
+        self.view.layout(btn).width(150).height(constant).bottom(300).right(40).center(offsetX: 100, offsetY: 0)
     }
     
     /// Handle the resign responder button.
     @objc
     internal func handleSegueToCreateAccountButton(button: UIButton) {
+        
+        let vc = CreateAccountTableViewController()
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
+        
         
     }
     
@@ -51,6 +58,8 @@ class EntryTableViewController: UITableViewController {
         tableView.dataSource = self
         prepareSignInButton()
         prepareCreateAccountButton()
+        tableView.allowsSelection = false
+
         
     }
     

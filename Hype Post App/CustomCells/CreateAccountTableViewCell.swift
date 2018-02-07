@@ -9,6 +9,7 @@
 import UIKit
 import Material
 import SnapKit
+import Firebase
 
 class CreateAccountTableViewCell: UITableViewCell {
 
@@ -92,8 +93,13 @@ class CreateAccountTableViewCell: UITableViewCell {
         commonInit()
     }
     
+  
+    
+    
+    
     private func commonInit() {
         backgroundColor = .white
+    
         setupViews()
     }
     
@@ -190,7 +196,9 @@ class CreateAccountTableViewCell: UITableViewCell {
     /// Handle the segue into feed once account is created button.
     @objc
     internal func handlesSegueintoFeed(button: UIButton) {
-       
+      
     }
+    
+    
 
 }

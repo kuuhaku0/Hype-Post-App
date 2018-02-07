@@ -58,6 +58,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.12):
     - GTMSessionFetcher/Core (= 1.1.12)
   - HMSegmentedControl (1.5.4)
+  - ImagePicker (3.0.0)
   - Kingfisher (4.6.1)
   - leveldb-library (1.20)
   - Material (2.13.5):
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - HMSegmentedControl
+  - ImagePicker
   - Kingfisher (~> 4.0)
   - Material (~> 2.13.5)
   - SnapKit (~> 4.0.0)
@@ -104,6 +106,7 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
+  ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Material: ced3fd11882147b135f897ca20227174bb104ad0
@@ -113,6 +116,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   Toucan: 61867fb10948c02e9804280a95eb183e98eac97a
 
-PODFILE CHECKSUM: a5ff8aabea561e12b32fce4ab076145be3c209cd
+PODFILE CHECKSUM: 885094754b6330dae5ef80be9b4e4214693e6766
 
 COCOAPODS: 1.4.0

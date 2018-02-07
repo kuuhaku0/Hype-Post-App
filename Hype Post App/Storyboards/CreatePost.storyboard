@@ -29,7 +29,7 @@
                                                     <action selector="cancel:" destination="oGN-G7-dLV" id="kwI-jH-Qjl"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" image="cm_photo_library_white" id="h9K-hj-M9x">
+                                            <barButtonItem springLoaded="YES" systemItem="camera" id="h9K-hj-M9x">
                                                 <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="openGallary:" destination="oGN-G7-dLV" id="uwB-ZT-LYJ"/>
@@ -43,8 +43,8 @@
                                                     <action selector="done:" destination="oGN-G7-dLV" id="ogi-vk-OWZ"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" image="cm_photo_camera_white" id="dmn-Cx-SSF">
-                                                <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <barButtonItem springLoaded="YES" systemItem="camera" id="dmn-Cx-SSF">
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <connections>
                                                     <action selector="openCamera:" destination="oGN-G7-dLV" id="Vqo-K9-pxv"/>
                                                 </connections>
@@ -110,8 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cm_photo_camera_white" width="24" height="24"/>
-        <image name="cm_photo_library_white" width="24" height="24"/>
         <image name="icons8-cancel-100" width="33" height="33"/>
         <image name="icons8-ok-100" width="33" height="33"/>
         <image name="profile" width="24" height="24"/>

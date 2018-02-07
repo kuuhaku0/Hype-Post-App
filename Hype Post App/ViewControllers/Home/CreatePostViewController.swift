@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import ImagePicker
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        return
+    }
+    
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postTitle: UITextField!
@@ -20,12 +33,6 @@ class CreatePostViewController: UIViewController {
         
     }
     
-    @IBAction func openCamera(_ sender: UIBarButtonItem) {
-        
-        
-        
-        
-    }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true) {
@@ -50,10 +57,12 @@ class CreatePostViewController: UIViewController {
        // DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
 
     }
+    let imagePickerController = ImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         postBody.borderColor = UIColor.gray
+        imagePickerController.delegate = self
     }
     
     public static func storyboardInstance() -> CreatePostViewController {
@@ -62,4 +71,11 @@ class CreatePostViewController: UIViewController {
         return createPostVC
     }
     
+    @IBAction func openCamera(_ sender: UIBarButtonItem) {
+        
+        
+        present(imagePickerController, animated: true, completion: nil)
+        
+        
+    }
 }

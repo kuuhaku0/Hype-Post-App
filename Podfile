@@ -18,6 +18,8 @@ pod 'SVProgressHUD'
 pod 'Material', '~> 2.13.5'
 pod 'Toucan'
 pod 'HMSegmentedControl'
+pod 'ImagePicker'
+
 
  swift4pods = ['Material']
  

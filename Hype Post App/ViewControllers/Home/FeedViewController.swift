@@ -17,7 +17,7 @@ class FeedViewController: UIViewController {
         let button = FABButton(image: Icon.cm.add)
         button.tintColor = .white
         button.pulseColor = .white
-        button.backgroundColor = Color.red.base
+        button.backgroundColor = Color.gray
         button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
         return button
     }()

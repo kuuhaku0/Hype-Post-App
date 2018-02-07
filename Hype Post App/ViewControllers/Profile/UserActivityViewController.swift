@@ -20,6 +20,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var segmentedView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var statsContainerView: UIView!
     @IBOutlet weak var editProfileButton: UIButton!
@@ -91,7 +92,10 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     }
     
     private func setupUI() {
+        
         // Header - Profile image
+        profileImage.layer.borderWidth = 4.5
+        profileImage.borderColor = .white
         profileImage.layer.cornerRadius = 20
         profileImage.clipsToBounds = true
         
@@ -203,7 +207,7 @@ extension UserActivityViewController: UIScrollViewDelegate {
             
             // PROFILE IMAGE
             // Slow down the animation
-            let profileImageScaleFactor = (min(headerStopOffset, offset)) / profileImage.bounds.height / 3
+            let profileImageScaleFactor = (min(headerStopOffset, offset)) / profileImage.bounds.height / 3.4
             let profileImageSizeVariation = ((profileImage.bounds.height * (1.0 + profileImageScaleFactor)) - profileImage.bounds.height) / 2
             
             profileImageTransform = CATransform3DTranslate(profileImageTransform, 0, profileImageSizeVariation, 0)

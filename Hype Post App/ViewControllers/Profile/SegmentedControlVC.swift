@@ -13,7 +13,7 @@ import Material
 
 class SegmentedControlVC: tabController {
     
-    let tabs = tabController(viewControllers: [UserActivityViewController.storyboardINstance(), AllCommentsContainer.storyboardINstance()])
+    let tabs = tabController(viewControllers: [UserActivityViewController.storyboardInstance(), AllCommentsContainer.storyboardINstance()])
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,9 +13,9 @@ import Material
 class tabController: TabsController {
 open override func prepare() {
     super.prepare()
-    tabBar.setLineColor(Color.red.base, for: .selected) // or tabBar.lineColor = Color.orange.base
+    tabBar.setLineColor(Color.darkGray, for: .selected) // or tabBar.lineColor = Color.orange.base
     tabBar.setTabItemsColor(Color.grey.base, for: .normal)
-    tabBar.setTabItemsColor(Color.red.base, for: .selected)
+    tabBar.setTabItemsColor(Color.darkGray, for: .selected)
     tabBar.setTabItemsColor(Color.green.base, for: .highlighted)
     
     tabBar.snp.makeConstraints { (make) in

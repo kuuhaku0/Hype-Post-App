@@ -16,8 +16,8 @@ class FeedTableViewCell: UITableViewCell {
     
     /// Conent area.
     var presenterView: UIImageView!
+    var contentContainer: UIView!
     var content: UILabel!
-    
     lazy var postTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -155,7 +155,6 @@ extension  FeedTableViewCell {
     
     fileprivate func prepareBottomBar() {
         bottomBar = Bar(leftViews: [upvoteButton,downvoteButton], rightViews: [addCommentButton,shareButton], centerViews: [])
-        
     }
     
     fileprivate func preparePresenterCard() {

@@ -15,11 +15,12 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
         let feedVC = FeedViewController.storyboardInstance()
         let popVc = PoppinViewController.storyboardInstance()
-        let profileVC = UserActivityViewController.storyboardINstance()
+        let profileVC = UserActivityViewController.storyboardInstance()
         let tab = tabController(viewControllers: [feedVC, popVc])
         tab.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home").withRenderingMode(.alwaysOriginal))
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile").withRenderingMode(.alwaysOriginal))
-    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.red], for: .selected)
+        tab.tabBar.tintColor = Color.grey.darken1
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .selected)
     
         self.setViewControllers([tab, profileVC], animated: true)
     }

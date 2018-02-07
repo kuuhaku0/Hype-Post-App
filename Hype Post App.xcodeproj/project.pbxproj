@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
-		811C7C21202A719D007FAC59 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C7C20202A719D007FAC59 /* DBService+Comment.swift */; };
+		813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */; };
 		81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */; };
 		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
 		816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFAE2027C73800D263D9 /* SettingsViewController.swift */; };
 		816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */; };
-		816DCFB32027D09B00D263D9 /* AllCommentsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB22027D09B00D263D9 /* AllCommentsContainer.swift */; };
 		816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB62027E1B300D263D9 /* UserActivityCollectionViewCell.swift */; };
-		816DCFB92027F35800D263D9 /* SegmentedControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB82027F35800D263D9 /* SegmentedControlVC.swift */; };
 		816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFC8202819A500D263D9 /* HMSegmentedControl.m */; };
 		816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFCA20281EE900D263D9 /* UserActivityCell.swift */; };
 		817C8BD82025047200660FA8 /* tabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BD72025047200660FA8 /* tabController.swift */; };
@@ -58,15 +56,13 @@
 		52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hype_Post_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
 		8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		811C7C20202A719D007FAC59 /* DBService+Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
+		813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8152AD952020D7EC00E1AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		816DCFAE2027C73800D263D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
-		816DCFB22027D09B00D263D9 /* AllCommentsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsContainer.swift; sourceTree = "<group>"; };
 		816DCFB62027E1B300D263D9 /* UserActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityCollectionViewCell.swift; sourceTree = "<group>"; };
-		816DCFB82027F35800D263D9 /* SegmentedControlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlVC.swift; sourceTree = "<group>"; };
 		816DCFC6202819A300D263D9 /* Hype Post App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hype Post App-Bridging-Header.h"; sourceTree = "<group>"; };
 		816DCFC7202819A400D263D9 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		816DCFC8202819A500D263D9 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
@@ -207,10 +203,10 @@
 				81AA2071202A43FB00E80BAC /* AuthUserService.swift */,
 				81AA2073202A43FB00E80BAC /* DBService.swift */,
 				81AA2072202A43FB00E80BAC /* DBService+AppUser.swift */,
-				811C7C20202A719D007FAC59 /* DBService+Comment.swift */,
 				81AA2076202A43FC00E80BAC /* DBService+Post.swift */,
 				81AA2074202A43FC00E80BAC /* StorageService.swift */,
 				81FBF094202A581C00E0179D /* StorageService+Image.swift */,
+				813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -241,10 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
-				816DCFB82027F35800D263D9 /* SegmentedControlVC.swift */,
 				816DCFAE2027C73800D263D9 /* SettingsViewController.swift */,
 				816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */,
-				816DCFB22027D09B00D263D9 /* AllCommentsContainer.swift */,
 				816DCFC7202819A400D263D9 /* HMSegmentedControl.h */,
 				816DCFC8202819A500D263D9 /* HMSegmentedControl.m */,
 				816DCFC6202819A300D263D9 /* Hype Post App-Bridging-Header.h */,
@@ -473,13 +467,12 @@
 				816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */,
 				81AA2084202A442B00E80BAC /* Post.swift in Sources */,
 				81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */,
+				813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */,
 				CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
-				816DCFB92027F35800D263D9 /* SegmentedControlVC.swift in Sources */,
 				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
 				816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */,
-				811C7C21202A719D007FAC59 /* DBService+Comment.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
 				81AA207C202A43FC00E80BAC /* DBService+Post.swift in Sources */,
@@ -489,7 +482,6 @@
 				816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */,
 				816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */,
 				81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */,
-				816DCFB32027D09B00D263D9 /* AllCommentsContainer.swift in Sources */,
 				81AA2081202A442B00E80BAC /* Comment.swift in Sources */,
 				81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */,
 				816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */,

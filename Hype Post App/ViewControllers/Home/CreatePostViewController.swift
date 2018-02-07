@@ -10,19 +10,7 @@ import UIKit
 import ImagePicker
 import Material
 
-
-class CreatePostViewController: UIViewController {
-    
-
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        return
-    }
-    
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-
-    
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postTitle: UITextField!
@@ -89,6 +77,14 @@ class CreatePostViewController: UIViewController {
 }
 
 extension CreatePostViewController: ImagePickerDelegate{
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.resetAssets()
         return

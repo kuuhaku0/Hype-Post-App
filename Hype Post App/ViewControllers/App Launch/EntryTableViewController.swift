@@ -14,8 +14,6 @@ class EntryTableViewController: UITableViewController {
 
     let constant: CGFloat = 32
 
-
-  
     private func prepareSignInButton() {
         let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
         btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
@@ -49,11 +47,7 @@ class EntryTableViewController: UITableViewController {
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
-        
-        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +58,6 @@ class EntryTableViewController: UITableViewController {
         prepareSignInButton()
         prepareCreateAccountButton()
         tableView.allowsSelection = false
-
-        
     }
     
     public static func storyboardInstance() -> EntryTableViewController {
@@ -73,7 +65,7 @@ class EntryTableViewController: UITableViewController {
         let VC = storyboard.instantiateViewController(withIdentifier: "EntryTableViewController") as! EntryTableViewController
         return VC
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height
     }

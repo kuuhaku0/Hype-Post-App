@@ -87,6 +87,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
         //setupSettingsButton()
+        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+
     }
     
     private func loadData() {
@@ -168,35 +170,43 @@ extension UserActivityViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
-        
-        switch self.selectedSegment {
-        case 0: // All comments
+        if selectedSegment == 0 {
             let post = posts[indexPath.row]
-            cell.isUserInteractionEnabled = true
-            cell.textLabel?.text = post.header
-            cell.detailTextLabel?.text = post.body
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-        case 1: // All posts
-            cell.isUserInteractionEnabled = true
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-            cell.textLabel?.text = "ayyyyyyyeeeee"
-            cell.detailTextLabel?.text = "sdfgsdfgsdfgsdfgsdfgsdfg"
-        case 2: // About
-            let about = self.about[indexPath.row]
-            if indexPath.row == 0 && indexPath.section == 0 {
-                cell.isUserInteractionEnabled = false
-                cell.textLabel?.text = "Account"
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-                cell.detailTextLabel?.text = ""
-            } else if indexPath.section == 0 {
-                cell.textLabel?.text = about
-                cell.detailTextLabel?.text = ""
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+            cell.configureCell(post: post)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
+            
+            switch self.selectedSegment {
+            case 0: // All posts
+                let post = posts[indexPath.row]
+                cell.isUserInteractionEnabled = true
+                cell.textLabel?.text = post.header
+                cell.detailTextLabel?.text = post.body
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+            case 1: // All comments
+                cell.isUserInteractionEnabled = true
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+                cell.textLabel?.text = "ayyyyyyyeeeee"
+                cell.detailTextLabel?.text = "sdfgsdfgsdfgsdfgsdfgsdfg"
+            case 2: // About
+                let about = self.about[indexPath.row]
+                if indexPath.row == 0 && indexPath.section == 0 {
+                    cell.isUserInteractionEnabled = false
+                    cell.textLabel?.text = "Account"
+                    cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+                    cell.detailTextLabel?.text = ""
+                } else if indexPath.section == 0 {
+                    cell.textLabel?.text = about
+                    cell.detailTextLabel?.text = ""
+                }
+            default:
+                break
             }
-        default:
-            break
+            return cell
         }
-        return cell
     }
 }
 

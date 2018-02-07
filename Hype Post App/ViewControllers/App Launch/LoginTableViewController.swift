@@ -52,9 +52,7 @@ class LoginTableViewController: UITableViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).offset(16)
         }
     }
-    
-   
-    
+
     @objc
     internal func loggingIn(button: UIButton) {
         if let email = email, let password = password{
@@ -71,8 +69,7 @@ class LoginTableViewController: UITableViewController {
         
         self.view.layout(btn).width(100).height(constant).bottom(300).center()
     }
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -82,7 +79,6 @@ class LoginTableViewController: UITableViewController {
         prepareLoginButton()
     
     }
-
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height

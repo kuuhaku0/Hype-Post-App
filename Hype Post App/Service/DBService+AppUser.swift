@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseDatabase
+
 extension DBService {
     public func addAppUser(_ appUser: AppUser) {
         let ref = usersRef.child(appUser.uID)
@@ -35,5 +37,32 @@ extension DBService {
     public func addImageToAppUser(with url: String, uID: String) {
         addImage(url: url, ref: usersRef, id: uID)
     }
+    
+    
+    public func flagUser(flaggedUID: String, userFlaggedById uID: String) {
+        let ref = usersRef.child(flaggedUID)
+        
+        ref.runTransactionBlock { (mutableData) -> TransactionResult in
+            if var userObject = mutableData.value as? [String: Any] {
+                var flaggedDict = userObject["flaggedBy"] as? [String:Any] ?? ["no":"data"]
+                var flags = userObject["flags"] as? UInt ?? 0
+                if flaggedDict[uID] != nil {
+                    //self.delegate?.didFlagUser?(self)
+                    print("user flagged already")
+                    
+                } else {
+                    flaggedDict[uID] = true
+                    flags += 1
+                    self.delegate?.didFlagUser?(self)
+                }
+                userObject["flaggedBy"] = flaggedDict
+                userObject["flags"] = flags
+                mutableData.value = userObject
+                return TransactionResult.success(withValue: mutableData)
+            }
+            return TransactionResult.success(withValue: mutableData)
+        }
+    }
+    
     
 }

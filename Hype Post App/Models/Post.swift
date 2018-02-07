@@ -17,11 +17,13 @@ class Post: NSObject, Codable {
     var downVotes: Int = 0
     var time: String  = "\(Date())"
     var flags: UInt = 0
+    var upVoted: Bool = false
+    var downVoted: Bool = false
 
     let postID: String
     var imageURL: String?
-    init(header: String, body: String, postID: String, uID: String, imageURL: String?, time: String, downVotes: Int, upVotes: Int, flags: UInt) {
-        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.imageURL = imageURL ?? ""; self.time = time; self.upVotes = upVotes; self.downVotes = downVotes; self.flags = flags
+    init(header: String, body: String, postID: String, uID: String, imageURL: String?, time: String, downVotes: Int, upVotes: Int, flags: UInt, upVoted: Bool, downVoted: Bool) {
+        self.header = header; self.body = body;  self.postID = postID; self.uID = uID; self.imageURL = imageURL ?? ""; self.time = time; self.upVotes = upVotes; self.downVotes = downVotes; self.flags = flags; self.upVoted = upVoted; self.downVoted = downVoted
     }
     init (header: String, body: String, postID: String, uID: String) {
         self.header = header; self.body = body;  self.postID = postID; self.uID = uID

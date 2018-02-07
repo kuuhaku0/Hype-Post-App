@@ -13,6 +13,20 @@ import FirebaseDatabase
     @objc optional func getPostsFromUsers(_ DBService:DBService, posts: [Post])
     
     @objc optional func didFailGettingUserPosts(_ databaseService: DBService, error: String)
+    
+    @objc optional func didUpvotePost(_ databaseService: DBService)
+    
+    @objc optional func didDownvotePost(_ databaseService: DBService)
+    
+     @objc optional func didUndoUpvote(_ databaseService: DBService)
+    
+    @objc optional func didUndoDonwnvote(_ databaseService: DBService)
+    
+    @objc optional func didFlagPost(_ databaseService: DBService)
+    
+    @objc optional func didFlagUser(_ databaseService: DBService)
+    
+    
 }
 
 class DBService: NSObject {

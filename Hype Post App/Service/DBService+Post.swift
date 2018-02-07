@@ -32,12 +32,14 @@ extension DBService {
                 let downVotes = postObject["downVotes"] as? Int,
                 let time = postObject["time"] as? String,
                 let postID = postObject["postID"] as? String,
-                let flags = postObject["flags"] as? UInt
+                let flags = postObject["flags"] as? UInt,
+                let upVoted = postObject["upVoted"] as? Bool,
+                let downVoted = postObject["downVoted"] as? Bool
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String
                
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags)
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags, upVoted: upVoted, downVoted: downVoted)
                 posts.append(thisPost)
 
             }
@@ -67,7 +69,9 @@ extension DBService {
                           "upVotes": post.upVotes,
                           "downVotes": post.downVotes,
                           "flags": post.flags,
-                          "time": post.time
+                          "time": post.time,
+                          "upVoted": post.upVoted,
+                          "downVoted": post.downVoted
                           
                 ])
             
@@ -75,6 +79,101 @@ extension DBService {
             
             
             
+    }
+    
+    
+    public func upVotePost(postID: String, likedByUID uID: String) {
+        let ref = postsRef.child(postID)
+        ref.runTransactionBlock { (mutableData) -> TransactionResult in
+            if var postObject = mutableData.value as? [String: Any] {
+                var upVotesDict = postObject["upVotedBy"] as? [String: Any] ?? ["no":"data"]
+                var downVotesDict = postObject["downVotedBy"] as? [String: Any] ?? ["no":"data"]
+                var upVotes = postObject["upVotes"] as? Int ?? 0
+                var downVotes = postObject["downVotes"] as? Int ?? 0
+                if upVotesDict[uID] != nil {
+                    upVotes -= 1
+                    upVotesDict.removeValue(forKey: uID)
+                    self.delegate?.didUndoUpvote?(self)
+                } else {
+                    upVotes += 1
+                    upVotesDict[uID] = true
+                    
+                    if downVotesDict[uID] != nil {
+                        downVotes -= 1
+                        downVotesDict.removeValue(forKey: uID)
+                        self.delegate?.didUndoDonwnvote?(self)
+                    }
+                    self.delegate?.didUpvotePost?(self)
+                }
+                postObject["uoVotedBy"] = upVotesDict
+                postObject["downVotedBy"] = downVotesDict
+                postObject["upVotes"] = upVotes
+                postObject["downVotes"] = downVotes
+                mutableData.value = postObject
+                return TransactionResult.success(withValue: mutableData)
+            
+            }
+            return TransactionResult.success(withValue: mutableData)
+        }
+    }
+    
+    
+    public func downVotePost(postID: String, likedByUID uID: String) {
+        let ref = postsRef.child(postID)
+        ref.runTransactionBlock { (mutableData) -> TransactionResult in
+            if var postObject = mutableData.value as? [String: Any] {
+                var upVotesDict = postObject["upVotedBy"] as? [String: Any] ?? ["no":"data"]
+                var downVotesDict = postObject["downVotedBy"] as? [String: Any] ?? ["no":"data"]
+                var upVotes = postObject["upVotes"] as? Int ?? 0
+                var downVotes = postObject["downVotes"] as? Int ?? 0
+                if downVotesDict[uID] != nil {
+                    downVotes -= 1
+                    downVotesDict.removeValue(forKey: uID)
+                    self.delegate?.didUndoDonwnvote?(self)
+                } else {
+                    downVotes += 1
+                    downVotesDict[uID] = true
+                    
+                    if upVotesDict[uID] != nil {
+                        upVotes -= 1
+                        upVotesDict.removeValue(forKey: uID)
+                        self.delegate?.didUndoDonwnvote?(self)
+                    }
+                    self.delegate?.didDownvotePost?(self)
+                }
+                postObject["uoVotedBy"] = upVotesDict
+                postObject["downVotedBy"] = downVotesDict
+                postObject["upVotes"] = upVotes
+                postObject["downVotes"] = downVotes
+                mutableData.value = postObject
+                return TransactionResult.success(withValue: mutableData)
+                
+            }
+            return TransactionResult.success(withValue: mutableData)
+        }
+    }
+    
+    public func flagPost(postID: String, userFlaggedById uID: String) {
+        let ref = postsRef.child(postID)
+        
+        ref.runTransactionBlock { (mutableData) -> TransactionResult in
+            if var postObject = mutableData.value as? [String: Any] {
+                var flaggedDict = postObject["flaggedBy"] as? [String:Any] ?? ["no":"data"]
+                var flags = postObject["flags"] as? UInt ?? 0
+                if flaggedDict[uID] != nil {
+                    print("this post has been flagged before")
+                } else {
+                    flaggedDict[uID] = true
+                    flags += 1
+                    self.delegate?.didFlagUser?(self)
+                }
+                postObject["flaggedBy"] = flaggedDict
+                postObject["flags"] = flags
+                mutableData.value = postObject
+                return TransactionResult.success(withValue: mutableData)
+            }
+            return TransactionResult.success(withValue: mutableData)
+        }
     }
     
     public func addImageToPost(url: String, postID: String) {

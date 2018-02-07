@@ -29,8 +29,6 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
     
     @IBAction func openGallary(_ sender: UIBarButtonItem) {
         
-        
-        
     }
     
     
@@ -72,7 +70,6 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
     }
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
-        
         
         present(imagePickerController, animated: true, completion: nil)
         

@@ -23,12 +23,13 @@ class CreateAccountViewController: UIViewController {
         let button = FABButton(image: Icon.cm.close)
         button.tintColor = .white
         button.pulseColor = .white
-        button.backgroundColor = Color.red.base
+        button.backgroundColor = Color.lightGray
         button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return button
     }()
     
     @objc func dismissView(){
+        resignFirstResponder()
         self.dismiss(animated: true) {
         }
     }
@@ -43,10 +44,8 @@ class CreateAccountViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
-
+        resignFirstResponder()
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

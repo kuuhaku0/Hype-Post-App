@@ -105,6 +105,7 @@ class CreateAccountTableViewCell: UITableViewCell {
         setupLastNameTF()
         setupPasswordTF()
         setupSecondPasswordTF()
+        prepareCreateAccountButton()
     }
     
     
@@ -176,6 +177,20 @@ class CreateAccountTableViewCell: UITableViewCell {
             
         }
     }
+    let constant: CGFloat = 32
     
+    func prepareCreateAccountButton() {
+        let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
+        btn.addTarget(self, action: #selector(handlesSegueintoFeed(button:)), for: .touchUpInside)
+        
+        
+        self.layout(btn).width(100).height(constant).bottom(120).center()
+    }
+    
+    /// Handle the segue into feed once account is created button.
+    @objc
+    internal func handlesSegueintoFeed(button: UIButton) {
+       
+    }
 
 }

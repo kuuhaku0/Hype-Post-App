@@ -52,18 +52,7 @@ class LoginTableViewController: UITableViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).offset(16)
         }
     }
-    
-   
-    
-<<<<<<< HEAD
-//    private func prepareSignInButton() {
-//        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
-//        btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
-//
-//
-//        self.view.layout(btn).width(150).height(constant).bottom(300).center().left(40)
-//    }
-=======
+
     @objc
     internal func loggingIn(button: UIButton) {
         if let email = email, let password = password{
@@ -78,9 +67,7 @@ class LoginTableViewController: UITableViewController {
         
         self.view.layout(btn).width(100).height(constant).bottom(300).center()
     }
-    
->>>>>>> 23cd23e58b82746a00c84731ad4a5ea2916fa7b5
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

@@ -10,10 +10,9 @@ import UIKit
 import ImagePicker
 import Material
 
-class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreatePostViewController: UIViewController {
     
-<<<<<<< HEAD
-=======
+
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         return
     }
@@ -21,7 +20,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
->>>>>>> 4a54260883cd951a6b7b90955b2bdf905e60f657
+
     
     
     @IBOutlet weak var userImage: UIImageView!
@@ -86,10 +85,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         
-<<<<<<< HEAD
-       
-=======
->>>>>>> 4a54260883cd951a6b7b90955b2bdf905e60f657
+
         present(imagePickerController, animated: true, completion: nil)
         
         
@@ -102,19 +98,8 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
 
 extension CreatePostViewController: ImagePickerDelegate{
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        
-        
-    }
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         return
+        
     }
-    
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        imagePickerController.dismiss(animated: true) {
-            
-        }
-    }
-    
     
 }

@@ -12,7 +12,7 @@ import Material
 
 class CreatePostViewController: UIViewController{
     
-
+ 
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         return
     }
@@ -56,19 +56,11 @@ class CreatePostViewController: UIViewController{
     }
 
     
-    var configuration = Configuration()
     var imagePickerController: ImagePickerController!
     
     
     override func viewDidLoad() {
-        configuration.bottomContainerColor = Color.grey.lighten5
-        configuration.backgroundColor = .green
-        configuration.gallerySeparatorColor = .blue
-        configuration.mainColor = .red
-        configuration.settingsColor = .magenta
-        configuration.collapseCollectionViewWhileShot = true
-        
-        imagePickerController = ImagePickerController(configuration: configuration)
+        imagePickerController = ImagePickerController()
         super.viewDidLoad()
         postBody.borderColor = UIColor.gray
         imagePickerController.delegate = self
@@ -85,7 +77,10 @@ class CreatePostViewController: UIViewController{
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         
 
-        present(imagePickerController, animated: true, completion: nil)
+        present(imagePickerController, animated: true, completion: {
+            self.imagePickerController.collapseGalleryView({
+            })
+        })
         
         
     }
@@ -97,8 +92,11 @@ class CreatePostViewController: UIViewController{
 
 extension CreatePostViewController: ImagePickerDelegate{
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.resetAssets()
         return
         
     }
 
 }
+
+

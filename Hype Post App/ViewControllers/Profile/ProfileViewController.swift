@@ -58,7 +58,7 @@ class ProfileViewController: UITableViewController { // Deprecated
     fileprivate func logout() {
         FirebaseAPIClient.manager.logOutCurrentUser()
         self.dismiss(animated: true, completion: {
-            self.present(EntryViewController.storyboardINstance(), animated: true)
+            self.present(EntryTableViewController.storyboardInstance(), animated: true)
         })
     }
 }

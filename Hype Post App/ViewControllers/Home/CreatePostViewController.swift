@@ -8,12 +8,12 @@
 
 import UIKit
 import ImagePicker
+import Material
 
-class CreatePostViewController: UIViewController, ImagePickerDelegate {
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        return
-    }
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+<<<<<<< HEAD
+=======
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         return
     }
@@ -21,6 +21,7 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+>>>>>>> 4a54260883cd951a6b7b90955b2bdf905e60f657
     
     
     @IBOutlet weak var userImage: UIImageView!
@@ -55,12 +56,26 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
        // DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
 
     }
-    let imagePickerController = ImagePickerController()
+
+    
+    var configuration = Configuration()
+    var imagePickerController: ImagePickerController!
+    
     
     override func viewDidLoad() {
+        configuration.bottomContainerColor = Color.grey.lighten5
+        configuration.backgroundColor = .green
+        configuration.gallerySeparatorColor = .blue
+        configuration.mainColor = .red
+        configuration.settingsColor = .magenta
+        configuration.collapseCollectionViewWhileShot = true
+        
+        imagePickerController = ImagePickerController(configuration: configuration)
         super.viewDidLoad()
         postBody.borderColor = UIColor.gray
         imagePickerController.delegate = self
+        imagePickerController.imageLimit = 1
+
     }
     
     public static func storyboardInstance() -> CreatePostViewController {
@@ -71,8 +86,35 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 4a54260883cd951a6b7b90955b2bdf905e60f657
         present(imagePickerController, animated: true, completion: nil)
         
         
     }
+    
+    
+    private let imagePickerViewController = UIImagePickerController()
+
+}
+
+extension CreatePostViewController: ImagePickerDelegate{
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
+        
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePickerController.dismiss(animated: true) {
+            
+        }
+    }
+    
+    
 }

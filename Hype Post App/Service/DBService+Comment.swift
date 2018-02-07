@@ -52,4 +52,9 @@ extension DBService {
         print("new comment added")
     }
     
+    public func deleteComment(with commentID: String) {
+        commentsRef.child(commentID).removeValue()
+        self.delegate?.didDeleteComment!(self)
+    }
+    
 }

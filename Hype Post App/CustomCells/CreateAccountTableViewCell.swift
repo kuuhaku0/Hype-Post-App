@@ -13,12 +13,10 @@ import Firebase
 
 class CreateAccountTableViewCell: UITableViewCell {
 
-   
     override func setSelected(_ selected: Bool, animated: Bool) {
         firstNameTF.resignFirstResponder()
         lastNameTF.resignFirstResponder()
     }
-    
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
@@ -60,7 +58,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     lazy var passwordField: TextField = {
         let tf = TextField()
         tf.placeholder = "Password"
-        tf.detail = "At least 8 characters"
+        tf.detail = "At least 6 characters"
         tf.clearButtonMode = .whileEditing
         tf.isVisibilityIconButtonEnabled = true
         
@@ -101,6 +99,7 @@ class CreateAccountTableViewCell: UITableViewCell {
         backgroundColor = .white
     
         setupViews()
+        self.isSelected = false
     }
     
     private func setupViews() {
@@ -120,7 +119,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     private func setupEmailTF() {
         addSubview(emailField)
         emailField.snp.makeConstraints { (make) in
-            make.top.equalTo(createAccountLabel.snp.bottom).offset(100)
+            make.top.equalTo(createAccountLabel.snp.bottom).offset(20)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             //            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
             make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.8)

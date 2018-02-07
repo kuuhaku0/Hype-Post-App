@@ -48,11 +48,8 @@
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
 		81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C00C312027953B0055C061 /* PopularPosts.storyboard */; };
 		81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */; };
-<<<<<<< HEAD
-=======
 		81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */; };
 		81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */; };
->>>>>>> 5e053f3fd5dfaffa34ded00aae8680d3cf1cfbea
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
@@ -427,6 +424,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
@@ -443,6 +441,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",

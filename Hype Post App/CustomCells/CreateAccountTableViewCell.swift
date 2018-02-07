@@ -93,6 +93,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     private func commonInit() {
         backgroundColor = .white
         setupViews()
+        self.isSelected = false
     }
     
     private func setupViews() {

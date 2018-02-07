@@ -37,6 +37,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
             selectedSegment = 0
         case 1: // All posts
             selectedSegment = 1
+        case 2: // About
+            selectedSegment = 2
         default:
             break
         }
@@ -59,6 +61,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
             tableView.reloadData()
         }
     }
+    
+    private var about = ["Account", "Your Hypes","Posts You've Hypped", "Your Posts", "Your Comments", "History", "Blocked Users", "Flagged Posts"]
     
     private lazy var headerBlurImageView: UIImageView = {
         let biv = UIImageView()
@@ -86,7 +90,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     }
     
     private func loadData() {
-        DBService.manager.getAllPosts {(posts) in
+        DBService.manager.getAllPosts { (posts) in
+            self.posts = []
             self.posts = posts
         }
     }
@@ -94,7 +99,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     private func setupUI() {
         
         // Header - Profile image
-        profileImage.layer.borderWidth = 4.5
+        profileImage.layer.borderWidth = 4
         profileImage.borderColor = .white
         profileImage.layer.cornerRadius = 20
         profileImage.clipsToBounds = true
@@ -146,10 +151,15 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
 
 //MARK: - TABLEVIEW METHODS
 extension UserActivityViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         //TODO: return the corresponding correct amount of cells
-        return posts.count
+        if selectedSegment == 0 || selectedSegment == 1 {
+            return posts.count
+        } else if selectedSegment == 2{
+            return about.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -159,14 +169,32 @@ extension UserActivityViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
-        let post = posts[indexPath.row]
         
-        if selectedSegment == 0 {
+        switch self.selectedSegment {
+        case 0: // All comments
+            let post = posts[indexPath.row]
+            cell.isUserInteractionEnabled = true
             cell.textLabel?.text = post.header
             cell.detailTextLabel?.text = post.body
-        } else if selectedSegment == 1 {
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+        case 1: // All posts
+            cell.isUserInteractionEnabled = true
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
             cell.textLabel?.text = "ayyyyyyyeeeee"
             cell.detailTextLabel?.text = "sdfgsdfgsdfgsdfgsdfgsdfg"
+        case 2: // About
+            let about = self.about[indexPath.row]
+            if indexPath.row == 0 && indexPath.section == 0 {
+                cell.isUserInteractionEnabled = false
+                cell.textLabel?.text = "Account"
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+                cell.detailTextLabel?.text = ""
+            } else if indexPath.section == 0 {
+                cell.textLabel?.text = about
+                cell.detailTextLabel?.text = ""
+            }
+        default:
+            break
         }
         return cell
     }

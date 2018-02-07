@@ -10,10 +10,58 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func logout(_ sender: UIButton) {
+        logout()
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButton(_ sender: UIBarButtonItem) {
+        resignFirstResponder()
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tableView.bounces = false
+        view.addGestureRecognizer(tap)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tap.numberOfTapsRequired = 1
+        tap.cancelsTouchesInView = false
+    }
+    
+    @objc func dismissKeyboard() {
+        resignFirstResponder()
+    }
+    
+    fileprivate func logout() {
+        FirebaseAPIClient.manager.logOutCurrentUser()
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: {
+                self.present(EntryViewController.storyboardINstance(), animated: true )
+            })
+    }
 }
+
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 1050
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath)
+            return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+}
+

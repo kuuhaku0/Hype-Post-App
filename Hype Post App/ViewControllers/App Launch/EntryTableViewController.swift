@@ -23,6 +23,11 @@ class EntryTableViewController: UITableViewController {
     
     @objc
     internal func handleSegueToLogInButton(button: UIButton) {
+        let vc = LoginTableViewController()
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
         
     }
     

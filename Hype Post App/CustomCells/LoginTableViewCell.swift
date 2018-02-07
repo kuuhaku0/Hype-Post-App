@@ -10,8 +10,25 @@ import UIKit
 import SnapKit
 import Material
 
-class LoginTableViewCell: UITableViewCell {
+class LoginTableViewCell: UITableViewCell, UITextFieldDelegate {
 
+    override func awakeFromNib() {
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
+    }
+    
+    var infoDictionary = [String:String]()
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailField{
+            infoDictionary["email"] = textField.text!
+        }
+        else{
+            infoDictionary["password"] = textField.text!
+        }
+    }
+    
+    
     let constant: CGFloat = 32
     
     func prepareLoginButton() {
@@ -60,6 +77,7 @@ class LoginTableViewCell: UITableViewCell {
     
     lazy var emailField: ErrorTextField = {
         let tf = ErrorTextField()
+        tf.tag = 0
         tf.placeholder = "Email"
         tf.detail = "Error, incorrect email"
         tf.isClearIconButtonEnabled = true
@@ -70,6 +88,7 @@ class LoginTableViewCell: UITableViewCell {
     
     lazy var passwordField: TextField = {
         let tf = TextField()
+        tf.tag = 1
         tf.placeholder = "Password"
         tf.clearButtonMode = .whileEditing
         tf.isVisibilityIconButtonEnabled = true
@@ -97,14 +116,19 @@ class LoginTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        setupCB()
+//        setupCB()
         setupLabel()
         setupEmailTF()
         setupPasswordTF()
-        setupRPB()
-        prepareLoginButton()
+//        setupRPB()
+//        prepareLoginButton()
         
     }
+    
+    func getEmailAndPassword() -> [String:String]{
+        return infoDictionary
+    }
+    
     
     
     private func setupCB() {

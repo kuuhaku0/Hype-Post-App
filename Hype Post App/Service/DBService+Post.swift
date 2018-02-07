@@ -182,7 +182,7 @@ extension DBService {
     
     public func deletePost(with postID: String) {
         postsRef.child(postID).removeValue()
-        self.delegate?.didDeletePost(self)
+        self.delegate?.didDeletePost!(self)
     }
     
 }

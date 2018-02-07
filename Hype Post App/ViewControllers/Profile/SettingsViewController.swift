@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logout(_ sender: UIButton) {
         logout()
+        present(EntryTableViewController.storyboardInstance(), animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {

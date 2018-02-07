@@ -58,6 +58,8 @@ class LoginTableViewController: UITableViewController {
     @objc
     internal func loggingIn(button: UIButton) {
         if let email = email, let password = password{
+            print(email + " this is 1")
+            print(password + " this is two")
             login(withEmail: email, password: password)
         }
     }
@@ -104,6 +106,7 @@ extension LoginTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0{
+            print(textField.text!)
         email = textField.text!
         }else{
         password = textField.text!

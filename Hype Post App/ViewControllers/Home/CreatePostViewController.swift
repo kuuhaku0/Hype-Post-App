@@ -19,7 +19,7 @@ class CreatePostViewController: UIViewController, ImagePickerDelegate {
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        return
+        dismiss(animated: true, completion: nil)
     }
     
     

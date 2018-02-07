@@ -423,6 +423,7 @@
                                 <items>
                                     <navigationItem title="Edit Profile" id="gDC-3X-shB">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-cancel-100" id="Z4s-3P-Fu4">
+                                            <color key="tintColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelButton:" destination="zac-Rr-CRg" id="6XN-Dj-qZf"/>
                                             </connections>

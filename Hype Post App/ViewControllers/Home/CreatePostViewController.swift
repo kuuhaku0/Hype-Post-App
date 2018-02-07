@@ -15,9 +15,16 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var postBody: UITextField!
     
     @IBAction func openGallary(_ sender: UIBarButtonItem) {
+        
+        
+        
     }
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
+        
+        
+        
+        
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

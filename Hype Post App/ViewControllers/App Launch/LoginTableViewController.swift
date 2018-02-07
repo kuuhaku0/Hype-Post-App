@@ -17,7 +17,8 @@ import SVProgressHUD
 class LoginTableViewController: UITableViewController {
     
     let constant: CGFloat = 32
-    
+    var email: String?
+    var password: String?
     
     lazy var resetPasswordButton: FlatButton = {
         let button = FlatButton()
@@ -56,7 +57,9 @@ class LoginTableViewController: UITableViewController {
     
     @objc
     internal func loggingIn(button: UIButton) {
-        
+        if let email = email, let password = password{
+            login(withEmail: email, password: password)
+        }
     }
     
 
@@ -101,28 +104,13 @@ extension LoginTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0{
-        
-        print(textField.text)
+        email = textField.text!
         }else{
-            print("wooo")
+        password = textField.text!
         }
-        
         textField.resignFirstResponder()
         return true
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.tag == 0{
-            
-            print(textField.text)
-        }else{
-            print("wooo")
-        }
-        
-        textField.resignFirstResponder()
-    }
-    
-    
     
     
 }

@@ -180,5 +180,20 @@ extension DBService {
         addImage(url: url, ref: postsRef, id: postID)
     }
     
+    public func deletePost(with postID: String) {
+        postsRef.child(postID).removeValue()
+        self.delegate?.didDeletePost(self)
+    }
+    
+}
+
+extension Array where Element == Post {
+    func sortedByUpVotes() -> [Post] {
+        return self.sorted(by: { (post1, post2) -> Bool in
+            let netVotesOfPost1 = post1.upVotes - post1.downVotes
+            let netVotesOfPost2 = post2.upVotes - post2.downVotes
+            return netVotesOfPost1 > netVotesOfPost2
+        })
+    }
 }
 

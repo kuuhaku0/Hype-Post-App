@@ -26,6 +26,14 @@ import FirebaseDatabase
     
     @objc optional func didFlagUser(_ databaseService: DBService)
     
+    @objc optional func didComment(_databaseService: DBService)
+    
+    @objc optional func getCommentsFromPost(_ DBService:DBService, comments: [Comment])
+    
+     @objc optional func didDeletePost(_ databaseService: DBService)
+    
+     @objc optional func didDeleteComment(_ databaseService: DBService)
+    
     
 }
 

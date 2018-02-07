@@ -12,14 +12,12 @@ import SnapKit
 
 class CreateAccountTableViewCell: UITableViewCell {
 
-    lazy var closeButton: FABButton = {
-        let button = FABButton(image: Icon.cm.close)
-        button.tintColor = .white
-        button.pulseColor = .white
-        button.backgroundColor = Color.red.base
-        //        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
-        return button
-    }()
+   
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        firstNameTF.resignFirstResponder()
+        lastNameTF.resignFirstResponder()
+    }
+    
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
@@ -100,7 +98,6 @@ class CreateAccountTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        setupCPB()
         setupLabel()
         setupEmailTF()
         setupUserName()
@@ -111,13 +108,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     }
     
     
-    private func setupCPB() {
-        addSubview(closeButton)
-        closeButton.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16)
-        }
-    }
+ 
     
     private func setupEmailTF() {
         addSubview(emailField)

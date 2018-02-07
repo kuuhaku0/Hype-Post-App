@@ -28,14 +28,17 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
         //TODO: Implement post
+
         DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, image: userImage.image ?? nil)
         
         let alertController = UIAlertController(title: "Success!", message: "post sucessful!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (alert) in
-            self.dismiss(animated: true, completion: {})
+            self.dismiss(animated: true, completion: {self.resignFirstResponder()})
+            self.resignFirstResponder()
         }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
+
      
        // DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, by: AuthUserService.getCurrentUser()?.displayName ?? "N/A")
 

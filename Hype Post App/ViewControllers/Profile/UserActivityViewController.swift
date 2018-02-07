@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 enum contentTypes {
     case allPosts, allComments
@@ -26,6 +27,17 @@ class UserActivityViewController: UIViewController, UITableViewDelegate, UIScrol
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var segmentedView: UIView!
+    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            selectedSegment = 0
+        case 1:
+            selectedSegment = 1
+        default:
+            break
+        }
+    }
+    
     @IBOutlet weak var editProfileButtonView: UIView!
     
     // At this offset the Header stops its transformations
@@ -33,23 +45,48 @@ class UserActivityViewController: UIViewController, UITableViewDelegate, UIScrol
     let hiddenLabelDistanceToTop:CGFloat = 30.0
     /*********************************************/
     
+    var selectedSegment = 0 {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var posts = [Post]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    func loadData() {
+        DBService.manager.getAllPosts {(posts) in
+            self.posts = posts
+        }
+    }
+    
+    @IBOutlet weak var statsContainerView: UIView!
     var headerBlurImageView:UIImageView!
     var headerImageView:UIImageView!
     @IBOutlet weak var constraintHeightHeaderImages: NSLayoutConstraint!
     var contentToDisplay : contentTypes = .allPosts
     
+    //EDIT PROFILE BUTTON
+    @IBOutlet weak var editProfileButton: UIButton!
+    @IBAction func editProfileButtonPressed(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         tableView.dataSource = self
         tableView.delegate = self
-         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
 //        setupSettingsButton()
         
-        editProfileButtonView.layer.cornerRadius = 15
-        editProfileButtonView.layer.borderWidth = 1
-        editProfileButtonView.borderColor = UIColor.darkGray
-        
+        editProfileButton.layer.borderColor = UIColor.gray.cgColor
+        editProfileButton.layer.borderWidth = 1
+        editProfileButton.layer.cornerRadius = 14
     }
+    
     
     override func viewWillLayoutSubviews() {
         
@@ -57,18 +94,30 @@ class UserActivityViewController: UIViewController, UITableViewDelegate, UIScrol
         profileImage.clipsToBounds = true
         
         // Header - Image
-        headerImageView = UIImageView(frame: headerView.bounds)
+        headerImageView = UIImageView()
         headerImageView?.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962")
         headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerView.insertSubview(headerImageView, belowSubview: headerLabel)
+        headerImageView.snp.makeConstraints { (make) in
+            make.leading.equalTo(view.snp.leading)
+            make.top.equalTo(headerView.snp.top)
+            make.height.equalTo(headerView.snp.height)
+            make.trailing.equalTo(view.snp.trailing)
+        }
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: headerView.bounds)
-        headerBlurImageView?.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 0.7)
+        headerBlurImageView?.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         headerBlurImageView?.contentMode = .scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         /////
         headerView.insertSubview(headerBlurImageView, belowSubview: headerLabel)
+        headerBlurImageView.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.view.snp.leading)
+            make.top.equalTo(headerView.snp.top)
+            make.height.equalTo(headerView.snp.height)
+            make.trailing.equalTo(self.view.snp.trailing)
+        }
     }
     
     private func setupSettingsButton() {
@@ -91,17 +140,28 @@ class UserActivityViewController: UIViewController, UITableViewDelegate, UIScrol
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 600
+        return UITableViewAutomaticDimension
            // UIScreen.main.bounds.width * 0.5628 + 32
 //        UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
+        
+        let post = posts[indexPath.row]
+        
+        if selectedSegment == 0 {
+            cell.textLabel?.text = post.header
+            cell.detailTextLabel?.text = post.body
+        } else if selectedSegment == 1 {
+            cell.textLabel?.text = "ayyyyyyyeeeee"
+            cell.detailTextLabel?.text = "sdfgsdfgsdfgsdfgsdfgsdfg"
+        }
+        
         return cell
     }
 }
@@ -135,23 +195,23 @@ extension UserActivityViewController {
             headerLabel.frame.origin = CGPoint(x: headerLabel.frame.origin.x, y: max(alignToNameLabel, hiddenLabelDistanceToTop + headerStopOffset))
         
             //BLUR
-            headerBlurImageView?.alpha = min (1.0, (offset - alignToNameLabel)/hiddenLabelDistanceToTop)
+            headerBlurImageView?.alpha = min(1.0, (offset - alignToNameLabel)/hiddenLabelDistanceToTop)
             
             //PROFILE IMAGE
             // Slow down the animation
-            let profileImageScaleFactor = (min(headerStopOffset, offset)) / profileImage.bounds.height / 9.4
-            let profileImageSizeVariation = ((profileImage.bounds.height * (1.0 + profileImageScaleFactor)) - profileImage.bounds.height) / 2.0
+            let profileImageScaleFactor = (min(headerStopOffset, offset)) / profileImage.bounds.height / 3//9.4
+            let profileImageSizeVariation = ((profileImage.bounds.height * (1.0 + profileImageScaleFactor)) - profileImage.bounds.height) / 2
             
             profileImageTransform = CATransform3DTranslate(profileImageTransform, 0, profileImageSizeVariation, 0)
             profileImageTransform = CATransform3DScale(profileImageTransform, 1.0 - profileImageScaleFactor, 1.0 - profileImageScaleFactor, 0)
             
             if offset <= headerStopOffset {
-                if profileImage.layer.zPosition < headerView.layer.zPosition{
+                if profileImage.layer.zPosition < headerView.layer.zPosition {
                     headerView.layer.zPosition = 0
                 }
                 
-            }else {
-                if profileImage.layer.zPosition >= headerView.layer.zPosition{
+            } else {
+                if profileImage.layer.zPosition >= headerView.layer.zPosition {
                     headerView.layer.zPosition = 2
                 }
             }
@@ -173,3 +233,5 @@ extension UserActivityViewController {
         tableView.scrollIndicatorInsets = UIEdgeInsetsMake(segmentedView.bounds.maxY, 0, 0, 0)
     }
 }
+
+

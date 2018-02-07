@@ -12,6 +12,8 @@ import SnapKit
 
 class ProfileViewController: UITableViewController {
     
+    var posts = [Post]()
+    
     //Profile Info View Stuff
     @IBOutlet var profileTableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!
@@ -36,6 +38,12 @@ class ProfileViewController: UITableViewController {
         super.viewDidLoad()
         setupCollectionView()
     }
+    
+    private func loadData() {
+        DBService.manager.getAllPosts { (posts) in
+            self.posts = posts
+        }
+    }
 
     public static func storyboardInstance() -> ProfileViewController {
         let storyboard = UIStoryboard(name: "ProfileView", bundle: nil)
@@ -58,8 +66,6 @@ class ProfileViewController: UITableViewController {
 }
 //MARK: - CollectionView Methods
 extension ProfileViewController: UICollectionViewDelegate {
-
-
 
 }
 

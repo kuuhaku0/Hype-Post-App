@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Comment {
+class Comment: NSObject {
     let commentID: String
     let uID: String
     let postID: String

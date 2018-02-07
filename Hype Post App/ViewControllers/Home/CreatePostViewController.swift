@@ -10,9 +10,10 @@ import UIKit
 import ImagePicker
 import Material
 
-class CreatePostViewController: UIViewController{
+
+class CreatePostViewController: UIViewController {
     
- 
+
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         return
     }
@@ -20,6 +21,7 @@ class CreatePostViewController: UIViewController{
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+
     
     
     @IBOutlet weak var userImage: UIImageView!
@@ -81,13 +83,9 @@ class CreatePostViewController: UIViewController{
             self.imagePickerController.collapseGalleryView({
             })
         })
-        
-        
     }
     
-    
     private let imagePickerViewController = UIImagePickerController()
-
 }
 
 extension CreatePostViewController: ImagePickerDelegate{
@@ -96,7 +94,4 @@ extension CreatePostViewController: ImagePickerDelegate{
         return
         
     }
-
 }
-
-

@@ -10,7 +10,7 @@ import UIKit
 import HMSegmentedControl
 import SnapKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: UITableViewController { // Deprecated
     
     var posts = [Post]()
     
@@ -31,8 +31,6 @@ class ProfileViewController: UITableViewController {
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    /***********************************************/
     
     override func viewDidLoad() {
         super.viewDidLoad()

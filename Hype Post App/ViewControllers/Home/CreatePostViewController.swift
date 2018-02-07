@@ -8,8 +8,9 @@
 
 import UIKit
 import ImagePicker
+import Material
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     
@@ -49,12 +50,24 @@ class CreatePostViewController: UIViewController {
     }
 
     
-    let imagePickerController = ImagePickerController()
+    var configuration = Configuration()
+    var imagePickerController: ImagePickerController!
+    
     
     override func viewDidLoad() {
+        configuration.bottomContainerColor = Color.grey.lighten5
+        configuration.backgroundColor = .green
+        configuration.gallerySeparatorColor = .blue
+        configuration.mainColor = .red
+        configuration.settingsColor = .magenta
+        configuration.collapseCollectionViewWhileShot = true
+        
+        imagePickerController = ImagePickerController(configuration: configuration)
         super.viewDidLoad()
         postBody.borderColor = UIColor.gray
         imagePickerController.delegate = self
+        imagePickerController.imageLimit = 1
+
     }
     
     public static func storyboardInstance() -> CreatePostViewController {
@@ -65,17 +78,20 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         
-        
+       
         present(imagePickerController, animated: true, completion: nil)
         
         
     }
+    
+    
     private let imagePickerViewController = UIImagePickerController()
 
 }
 
 extension CreatePostViewController: ImagePickerDelegate{
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
         
     }
     

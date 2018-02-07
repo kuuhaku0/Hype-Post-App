@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     func showAlert(title: String, message: String) {
@@ -40,6 +42,23 @@ class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 }
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+
 
 //MARK: -FIREBASE METHODS EXTENSION
 extension LoginViewController {

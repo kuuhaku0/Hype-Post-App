@@ -11,9 +11,19 @@ import Material
 import SnapKit
 
 class AddCommentViewController: UIViewController {
+  
+    init(post: Post){
+        super.init(nibName: nil, bundle: nil)
+        posts = post
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError()
+    }
     
     
-    public var posts = [Post]()
+    var posts: Post!
 
     var tableViewCell = AddCommentTableViewCell()
     let tView = AddCommentTableView()
@@ -34,6 +44,7 @@ class AddCommentViewController: UIViewController {
         super.viewDidLoad()
         tView.tableView.delegate = self
         tView.tableView.dataSource = self
+        tView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         textfieldView.textfield.delegate = self
         view.backgroundColor = Color.grey.lighten5
         view.addSubview(tView)
@@ -97,8 +108,8 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-            let post = posts[indexPath.row]
-            cell.configureCell(post: post)
+            let post = posts
+            cell.configureCell(post: post!)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell

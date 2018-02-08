@@ -10,15 +10,22 @@ import UIKit
 import SnapKit
 import Material
 
+
+protocol LoginTableViewCellDelegate: class{
+    func loginHasBeenPressed()
+    func resetPasswordHasBeenPressed()
+}
+
+
+
+
 class LoginTableViewCell: UITableViewCell{
 
     override func awakeFromNib() {
-//        self.emailField.delegate = self
-//        self.passwordField.delegate = self
     }
     
     
-    
+    weak var delegate: LoginTableViewCellDelegate?
     
     let constant: CGFloat = 32
     
@@ -32,6 +39,7 @@ class LoginTableViewCell: UITableViewCell{
     /// Handle the resign responder button.
     @objc
     internal func handleResignResponderButton(button: UIButton) {
+        self.delegate?.loginHasBeenPressed()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
@@ -51,10 +59,15 @@ class LoginTableViewCell: UITableViewCell{
         button.pulseColor = .gray
         button.titleColor = Color.blue.base
         button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(resetPassword), for: .touchUpInside)
         button.setTitle("Forgot Password", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         return button
     }()
+    
+    @objc private func resetPassword(){
+    self.delegate?.resetPasswordHasBeenPressed()
+    }
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
@@ -108,7 +121,6 @@ class LoginTableViewCell: UITableViewCell{
     }
     
     private func setupViews() {
-//        setupCB()
         setupLabel()
         setupEmailTF()
         setupPasswordTF()

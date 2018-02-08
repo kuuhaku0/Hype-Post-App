@@ -13,7 +13,7 @@ import SnapKit
 protocol FeedTableViewCellDelegate : class {
     func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell)
     func feedTableViewCellLikedPost(_ sender: FeedTableViewCell)
-    func feedTableViewCellCommentPressed()
+    func feedTableViewCellCommentPressed(_ sender: FeedTableViewCell)
 }
 
 
@@ -123,6 +123,7 @@ extension  FeedTableViewCell {
     
     fileprivate func prepareToolBarButtons() {
         addCommentButton = IconButton(image: #imageLiteral(resourceName: "icons8-topic-filled-50"), tintColor: Color.blueGrey.base)
+        addCommentButton.addTarget(self, action: #selector(commentPressed), for: .touchUpInside)
         spacing = UILabel()
         spacing.text = " "
         
@@ -143,6 +144,9 @@ extension  FeedTableViewCell {
         
     }
     
+    @objc fileprivate func commentPressed(){
+        self.delegate?.feedTableViewCellCommentPressed(self)
+    }
     
     
     

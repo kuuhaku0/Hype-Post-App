@@ -30,7 +30,7 @@ extension DBService {
             guard let userName = snapshot.childSnapshot(forPath: "userName").value as? String else {return}
             guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else {return}
             guard let lastName = snapshot.childSnapshot(forPath: "lastName").value as? String else {return}
-            guard let flags = snapshot.childSnapshot(forPath: "flags") as? UInt else {return}
+            guard let flags = snapshot.childSnapshot(forPath: "flags").value as? UInt else {return}
             let imageURL = snapshot.childSnapshot(forPath: "imageURL").value as? String
             let bio = snapshot.childSnapshot(forPath: "bio").value as? String
             

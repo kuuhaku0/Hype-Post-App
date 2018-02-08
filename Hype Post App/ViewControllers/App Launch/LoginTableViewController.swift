@@ -79,6 +79,7 @@ class LoginTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LoginTableViewCell.self, forCellReuseIdentifier: "LoginCell")
+        tableView.isScrollEnabled = false
         setupCPB()
         prepareLoginButton()
     }

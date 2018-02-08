@@ -38,10 +38,7 @@ class CreateAccountTableViewController: UITableViewController {
     /// Handle the segue into feed once account is created button.
     @objc
     internal func handlesSegueintoFeed(button: UIButton) {
-        signUp(withEmail: email!,
-               password: password!,
-               passwordsMatch: checkPasswordsMatch(),
-               user: AppUser.init(email: email!, userName: username!, uID:  "", firstName: firstName!, lastName: lastName ?? "", imageURL: nil))
+        AuthUserService.manager.createUser(withEmail: email!, userName: username!, password: password!, firstName: firstName!, lastName: lastName)
     }
     
     

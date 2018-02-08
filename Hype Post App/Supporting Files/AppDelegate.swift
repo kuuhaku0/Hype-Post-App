@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 import Firebase
 
 @UIApplicationMain
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var viewController: UIViewController!
         let tabBar = TabViewController()
-        
+
         if let _ = AuthUserService.getCurrentUser() {
             viewController = tabBar
         } else {

@@ -11,7 +11,7 @@ import UIKit
 class PoppinViewController: UIViewController {
 
     var posts = [Post]().sorted { (current, next) -> Bool in
-        current.upVotes > next.upVotes
+            current.upVotes > next.upVotes
         } {
         didSet {
             tableView.reloadData()
@@ -26,6 +26,11 @@ class PoppinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.hidesBarsOnSwipe = true
+        
         tableView.dataSource = self
         prepareTabItem()
         loadData()

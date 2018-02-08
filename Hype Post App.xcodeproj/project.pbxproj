@@ -17,6 +17,7 @@
 		816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB62027E1B300D263D9 /* UserActivityCollectionViewCell.swift */; };
 		816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFC8202819A500D263D9 /* HMSegmentedControl.m */; };
 		816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFCA20281EE900D263D9 /* UserActivityCell.swift */; };
+		817290F3202C195C0004C35D /* DynamicFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */; };
 		817C8BD82025047200660FA8 /* tabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BD72025047200660FA8 /* tabController.swift */; };
 		817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */; };
 		817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDD20250D8E00660FA8 /* TabViewController.swift */; };
@@ -70,6 +71,7 @@
 		816DCFC7202819A400D263D9 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		816DCFC8202819A500D263D9 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		816DCFCA20281EE900D263D9 /* UserActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityCell.swift; sourceTree = "<group>"; };
+		817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFeedTableViewCell.swift; sourceTree = "<group>"; };
 		817C8BD72025047200660FA8 /* tabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabController.swift; sourceTree = "<group>"; };
 		817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		817C8BDD20250D8E00660FA8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */,
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
+				817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */,
 				816DCFCC2028241400D263D9 /* Profile */,
 			);
 			path = CustomCells;
@@ -428,6 +431,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
@@ -445,6 +449,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
@@ -477,6 +482,7 @@
 				81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */,
 				813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */,
 				CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */,
+				817290F3202C195C0004C35D /* DynamicFeedTableViewCell.swift in Sources */,
 				81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,

@@ -13,7 +13,6 @@ import SnapKit
 class FeedTableViewCell: TableViewCell {
 
     fileprivate var card: PresenterCard!
-    
     /// Conent area.
     var presenterView: UIImageView!
     var contentContainer: UIView!
@@ -84,7 +83,7 @@ class FeedTableViewCell: TableViewCell {
 extension  FeedTableViewCell {
     fileprivate func preparePresenterView() {
         presenterView = UIImageView()
-        presenterView.image = #imageLiteral(resourceName: "pokemon").resize(toWidth: self.frame.width)
+        presenterView.clipsToBounds = true
         presenterView.contentMode = .scaleAspectFill
     }
     
@@ -171,7 +170,9 @@ extension  FeedTableViewCell {
     }
     
     fileprivate func prepareBottomBar() {
-        bottomBar = Bar(leftViews: [upvoteButton,downvoteButton], rightViews: [addCommentButton,shareButton], centerViews: [])
+        bottomBar = Bar(leftViews: [upvoteButton,downvoteButton],
+                        rightViews: [addCommentButton,shareButton],
+                        centerViews: [])
     }
     
     fileprivate func preparePresenterCard() {

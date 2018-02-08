@@ -22,14 +22,12 @@ open override func prepare() {
         make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         make.centerX.equalTo(view.snp.centerX)
     }
-    
+
     tabBarAlignment = .top
     tabBar.tabBarStyle = .auto
     tabBar.dividerColor = nil
     tabBar.lineHeight = 5.0
     tabBar.lineAlignment = .bottom
-    
-
     //        tabBar.backgroundColor = Color.blue.darken2
     }
 

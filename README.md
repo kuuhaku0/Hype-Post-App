@@ -11,7 +11,8 @@ What does the app do
 ### Installing
 * Open Terminal
 * cd to the folder of where the project has been cloned/ downloaded
-* All necessary cocoapods needed for this project are included(AlamoFire, SnapKit, KingFisher)
+* All necessary cocoapods needed for this project are included(AlamoFire, Firebase, Firebase/Auth, Firebase/Database, Firebase/Storage, SnapKit, KingFisher, SVProgressHUD, Material, HMSegmentedControl, ImagePicker)
+
 
 Install the cocoapods needed by entering the below after cding into the project folder
 ```

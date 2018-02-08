@@ -11,12 +11,21 @@ import Material
 import SnapKit
 import Firebase
 
+protocol CreateAccountTableViewCellDelegate: class{
+    func createAccountButtonPressed()
+}
+
+
+
 class CreateAccountTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         firstNameTF.resignFirstResponder()
         lastNameTF.resignFirstResponder()
     }
+    
+    weak var delegate: CreateAccountTableViewCellDelegate?
+    
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
@@ -87,9 +96,15 @@ class CreateAccountTableViewCell: UITableViewCell {
     
     lazy var createButton: RaisedButton = {
         let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
-       
+        btn.addTarget(self, action: #selector(segueToLoginAfterCreate), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func segueToLoginAfterCreate(){
+        self.delegate?.createAccountButtonPressed()
+    }
+    
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "CreateAccountCell")

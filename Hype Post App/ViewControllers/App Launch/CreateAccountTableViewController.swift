@@ -91,6 +91,7 @@ class CreateAccountTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreateAccountCell", for: indexPath) as! CreateAccountTableViewCell
        cell.selectionStyle = .none
+        cell.delegate = self
         cell.emailField.delegate = self
         cell.userNameTF.delegate = self
         cell.firstNameTF.delegate = self
@@ -185,4 +186,15 @@ extension CreateAccountTableViewController {
             }
         }
     }
+}
+
+
+extension CreateAccountTableViewController: CreateAccountTableViewCellDelegate{
+    func createAccountButtonPressed() {
+     AuthUserService.manager.createUser(withEmail: email!, userName: username!, password: password!, firstName: firstName!, lastName: lastName!)
+        
+        
+        
+    }
+
 }

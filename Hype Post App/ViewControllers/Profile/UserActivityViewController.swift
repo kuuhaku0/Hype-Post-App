@@ -94,7 +94,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
         //setupSettingsButton()
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
-
+        let user = AuthUserService.getCurrentUser()
+        nameLabel.text = user!.displayName
     }
     
     private func loadData() {

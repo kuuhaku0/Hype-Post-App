@@ -193,8 +193,13 @@ extension CreateAccountTableViewController: CreateAccountTableViewCellDelegate{
     func createAccountButtonPressed() {
      AuthUserService.manager.createUser(withEmail: email!, userName: username!, password: password!, firstName: firstName!, lastName: lastName!)
         
-        
-        
+        let alertController = UIAlertController(title: "Success!", message: "User Created!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (alert) in
+            self.dismiss(animated: true, completion: {self.resignFirstResponder()})
+            self.resignFirstResponder()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 
 }

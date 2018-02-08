@@ -73,16 +73,19 @@ class LoginTableViewController: UITableViewController {
         
         self.view.layout(btn).width(100).height(constant).bottom(300).center()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LoginTableViewCell.self, forCellReuseIdentifier: "LoginCell")
-        tableView.isScrollEnabled = false
+        self.tableView.isScrollEnabled = false
         setupCPB()
         prepareLoginButton()
-
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

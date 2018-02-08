@@ -74,6 +74,7 @@ class LoginTableViewCell: UITableViewCell{
         tf.isClearIconButtonEnabled = true
         tf.isPlaceholderUppercasedWhenEditing = true
         tf.placeholderAnimation = .hidden
+        tf.autocorrectionType = .no
         return tf
     }()
     

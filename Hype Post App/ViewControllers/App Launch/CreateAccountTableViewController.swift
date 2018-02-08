@@ -24,22 +24,6 @@ class CreateAccountTableViewController: UITableViewController {
     
     
     
-    
-    let constant: CGFloat = 32
-    
-    func prepareCreateAccountButton() {
-        let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(createAccountPressed(button:)), for: .touchUpInside)
-        
-        
-        self.view.layout(btn).width(100).height(constant).bottom(11).center()
-    }
-    
-    @objc internal func createAccountPressed(button: UIButton) {
-        AuthUserService.manager.createUser(withEmail: email!, userName: username!, password: password!, firstName: firstName!, lastName: lastName)
-    }
-    
-    
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)
         button.tintColor = .white
@@ -68,7 +52,6 @@ class CreateAccountTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        prepareCreateAccountButton()
         setupCPB()
         
         tableView.register(CreateAccountTableViewCell.self, forCellReuseIdentifier: "CreateAccountCell")

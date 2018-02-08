@@ -14,7 +14,7 @@ class AddCommentTableView: UIView {
     //    TableView
     lazy var tableView: UITableView = {
         let tv = UITableView()
-        tv.register(TableViewCell.self, forCellReuseIdentifier: "CommentCell")
+        tv.register(AddCommentTableViewCell.self, forCellReuseIdentifier: "CommentCell")
         tv.backgroundColor = UIColor.groupTableViewBackground
         return tv
     }()

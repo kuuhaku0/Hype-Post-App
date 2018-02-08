@@ -38,6 +38,13 @@ class FeedViewController: UIViewController {
 
     public var posts = [Post]() {
         didSet {
+            recentPosts = posts.reversed()
+            feedTableView.reloadData()
+        }
+    }
+    
+    public var recentPosts = [Post](){
+        didSet  {
             feedTableView.reloadData()
         }
     }
@@ -83,11 +90,45 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        let post = posts[indexPath.row]
+        let post = recentPosts[indexPath.row]
         cell.configureCell(post: post)
+        cell.delegate = self
+        
         return cell
     }
 }
+
+extension FeedViewController: FeedTableViewCellDelegate {
+  
+    
+    func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = recentPosts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
+    }
+    }
+    
+    
+    func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell) {
+       
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = recentPosts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+        DBService.manager.flagPost(postID: post.postID, userFlaggedById: currentUser.uid)
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
 
 extension FeedViewController {
     

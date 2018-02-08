@@ -29,7 +29,7 @@ class CreateAccountTableViewController: UITableViewController {
     
     func prepareCreateAccountButton() {
         let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(handlesSegueintoFeed(button:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(createAccountPressed(button:)), for: .touchUpInside)
         
         
         self.view.layout(btn).width(100).height(constant).bottom(11).center()
@@ -37,7 +37,7 @@ class CreateAccountTableViewController: UITableViewController {
     
     /// Handle the segue into feed once account is created button.
     @objc
-    internal func handlesSegueintoFeed(button: UIButton) {
+    internal func createAccountPressed(button: UIButton) {
         signUp(withEmail: email!,
                password: password!,
                passwordsMatch: checkPasswordsMatch(),
@@ -79,14 +79,8 @@ class CreateAccountTableViewController: UITableViewController {
         tableView.register(CreateAccountTableViewCell.self, forCellReuseIdentifier: "CreateAccountCell")
 
     }
-    //
-    //    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-    //        signUp(withEmail: emailTextField.text!,
-    //               password: passwordTextField.text!,
-    //               passwordsMatch: checkPasswordsMatch(),
-    //               user: AppUser.init(email: emailTextField.text!, userName: userName.text!, firstName: FirstNameTF.text!, lastName: LastNameTF.text ?? ""))
-    //    }
-    //
+    
+    
         func checkPasswordsMatch() -> Bool {
             if password == sPassword {
                 return true

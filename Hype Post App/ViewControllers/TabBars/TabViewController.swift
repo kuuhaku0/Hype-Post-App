@@ -17,8 +17,8 @@ class TabViewController: UITabBarController {
         let popVc = PoppinViewController.storyboardInstance()
         let profileVC = UserActivityViewController.storyboardInstance()
         let tab = tabController(viewControllers: [feedVC, popVc])
-        tab.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-100"), selectedImage: #imageLiteral(resourceName: "icons8-home-page-100").withRenderingMode(.alwaysOriginal))
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "icons8-male-user-100"), selectedImage: #imageLiteral(resourceName: "icons8-male-user-100").withRenderingMode(.alwaysOriginal))
+        tab.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-filled-50"), selectedImage: #imageLiteral(resourceName: "icons8-home-page-filled-50").withRenderingMode(.alwaysOriginal))
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "icons8-male-user-filled-50"), selectedImage: #imageLiteral(resourceName: "icons8-male-user-filled-50").withRenderingMode(.alwaysOriginal))
         tab.tabBar.tintColor = Color.grey.darken1
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .selected)
     

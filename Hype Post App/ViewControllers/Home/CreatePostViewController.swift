@@ -67,10 +67,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         
 
-        present(imagePickerController, animated: true, completion: {
-            self.imagePickerController.collapseGalleryView({
-            })
-        })
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     private let imagePickerViewController = UIImagePickerController()

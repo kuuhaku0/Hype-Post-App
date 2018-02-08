@@ -21,6 +21,7 @@
 		817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */; };
 		817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BDD20250D8E00660FA8 /* TabViewController.swift */; };
 		817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C8BE1202519AB00660FA8 /* PoppinViewController.swift */; };
+		818136EC202D18430007415D /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818136EB202D18430007415D /* CreateAccountTableViewController.swift */; };
 		8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */; };
 		81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81892595202B7527002D07C5 /* EditProfileCell.swift */; };
 		818A576D202B659600761FE0 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A576C202B659600761FE0 /* EntryTableViewController.swift */; };
@@ -51,7 +52,6 @@
 		81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */; };
 		81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A349202CAEA40023B5D8 /* TextfieldView.swift */; };
 		81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */; };
-		81E098C3202D0E7200808808 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
@@ -76,6 +76,7 @@
 		817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		817C8BDD20250D8E00660FA8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		817C8BE1202519AB00660FA8 /* PoppinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinViewController.swift; sourceTree = "<group>"; };
+		818136EB202D18430007415D /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		81892595202B7527002D07C5 /* EditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		818A576C202B659600761FE0 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		81C4A349202CAEA40023B5D8 /* TextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldView.swift; sourceTree = "<group>"; };
 		81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableView.swift; sourceTree = "<group>"; };
-		81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountTableViewController.swift; path = ../../../../../.Trash/CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
+				818136EB202D18430007415D /* CreateAccountTableViewController.swift */,
 				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
-				81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */,
 				81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */,
 				818A576C202B659600761FE0 /* EntryTableViewController.swift */,
 			);
@@ -482,7 +482,6 @@
 				81AA2082202A442B00E80BAC /* FirebaseAPIClient.swift in Sources */,
 				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
 				81AA207A202A43FC00E80BAC /* StorageService.swift in Sources */,
-				81E098C3202D0E7200808808 /* CreateAccountTableViewController.swift in Sources */,
 				817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
@@ -505,6 +504,7 @@
 				81AA207C202A43FC00E80BAC /* DBService+Post.swift in Sources */,
 				81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */,
 				81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */,
+				818136EC202D18430007415D /* CreateAccountTableViewController.swift in Sources */,
 				81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */,
 				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,
 				816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */,

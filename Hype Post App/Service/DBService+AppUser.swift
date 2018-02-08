@@ -16,7 +16,8 @@ extension DBService {
                       "uID": appUser.uID,
                       "userName": appUser.userName,
                       "firstName": appUser.firstName,
-                      "lastName": appUser.lastName,
+                      "lastName": appUser.lastName as Any,
+                      "flags": appUser.flags,
                       "bio": appUser.bio ?? ""])
     }
     
@@ -29,10 +30,11 @@ extension DBService {
             guard let userName = snapshot.childSnapshot(forPath: "userName").value as? String else {return}
             guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else {return}
             guard let lastName = snapshot.childSnapshot(forPath: "lastName").value as? String else {return}
+            guard let flags = snapshot.childSnapshot(forPath: "flags").value as? UInt else {return}
             let imageURL = snapshot.childSnapshot(forPath: "imageURL").value as? String
             let bio = snapshot.childSnapshot(forPath: "bio").value as? String
             
-            let currentAppUser = AppUser(email: email, userName: userName, uID: uID, firstName: firstName, lastName: lastName, imageURL: imageURL, bio: bio)
+            let currentAppUser = AppUser(email: email, userName: userName, uID: uID, firstName: firstName, lastName: lastName, imageURL: imageURL, bio: bio, flags: flags)
             completion(currentAppUser)
         }
     }

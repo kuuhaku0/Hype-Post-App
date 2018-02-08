@@ -20,6 +20,7 @@ class EntryTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+        tableView.isScrollEnabled = false
     }
     
     public static func storyboardInstance() -> EntryTableViewController {

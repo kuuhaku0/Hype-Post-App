@@ -131,8 +131,14 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FeedViewController: FeedTableViewCellDelegate {
-    func feedTableViewCellCommentPressed() {
+    func feedTableViewCellCommentPressed(_ sender: FeedTableViewCell) {
         
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = posts[tappedIndexPath.row]
+        let vc = AddCommentViewController(post: post)
+        vc.modalPresentationStyle = .currentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true) {}
     }
     
     func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {

@@ -21,20 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        var viewController: UIViewController!
-        let tabBar = TabViewController()
-
         if let _ = AuthUserService.getCurrentUser() {
-            viewController = tabBar
+            let tabBar = TabViewController()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = tabBar
+            window?.makeKeyAndVisible()
         } else {
             let entryVC = EntryTableViewController.storyboardInstance()
             let navController =  UINavigationController(rootViewController: entryVC)
-            viewController = navController
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
         }
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+        
 
         return true
     }

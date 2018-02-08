@@ -29,7 +29,6 @@
 		8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFB201FCAE1005BED8E /* Assets.xcassets */; };
 		8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */; };
 		8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */; };
-		81A80C80202B9565002AE019 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A80C7F202B9565002AE019 /* CreateAccountTableViewController.swift */; };
 		81AA2077202A43FC00E80BAC /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA2071202A43FB00E80BAC /* AuthUserService.swift */; };
 		81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA2072202A43FB00E80BAC /* DBService+AppUser.swift */; };
 		81AA2079202A43FC00E80BAC /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA2073202A43FB00E80BAC /* DBService.swift */; };
@@ -53,9 +52,9 @@
 		81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */; };
 		81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A349202CAEA40023B5D8 /* TextfieldView.swift */; };
 		81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */; };
+		81E098C3202D0E7200808808 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
-		81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +87,6 @@
 		8190FAFE201FCAE1005BED8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8190FB00201FCAE1005BED8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8190FB06201FCEAC005BED8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		81A80C7F202B9565002AE019 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		81AA2071202A43FB00E80BAC /* AuthUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
 		81AA2072202A43FB00E80BAC /* DBService+AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+AppUser.swift"; sourceTree = "<group>"; };
 		81AA2073202A43FB00E80BAC /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
@@ -111,9 +109,9 @@
 		81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		81C4A349202CAEA40023B5D8 /* TextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldView.swift; sourceTree = "<group>"; };
 		81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableView.swift; sourceTree = "<group>"; };
+		81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountTableViewController.swift; path = ../../../../../.Trash/CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
-		81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewController.swift; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,7 +230,7 @@
 				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
 				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
 				81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */,
-				81A80C7F202B9565002AE019 /* CreateAccountTableViewController.swift */,
+				81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */,
 				81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */,
 				818A576C202B659600761FE0 /* EntryTableViewController.swift */,
 			);
@@ -246,7 +244,6 @@
 				81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
-				81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -488,13 +485,13 @@
 				81AA2082202A442B00E80BAC /* FirebaseAPIClient.swift in Sources */,
 				81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */,
 				81AA207A202A43FC00E80BAC /* StorageService.swift in Sources */,
+				81E098C3202D0E7200808808 /* CreateAccountTableViewController.swift in Sources */,
 				817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */,
 				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81AA2083202A442B00E80BAC /* AppUser.swift in Sources */,
 				81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */,
-				81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */,
 				817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */,
 				816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */,
 				81AA2084202A442B00E80BAC /* Post.swift in Sources */,
@@ -521,7 +518,6 @@
 				81C2C846202B63A3002BF0CE /* LoginTableViewController.swift in Sources */,
 				81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */,
 				816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */,
-				81A80C80202B9565002AE019 /* CreateAccountTableViewController.swift in Sources */,
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
 				81AA2077202A43FC00E80BAC /* AuthUserService.swift in Sources */,
 				818A576D202B659600761FE0 /* EntryTableViewController.swift in Sources */,

@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logout(_ sender: UIButton) {
         logout()
-    self.navigationController?.popToRootViewController
+//    self.navigationController?.popToRootViewController
     }
     
     @IBAction func cancelButton(_ sender: Any) {

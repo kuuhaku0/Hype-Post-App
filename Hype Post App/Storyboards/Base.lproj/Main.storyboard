@@ -73,35 +73,6 @@
             </objects>
             <point key="canvasLocation" x="-1657" y="-141"/>
         </scene>
-        <!--Add Comment Table View Controller-->
-        <scene sceneID="9yz-p3-2gC">
-            <objects>
-                <tableViewController storyboardIdentifier="AddCommentTableViewController" id="lvP-mK-FYo" customClass="AddCommentTableViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Iy-9J-6Ef">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddCommentCell" id="oW8-t1-sy6">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oW8-t1-sy6" id="Qwu-Cb-s8N">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="lvP-mK-FYo" id="HZg-Va-kDM"/>
-                            <outlet property="delegate" destination="lvP-mK-FYo" id="boM-V7-zXx"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SYJ-bg-Xqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1473" y="-126"/>
-        </scene>
         <!--Title-->
         <scene sceneID="h2T-Fw-Cup">
             <objects>
@@ -137,6 +108,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMZ-3m-Zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="-126.38680659670166"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="wnA-hp-QkV">
+            <objects>
+                <viewController id="g98-aC-Ppe" customClass="AddCommentViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kxp-LK-RrK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Y9h-AK-UN9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixG-7T-zI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1485" y="43"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="k1r-1E-qFx">

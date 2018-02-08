@@ -16,10 +16,7 @@ import SVProgressHUD
 
 class LoginTableViewController: UITableViewController {
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        
-    }
-    
+
     let constant: CGFloat = 32
     var email: String?
     var password: String?
@@ -58,22 +55,19 @@ class LoginTableViewController: UITableViewController {
     }
     
 
-//    func prepareLoginButton() {
-//        let btn = RaisedButton(title: "Log In", titleColor: Color.red.base)
-//        btn.addTarget(self, action: #selector(loggingIn(button:)), for: .touchUpInside)
-//
-//        self.view.layout(btn).width(100).height(constant).bottom(300).center()
-//    }
-//
+
+
+   
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LoginTableViewCell.self, forCellReuseIdentifier: "LoginCell")
-        tableView.isScrollEnabled = false
         setupCPB()
-//        prepareLoginButton()
-
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,6 +83,7 @@ class LoginTableViewController: UITableViewController {
        cell.selectionStyle = .none
         cell.emailField.delegate = self
         cell.passwordField.delegate = self
+        cell.delegate = self
         return cell
         
     }
@@ -118,6 +113,26 @@ extension LoginTableViewController: UITextFieldDelegate {
     
     
 }
+
+extension LoginTableViewController: LoginTableViewCellDelegate{
+    func resetPasswordHasBeenPressed() {
+        let vc = ResetPasswordViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .currentContext
+        present(ResetPasswordViewController(), animated: true) {}
+    }
+    
+    
+    func loginHasBeenPressed() {
+        login(withEmail: email!, password: password!)
+    }
+    
+    
+    
+}
+
+
+
 
 
 extension LoginTableViewController {

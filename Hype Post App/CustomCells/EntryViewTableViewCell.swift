@@ -192,12 +192,7 @@ class EntryViewTableViewCell: UITableViewCell {
                 print("unknown")
             }
         }
-        btn.snp.makeConstraints { (make) in
-            make.top.equalTo(imageLogo.snp.bottom).offset(11)
-            make.size.equalTo(CGSize(width: 130, height: constant))
-            make.right.equalTo(imageLogo.snp.right).offset(-10)
-            
-        }
+       
     }
     
     /// Handle the resign responder button.

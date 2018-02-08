@@ -113,6 +113,15 @@ extension LoginTableViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 0{
+            print(textField.text!)
+            email = textField.text!
+        }else{
+            password = textField.text!
+        }
+        textField.resignFirstResponder()
+    }
     
     
 }

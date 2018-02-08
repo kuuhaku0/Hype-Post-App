@@ -93,13 +93,15 @@ extension DBService {
                 
                 
                 if upVotesDict[uID] as? Bool == true{
-                    print(upVotesDict[uID])
+                    print(upVotes)
                     upVotes -= 1
                     upVotesDict[uID] = false
                     self.delegate?.didUndoUpvote?(self)
                 } else {
+                    print(upVotes)
                     upVotes += 1
                     upVotesDict[uID] = true
+                    print(upVotes)
                     
                     
                     if downVotesDict[uID] != nil {
@@ -109,6 +111,7 @@ extension DBService {
                     }
                     self.delegate?.didUpvotePost?(self)
                 }
+                
                 postObject["upVotedBy"] = upVotesDict
                 postObject["downVotedBy"] = downVotesDict
                 postObject["upVotes"] = upVotes

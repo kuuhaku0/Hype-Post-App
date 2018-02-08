@@ -36,6 +36,7 @@ import FirebaseDatabase
      @objc optional func didDeleteComment(_ databaseService: DBService)
     
     
+    
 }
 
 class DBService: NSObject {
@@ -53,6 +54,7 @@ class DBService: NSObject {
     static let manager = DBService()
     
      var posts = [Post]()
+     var comments = [Comment]()
 
     
      var rootRef: DatabaseReference!

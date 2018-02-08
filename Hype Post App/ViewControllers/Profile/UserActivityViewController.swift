@@ -15,6 +15,10 @@ enum contentTypes {
 
 class UserActivityViewController: UIViewController, UITableViewDelegate {
     // Storyboard is great
+    
+   
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var handleLabel: UILabel!
@@ -43,6 +47,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
             break
         }
     }
+    
+
     @IBAction func editProfileButtonPressed(_ sender: UIButton) {
         //TODO: Present settingsVC
     }
@@ -100,6 +106,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     
     private func setupUI() {
         
+            
         // Header - Profile image
         profileImage.layer.borderWidth = 4
         profileImage.borderColor = .white

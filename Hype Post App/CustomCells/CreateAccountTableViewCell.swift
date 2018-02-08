@@ -29,24 +29,28 @@ class CreateAccountTableViewCell: UITableViewCell {
     
     lazy var firstNameTF: TextField = {
         let lb = TextField()
+        lb.tag = 2
         lb.placeholder = "First "
         return lb
     }()
     
     lazy var lastNameTF: TextField = {
         let lb = TextField()
+        lb.tag = 3
         lb.placeholder = "Last "
         return lb
     }()
     
     lazy var userNameTF: TextField = {
         let lb = TextField()
+        lb.tag = 1
         lb.placeholder = "Username "
         return lb
     }()
     
     lazy var emailField: ErrorTextField = {
         let tf = ErrorTextField()
+        tf.tag = 0
         tf.placeholder = "Email"
         tf.detail = "Error, incorrect email"
         tf.isClearIconButtonEnabled = true
@@ -57,6 +61,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     
     lazy var passwordField: TextField = {
         let tf = TextField()
+        tf.tag = 4
         tf.placeholder = "Password"
         tf.detail = "At least 6 characters"
         tf.clearButtonMode = .whileEditing
@@ -69,6 +74,7 @@ class CreateAccountTableViewCell: UITableViewCell {
     
     lazy var secondPasswordField: TextField = {
         let tf = TextField()
+        tf.tag = 5
         tf.placeholder = "Password"
         tf.detail = "Re-enter password"
         tf.clearButtonMode = .whileEditing
@@ -110,8 +116,7 @@ class CreateAccountTableViewCell: UITableViewCell {
         setupLastNameTF()
         setupPasswordTF()
         setupSecondPasswordTF()
-        prepareCreateAccountButton()
-    }
+        }
     
     
  
@@ -182,22 +187,5 @@ class CreateAccountTableViewCell: UITableViewCell {
             
         }
     }
-    let constant: CGFloat = 32
-    
-    func prepareCreateAccountButton() {
-        let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(handlesSegueintoFeed(button:)), for: .touchUpInside)
-        
-        
-        self.layout(btn).width(100).height(constant).bottom(120).center()
-    }
-    
-    /// Handle the segue into feed once account is created button.
-    @objc
-    internal func handlesSegueintoFeed(button: UIButton) {
-      
-    }
-    
-    
 
 }

@@ -49,16 +49,7 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    
-    
-    
-    
 }
-
-
-
-
 
 //MARK: -FIREBASE METHODS EXTENSION
 extension LoginViewController {

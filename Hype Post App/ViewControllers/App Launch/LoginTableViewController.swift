@@ -82,6 +82,7 @@ class LoginTableViewController: UITableViewController {
         tableView.isScrollEnabled = false
         setupCPB()
         prepareLoginButton()
+
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

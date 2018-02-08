@@ -26,9 +26,9 @@ class CreateAccountTableViewController: UITableViewController {
     
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)
-        button.tintColor = .white
-        button.pulseColor = .white
-        button.backgroundColor = Color.red.base
+        button.tintColor = Color.red.base
+        button.pulseColor = .gray
+        button.backgroundColor = .clear
         button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return button
     }()

@@ -44,6 +44,13 @@ class FeedViewController: UIViewController {
 
     public var posts = [Post]() {
         didSet {
+            recentPosts = posts.reversed()
+            feedTableView.reloadData()
+        }
+    }
+    
+    public var recentPosts = [Post](){
+        didSet  {
             feedTableView.reloadData()
         }
     }
@@ -58,7 +65,7 @@ class FeedViewController: UIViewController {
         setupCPB()
         loadData()
         prepareTabItem()
-//        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
@@ -93,31 +100,64 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
+
+        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
         let post = posts[indexPath.row]
-//        cell.configureCell(post: post)
+        cell.configureCell(post: post)
         
-        cell.clipsToBounds = true
-        if let imgURL = post.imageURL {
-            let img1str = imgURL
-            let url1 = URL(string: img1str)
-            
-            cell.postImage.sd_setImage(with: url1) { (image, error, cache, url) in
-                if let image = image {
-                    let ratio = image.size.width / image.size.height
-                    if ratio > 1 {
-                        let newHeight = cell.frame.width * 0.8 / ratio
-                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
-                    } else {
-                        let newWidth = cell.frame.height * ratio
-                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
-                    }
-                }
-            }
-        }
+//        cell.clipsToBounds = true
+//        if let imgURL = post.imageURL {
+//            let img1str = imgURL
+//            let url1 = URL(string: img1str)
+//
+//            cell.postImage.sd_setImage(with: url1) { (image, error, cache, url) in
+//                if let image = image {
+//                    let ratio = image.size.width / image.size.height
+//                    if ratio > 1 {
+//                        let newHeight = cell.frame.width * 0.8 / ratio
+//                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+//                    } else {
+//                        let newWidth = cell.frame.height * ratio
+//                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+//                    }
+//                }
+//            }
+//        }
         return cell
     }
 }
+
+extension FeedViewController: FeedTableViewCellDelegate {
+  
+    
+    func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = recentPosts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
+    }
+    }
+    
+    
+    func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell) {
+       
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = recentPosts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+        DBService.manager.flagPost(postID: post.postID, userFlaggedById: currentUser.uid)
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
 
 extension FeedViewController {
     

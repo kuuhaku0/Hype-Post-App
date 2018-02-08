@@ -10,7 +10,19 @@ import UIKit
 import Material
 import SnapKit
 
+protocol FeedTableViewCellDelegate : class {
+    func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell)
+    func feedTableViewCellLikedPost(_ sender: FeedTableViewCell)
+}
+
+
+
+
+
+
 class FeedTableViewCell: TableViewCell {
+
+    weak var delegate: FeedTableViewCellDelegate?
 
     fileprivate var card: PresenterCard!
     /// Conent area.
@@ -76,6 +88,7 @@ class FeedTableViewCell: TableViewCell {
     public func configureCell(post: Post) {
         content.text = post.body
         toolbar.title = post.header
+        upvoteButton.title = post.upVotes.description
         toolbar.detail = post.time.components(separatedBy: "+0000").joined()
     }
 }
@@ -113,6 +126,7 @@ extension  FeedTableViewCell {
         spacing.text = " "
         
         upvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-slide-up-filled-50"), tintColor: Color.red.base)
+        upvoteButton.addTarget(self, action: #selector(upvoting), for: .touchUpInside)
         upvoteButton.title = " 12"
         hypeAmount = UILabel()
         hypeAmount.textAlignment = .center
@@ -122,6 +136,14 @@ extension  FeedTableViewCell {
         hypeAmount.textColor = Color.grey.base
         downvoteButton = IconButton(image: #imageLiteral(resourceName: "icons8-down-button-filled-50"), tintColor: Color.red.base)
     }
+    
+    @objc fileprivate func upvoting(){
+        self.delegate?.feedTableViewCellLikedPost(self)
+        
+    }
+    
+    
+    
     
     fileprivate func prepareShareButton() {
         shareButton = IconButton(image: Icon.cm.share, tintColor: Color.grey.darken1)
@@ -134,12 +156,15 @@ extension  FeedTableViewCell {
     
     
     @objc fileprivate func moreMenu(){
+        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
         })
         
         alert.addAction(UIAlertAction(title: "Flag Post", style: .destructive) { _ in
+            self.delegate?.feedTableViewCellDidFlagPost(self)
+
         })
       
         alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in

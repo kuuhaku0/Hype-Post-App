@@ -394,6 +394,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="atDisplayNameLabel" destination="Gbi-jQ-JXA" id="V6F-7o-B6g"/>
                         <outlet property="constraintHeightHeaderImages" destination="ItI-0g-7k2" id="VAn-KY-kz3"/>
                         <outlet property="editProfileButton" destination="zyb-oJ-fOj" id="0tk-Se-Yjc"/>
                         <outlet property="handleLabel" destination="RZD-G6-9fx" id="UeM-iZ-Ck9"/>

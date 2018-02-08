@@ -24,6 +24,7 @@ extension DBService {
         let userRef = usersRef.child(uID)
         
         userRef.observeSingleEvent(of: .value) { (snapshot) in
+            
             guard let email = snapshot.childSnapshot(forPath: "email").value as? String else {return}
             guard let userName = snapshot.childSnapshot(forPath: "userName").value as? String else {return}
             guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else {return}

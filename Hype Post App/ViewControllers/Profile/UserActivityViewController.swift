@@ -19,6 +19,9 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
    //private let dbService = DBService()
     @IBOutlet weak var nameLabel: UILabel!
     
+    
+    @IBOutlet weak var atDisplayNameLabel: UILabel!
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var handleLabel: UILabel!
@@ -85,6 +88,12 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         return hiv
     }()
     
+    var user: AppUser?{
+        didSet{
+            nameLabel.text = user!.firstName
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -94,8 +103,16 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
         //setupSettingsButton()
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
-        let user = AuthUserService.getCurrentUser()
-        nameLabel.text = user!.displayName
+        
+        let currentUser = AuthUserService.getCurrentUser()
+        print("THIS IS THE ID: " + currentUser!.uid)
+        DBService.manager.getAppUser(with: currentUser!.uid) { (appUser) in
+            self.user = appUser
+        }
+        
+        handleLabel.text = currentUser!.displayName
+        atDisplayNameLabel.text = "@" + currentUser!.displayName!
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

@@ -42,18 +42,14 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        resignFirstResponder()
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setupCPB()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
+        
     }
 //
 //    @IBAction func createAccountButtonPressed(_ sender: UIButton) {

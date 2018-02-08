@@ -41,7 +41,6 @@
 		81B739ED2023C30A0033F706 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD90201FCE9100E1AD03 /* FeedViewController.swift */; };
 		81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7973320277636001A002E /* ProfileInfoCell.swift */; };
 		81B7973820278009001A002E /* CreatePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B7973720278009001A002E /* CreatePost.storyboard */; };
-		81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */; };
 		81BA30E320265DFA0097D3BF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA30E220265DFA0097D3BF /* ProfileView.storyboard */; };
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
 		81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C00C312027953B0055C061 /* PopularPosts.storyboard */; };
@@ -96,7 +95,6 @@
 		81AA207E202A442B00E80BAC /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
 		81AA207F202A442B00E80BAC /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		81AA2080202A442B00E80BAC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		81B7973320277636001A002E /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		81B7973720278009001A002E /* CreatePost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePost.storyboard; sourceTree = "<group>"; };
 		81BA30E220265DFA0097D3BF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				8185CF6420211E0000FA496A /* ResetPasswordViewController.swift */,
 				81E62288201FE3AD00A00F93 /* LoginViewController.swift */,
-				81AB1AEF20211212001386D2 /* CreateAccountViewController.swift */,
 				81E098C2202D0E7100808808 /* CreateAccountTableViewController.swift */,
 				81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */,
 				818A576C202B659600761FE0 /* EntryTableViewController.swift */,
@@ -487,7 +484,6 @@
 				81AA207A202A43FC00E80BAC /* StorageService.swift in Sources */,
 				81E098C3202D0E7200808808 /* CreateAccountTableViewController.swift in Sources */,
 				817C8BE2202519AB00660FA8 /* PoppinViewController.swift in Sources */,
-				81B8255620212EAB0077A49B /* CreateAccountViewController.swift in Sources */,
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81AA2083202A442B00E80BAC /* AppUser.swift in Sources */,

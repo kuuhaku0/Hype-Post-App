@@ -57,7 +57,7 @@ class AuthUserService: NSObject {
                     }
                 })
                 
-                let newAppUser = AppUser(email: email, userName: userName, uID: user.uid, firstName:firstName , lastName: lastName, imageURL: nil)
+                let newAppUser = AppUser(email: email, userName: userName, uID: user.uid, firstName:firstName , lastName: lastName, imageURL: nil, bio: nil)
                 DBService.manager.addAppUser(newAppUser)
                 
                 self.delegate?.didCreateUser?(self, user: newAppUser)

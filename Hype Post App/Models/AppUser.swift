@@ -16,8 +16,9 @@ class AppUser: NSObject {
     let firstName: String
     let lastName: String?
     var imageURL: String?
-    init(email: String, userName: String, uID: String, firstName: String, lastName: String?, imageURL: String?) {
-        self.email = email; self.userName = userName; self.uID = uID; self.firstName = firstName; self.lastName = lastName; self.imageURL = imageURL ?? ""
+    var bio: String?
+    init(email: String, userName: String, uID: String, firstName: String, lastName: String?, imageURL: String?, bio: String?) {
+        self.email = email; self.userName = userName; self.uID = uID; self.firstName = firstName; self.lastName = lastName; self.imageURL = imageURL ?? ""; self.bio = bio
     }
 }
 

@@ -16,7 +16,8 @@ extension DBService {
                       "uID": appUser.uID,
                       "userName": appUser.userName,
                       "firstName": appUser.firstName,
-                      "lastName": appUser.lastName ])
+                      "lastName": appUser.lastName,
+                      "bio": appUser.bio ?? ""])
     }
     
     func getAppUser(with uID: String, completion: @escaping (_ user: AppUser) -> Void) {
@@ -28,8 +29,9 @@ extension DBService {
             guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else {return}
             guard let lastName = snapshot.childSnapshot(forPath: "lastName").value as? String else {return}
             let imageURL = snapshot.childSnapshot(forPath: "imageURL").value as? String
+            let bio = snapshot.childSnapshot(forPath: "bio").value as? String
             
-            let currentAppUser = AppUser(email: email, userName: userName, uID: uID, firstName: firstName, lastName: lastName, imageURL: imageURL)
+            let currentAppUser = AppUser(email: email, userName: userName, uID: uID, firstName: firstName, lastName: lastName, imageURL: imageURL, bio: bio)
             completion(currentAppUser)
         }
     }

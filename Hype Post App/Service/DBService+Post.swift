@@ -50,7 +50,7 @@ extension DBService {
     }
     
     func getCurrentUserPosts() -> [Post] {
-        guard let userId = AuthUserService.getCurrentUser()?.uid else { return []}
+        guard let userId = AuthUserService.getCurrentUser()?.uid else {print("cant get current users posts"); return []}
         return posts.filter{ $0.uID ==  userId}
     }
 

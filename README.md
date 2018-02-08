@@ -20,3 +20,7 @@ pod install
 ```
 
 ## Run Project on Mac's iPhone Simulator
+* Open the Hype-Post-App project and open the file that says “Hype-Post-App.xcworkspace“.
+
+* Xcode will load the project for you. Click on “Hype-Post-App” in the left sidebar.
+* On the upper left of Xcode is a play button, click to run project, a iphone simulator will popup and take a few minutes to load

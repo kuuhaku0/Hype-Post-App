@@ -63,9 +63,7 @@ class AuthUserService: NSObject {
                 self.delegate?.didCreateUser?(self, user: newAppUser)
                 // Update authentication user displayName with their email prefix
                 let changeRequest = user.createProfileChangeRequest()
-                let stringArray = user.email!.components(separatedBy: "@")
-                let username = stringArray[0]
-                changeRequest.displayName = username
+                changeRequest.displayName = userName
                 changeRequest.commitChanges(completion: { (error) in
                     if let error = error {
                         print("changeRequest error: \(error.localizedDescription)")

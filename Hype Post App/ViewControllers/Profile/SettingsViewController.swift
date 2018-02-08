@@ -45,8 +45,10 @@ class SettingsViewController: UIViewController {
         FirebaseAPIClient.manager.logOutCurrentUser()
         self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
             self.dismiss(animated: false, completion: {
-                self.present(EntryTableViewController.storyboardInstance(), animated: true )
             })
+        let entryVC = EntryTableViewController.storyboardInstance()
+        let navController =  UINavigationController(rootViewController: entryVC)
+        present(navController, animated: true)
     }
 }
 

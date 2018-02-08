@@ -73,6 +73,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.2)
   - Toucan (1.0.0)
@@ -88,6 +91,7 @@ DEPENDENCIES:
   - ImagePicker
   - Kingfisher (~> 4.0)
   - Material (~> 2.13.5)
+  - SDWebImage (~> 4.0)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
   - Toucan
@@ -112,10 +116,11 @@ SPEC CHECKSUMS:
   Material: ced3fd11882147b135f897ca20227174bb104ad0
   Motion: 85b8777db2e68801c03a5c629e918c35dd184c8d
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   Toucan: 61867fb10948c02e9804280a95eb183e98eac97a
 
-PODFILE CHECKSUM: 885094754b6330dae5ef80be9b4e4214693e6766
+PODFILE CHECKSUM: c3d066302a88a1325ad9cd684ce82ad80c0c0848
 
 COCOAPODS: 1.4.0

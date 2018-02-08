@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import Material
 import SnapKit
+import Kingfisher
+import SDWebImage
 
 class FeedViewController: UIViewController {
   
@@ -34,7 +36,11 @@ class FeedViewController: UIViewController {
         self.present(createPostVC, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var feedTableView: UITableView! {
+        didSet {
+            feedTableView.estimatedRowHeight = 100
+        }
+    }
 
     public var posts = [Post]() {
         didSet {
@@ -53,6 +59,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(createPostButton)
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
@@ -71,12 +78,16 @@ class FeedViewController: UIViewController {
     
     func loadData() {
         DBService.manager.getAllPosts { (posts) in
-            self.posts = posts
+            self.posts = posts.reversed()
         }
     }
 }
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -89,11 +100,29 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        let post = recentPosts[indexPath.row]
+        let post = posts[indexPath.row]
         cell.configureCell(post: post)
-        cell.delegate = self
         
+//        cell.clipsToBounds = true
+//        if let imgURL = post.imageURL {
+//            let img1str = imgURL
+//            let url1 = URL(string: img1str)
+//
+//            cell.postImage.sd_setImage(with: url1) { (image, error, cache, url) in
+//                if let image = image {
+//                    let ratio = image.size.width / image.size.height
+//                    if ratio > 1 {
+//                        let newHeight = cell.frame.width * 0.8 / ratio
+//                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+//                    } else {
+//                        let newWidth = cell.frame.height * ratio
+//                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+//                    }
+//                }
+//            }
+//        }
         return cell
     }
 }

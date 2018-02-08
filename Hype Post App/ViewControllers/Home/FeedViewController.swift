@@ -85,9 +85,9 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -133,15 +133,13 @@ extension FeedViewController: FeedTableViewCellDelegate {
         
     }
     
-    
-  
-    
     func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {
         guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
-        let post = recentPosts[tappedIndexPath.row]
+        let post = posts[tappedIndexPath.row]
         if let currentUser = AuthUserService.getCurrentUser(){
             DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
-    }
+//            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
+        }
     }
     
     
@@ -152,18 +150,8 @@ extension FeedViewController: FeedTableViewCellDelegate {
         if let currentUser = AuthUserService.getCurrentUser(){
         DBService.manager.flagPost(postID: post.postID, userFlaggedById: currentUser.uid)
         }
-        
-        
-        
     }
-    
-    
 }
-
-
-
-
-
 
 extension FeedViewController {
     

@@ -10,6 +10,7 @@ import Foundation
 import FirebaseDatabase
 
 @objc protocol DBServiceDelegate: class {
+    
     @objc optional func getPostsFromUsers(_ DBService:DBService, posts: [Post])
     
     @objc optional func didFailGettingUserPosts(_ databaseService: DBService, error: String)
@@ -50,6 +51,9 @@ class DBService: NSObject {
     }
     
     static let manager = DBService()
+    
+     var posts = [Post]()
+
     
      var rootRef: DatabaseReference!
      var usersRef: DatabaseReference!

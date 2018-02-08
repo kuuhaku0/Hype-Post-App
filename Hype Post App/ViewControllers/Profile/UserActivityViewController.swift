@@ -16,7 +16,7 @@ enum contentTypes {
 class UserActivityViewController: UIViewController, UITableViewDelegate {
     // Storyboard is great
     
-   
+   //private let dbService = DBService()
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var headerView: UIView!
@@ -96,12 +96,18 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
     
     private func loadData() {
-        DBService.manager.getAllPosts { (posts) in
-            self.posts = []
-            self.posts = posts
-        }
+//        DBService.manager.getAllPosts { (posts) in
+//            self.posts = []
+//            self.posts = posts
+//        }
+        self.posts = DBService.manager.getCurrentUserPosts().reversed()//DBService.manager.getPost().filter()
+        
     }
     
     private func setupUI() {

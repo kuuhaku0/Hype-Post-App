@@ -64,6 +64,8 @@ class FeedViewController: UIViewController {
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
         loadData()
+       let user = AuthUserService.getCurrentUser()
+        print(user?.displayName)
         prepareTabItem()
         feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self

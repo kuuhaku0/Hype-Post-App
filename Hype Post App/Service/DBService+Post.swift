@@ -11,6 +11,7 @@ import UIKit
 import FirebaseDatabase
 
 extension DBService {
+    
 
     //Func below gets all the posts using a completion handler
     public func getAllPosts(completion: @escaping (_ posts: [Post]) -> Void) {
@@ -43,18 +44,24 @@ extension DBService {
                 posts.append(thisPost)
 
             }
-            
+            DBService.manager.posts = posts
             completion(posts)
         }
     }
+    
+    func getCurrentUserPosts() -> [Post] {
+        guard let userId = AuthUserService.getCurrentUser()?.uid else { return []}
+        return posts.filter{ $0.uID ==  userId}
+    }
 
     //func below gets posts from a certain user using filter by ID
-    func getPostsByID(from uID: String) {
-        getAllPosts { (allPosts) in
-            let userPosts = allPosts.filter({$0.uID == uID})
-            self.delegate?.getPostsFromUsers?(self, posts: userPosts)
-        }
-    }
+//    func getPostsByID() {
+//        getAllPosts { (allPosts) in
+//            guard let userId = AuthUserService.getCurrentUser()?.uid else { print("userId is nil"); return }
+//            let userPosts = allPosts.filter({$0.uID == userId})
+//            self.delegate?.getPostsFromUsers?(self, posts: userPosts)
+//        }
+//    }
     
     
 

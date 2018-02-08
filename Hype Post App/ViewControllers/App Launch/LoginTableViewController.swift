@@ -24,22 +24,13 @@ class LoginTableViewController: UITableViewController {
     var email: String?
     var password: String?
     
-    lazy var resetPasswordButton: FlatButton = {
-        let button = FlatButton()
-        button.tintColor = .white
-        button.pulseColor = .gray
-        button.titleColor = Color.red.base
-        button.backgroundColor = .clear
-        button.setTitle("Forgot Password", for: .normal)
-        //        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
-        return button
-    }()
+
     
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)
-        button.tintColor = .white
-        button.pulseColor = .white
-        button.backgroundColor = Color.red.base
+        button.tintColor = Color.red.base
+        button.pulseColor = .gray
+        button.backgroundColor = .clear
         button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return button
     }()
@@ -67,13 +58,13 @@ class LoginTableViewController: UITableViewController {
     }
     
 
-    func prepareLoginButton() {
-        let btn = RaisedButton(title: "Log In", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(loggingIn(button:)), for: .touchUpInside)
-        
-        self.view.layout(btn).width(100).height(constant).bottom(300).center()
-    }
-        
+//    func prepareLoginButton() {
+//        let btn = RaisedButton(title: "Log In", titleColor: Color.red.base)
+//        btn.addTarget(self, action: #selector(loggingIn(button:)), for: .touchUpInside)
+//
+//        self.view.layout(btn).width(100).height(constant).bottom(300).center()
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -81,7 +72,7 @@ class LoginTableViewController: UITableViewController {
         tableView.register(LoginTableViewCell.self, forCellReuseIdentifier: "LoginCell")
         tableView.isScrollEnabled = false
         setupCPB()
-        prepareLoginButton()
+//        prepareLoginButton()
 
     }
 

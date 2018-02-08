@@ -49,10 +49,10 @@ class LoginTableViewCell: UITableViewCell{
         let button = FlatButton()
         button.tintColor = .white
         button.pulseColor = .gray
-        button.titleColor = Color.red.base
+        button.titleColor = Color.blue.base
         button.backgroundColor = .clear
         button.setTitle("Forgot Password", for: .normal)
-        //        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         return button
     }()
     
@@ -111,8 +111,8 @@ class LoginTableViewCell: UITableViewCell{
         setupLabel()
         setupEmailTF()
         setupPasswordTF()
-//        setupRPB()
-//        prepareLoginButton()
+        setupRPB()
+        prepareLoginButton()
         
     }
     
@@ -151,7 +151,7 @@ class LoginTableViewCell: UITableViewCell{
     private func setupRPB() {
         addSubview(resetPasswordButton)
         resetPasswordButton.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordField.snp.bottom).offset(40)
+            make.top.equalTo(passwordField.snp.bottom).offset(20)
             make.leading.equalTo(passwordField.snp.leading)
         }
     }

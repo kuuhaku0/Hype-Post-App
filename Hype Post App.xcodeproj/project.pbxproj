@@ -50,6 +50,9 @@
 		81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */; };
 		81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */; };
 		81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */; };
+		81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */; };
+		81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A349202CAEA40023B5D8 /* TextfieldView.swift */; };
+		81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */; };
@@ -105,6 +108,9 @@
 		81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewCell.swift; sourceTree = "<group>"; };
 		81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewTableViewCell.swift; sourceTree = "<group>"; };
 		81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
+		81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		81C4A349202CAEA40023B5D8 /* TextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldView.swift; sourceTree = "<group>"; };
+		81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableView.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
+				81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
 				81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */,
@@ -289,6 +296,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		81C4A34D202CAFDC0023B5D8 /* AddCommentViews */ = {
+			isa = PBXGroup;
+			children = (
+				81C4A349202CAEA40023B5D8 /* TextfieldView.swift */,
+				81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */,
+			);
+			path = AddCommentViews;
+			sourceTree = "<group>";
+		};
 		CF7CE94B2024FECC00677448 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +313,10 @@
 				81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */,
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
+				81C4A34D202CAFDC0023B5D8 /* AddCommentViews */,
+
 				817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */,
+
 				816DCFCC2028241400D263D9 /* Profile */,
 			);
 			path = CustomCells;
@@ -476,6 +495,7 @@
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81AA2083202A442B00E80BAC /* AppUser.swift in Sources */,
+				81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */,
 				81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */,
 				817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */,
 				816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */,
@@ -487,10 +507,15 @@
 				81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
+
+				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
+				81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */,
+
 				816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
 				81AA207C202A43FC00E80BAC /* DBService+Post.swift in Sources */,
+				81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */,
 				81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */,
 				81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */,
 				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,

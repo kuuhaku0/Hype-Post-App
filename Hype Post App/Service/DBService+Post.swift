@@ -90,13 +90,17 @@ extension DBService {
                 var downVotesDict = postObject["downVotedBy"] as? [String: Any] ?? ["no":"data"]
                 var upVotes = postObject["upVotes"] as? Int ?? 0
                 var downVotes = postObject["downVotes"] as? Int ?? 0
-                if upVotesDict[uID] != nil {
+                
+                
+                if upVotesDict[uID] as? Bool == true{
+                    print(upVotesDict[uID])
                     upVotes -= 1
-                    upVotesDict.removeValue(forKey: uID)
+                    upVotesDict[uID] = false
                     self.delegate?.didUndoUpvote?(self)
                 } else {
                     upVotes += 1
                     upVotesDict[uID] = true
+                    
                     
                     if downVotesDict[uID] != nil {
                         downVotes -= 1
@@ -105,7 +109,7 @@ extension DBService {
                     }
                     self.delegate?.didUpvotePost?(self)
                 }
-                postObject["uoVotedBy"] = upVotesDict
+                postObject["upVotedBy"] = upVotesDict
                 postObject["downVotedBy"] = downVotesDict
                 postObject["upVotes"] = upVotes
                 postObject["downVotes"] = downVotes
@@ -141,7 +145,7 @@ extension DBService {
                     }
                     self.delegate?.didDownvotePost?(self)
                 }
-                postObject["uoVotedBy"] = upVotesDict
+                postObject["upVotedBy"] = upVotesDict
                 postObject["downVotedBy"] = downVotesDict
                 postObject["upVotes"] = upVotes
                 postObject["downVotes"] = downVotes

@@ -10,10 +10,24 @@ import UIKit
 import SnapKit
 import Material
 
+protocol EntryViewTableViewCellDelegate : class {
+    func EntryViewTableViewCellSignInPressed()
+    func EntryViewTableViewCellCreateAccountPressed()
+}
 
 class EntryViewTableViewCell: UITableViewCell {
 
+    weak var delegate: EntryViewTableViewCellDelegate?
+
     let constant: CGFloat = 32
+    
+    @objc
+    internal func handleSegueToLogInButton(button: UIButton) {
+        let vc = LoginTableViewController()
+        self.delegate?.EntryViewTableViewCellSignInPressed()
+    }
+    
+   
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -32,9 +46,9 @@ class EntryViewTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-//        prepareSignInButton()
-//        prepareCreateAccountButton()
         setupImageView()
+        prepareCreateAccountButton()
+        prepareSignInButton()
 //        setupLabel()
     }
     
@@ -77,6 +91,50 @@ class EntryViewTableViewCell: UITableViewCell {
         }
     }
     
+    private func prepareSignInButton() {
+        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
+        btn.addTarget(self, action: #selector(handleSegueToLogInButton(button:)), for: .touchUpInside)
+        addSubview(btn)
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 130, height: constant))
+                    make.left.equalTo(imageLogo.snp.left).offset(10)
+                    
+                }
+                print("iPhone 5 or 5S or 5C")
+            case 1334:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                        make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.left.equalTo(imageLogo.snp.left).offset(10)
+                    
+                }
+                print("iPhone 6/6S/7/8")
+            case 2208:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.left.equalTo(imageLogo.snp.left).offset(10)
+                    
+                }
+                print("iPhone 6+/6S+/7+/8+")
+            case 2436:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.left.equalTo(imageLogo.snp.left).offset(10)
+                    
+                }
+                print("iPhone X")
+            default:
+                print("unknown")
+            }
+        }
+    }
+
 //    
 //    private func prepareSignInButton() {
 //        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
@@ -92,18 +150,60 @@ class EntryViewTableViewCell: UITableViewCell {
 //        
 //    }
 //    
-//    private func prepareCreateAccountButton() {
-//        let btn = RaisedButton(title: "Create Account", titleColor: Color.blue.base)
-//        btn.addTarget(self, action: #selector(handleSegueToCreateAccountButton(button:)), for: .touchUpInside)
-//        
-//        
-//        self.layout(btn).width(150).height(constant).bottom(300).right(40)
-//    }
-//    
-//    /// Handle the resign responder button.
-//    @objc
-//    internal func handleSegueToCreateAccountButton(button: UIButton) {
-//        
-//    }
+    private func prepareCreateAccountButton() {
+        let btn = RaisedButton(title: "Create Account", titleColor: Color.blue.base)
+        btn.addTarget(self, action: #selector(handleSegueToCreateAccountButton(button:)), for: .touchUpInside)
+        addSubview(btn)
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 130, height: constant))
+                    make.right.equalTo(imageLogo.snp.right).offset(-10)
+                    
+                }
+                print("iPhone 5 or 5S or 5C")
+            case 1334:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.right.equalTo(imageLogo.snp.right).offset(-10)
+                    
+                }
+                print("iPhone 6/6S/7/8")
+            case 2208:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.right.equalTo(imageLogo.snp.right).offset(-10)
+                    
+                }
+                print("iPhone 6+/6S+/7+/8+")
+            case 2436:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(imageLogo.snp.bottom).offset(11)
+                    make.size.equalTo(CGSize(width: 150, height: constant))
+                    make.right.equalTo(imageLogo.snp.right).offset(-10)
+                    
+                }
+                print("iPhone X")
+            default:
+                print("unknown")
+            }
+        }
+        btn.snp.makeConstraints { (make) in
+            make.top.equalTo(imageLogo.snp.bottom).offset(11)
+            make.size.equalTo(CGSize(width: 130, height: constant))
+            make.right.equalTo(imageLogo.snp.right).offset(-10)
+            
+        }
+    }
+    
+    /// Handle the resign responder button.
+    @objc
+    internal func handleSegueToCreateAccountButton(button: UIButton) {
+        self.delegate?.EntryViewTableViewCellCreateAccountPressed()
+    }
 
 }

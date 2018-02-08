@@ -13,6 +13,7 @@ import SnapKit
 protocol FeedTableViewCellDelegate : class {
     func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell)
     func feedTableViewCellLikedPost(_ sender: FeedTableViewCell)
+    func feedTableViewCellCommentPressed()
 }
 
 

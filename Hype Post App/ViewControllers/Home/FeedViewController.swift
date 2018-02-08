@@ -99,6 +99,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FeedViewController: FeedTableViewCellDelegate {
+    func feedTableViewCellCommentPressed() {
+        
+    }
+    
+    
   
     
     func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {

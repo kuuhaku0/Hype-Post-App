@@ -11,7 +11,6 @@
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
 		813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */; };
 		81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */; };
-		8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152AD952020D7EC00E1AD03 /* CommentViewController.swift */; };
 		816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFAE2027C73800D263D9 /* SettingsViewController.swift */; };
 		816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */; };
 		816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFB62027E1B300D263D9 /* UserActivityCollectionViewCell.swift */; };
@@ -52,6 +51,7 @@
 		81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
+		81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,6 @@
 		813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		8152AD952020D7EC00E1AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		816DCFAE2027C73800D263D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
 		816DCFB62027E1B300D263D9 /* UserActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
+		81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewController.swift; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
 		F6D8943D9843F91A4B1C7D1F /* Pods-Hype Post App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,7 +237,7 @@
 				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
-				8152AD952020D7EC00E1AD03 /* CommentViewController.swift */,
+				81FC12A4202C224A00EB87F4 /* AddCommentTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -471,6 +471,7 @@
 				8185CF6520211E0000FA496A /* ResetPasswordViewController.swift in Sources */,
 				81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */,
 				81AA2083202A442B00E80BAC /* AppUser.swift in Sources */,
+				81FC12A5202C224A00EB87F4 /* AddCommentTableViewController.swift in Sources */,
 				817C8BDC20250BAB00660FA8 /* ProfileViewController.swift in Sources */,
 				816DCFB12027D08A00D263D9 /* UserActivityViewController.swift in Sources */,
 				81AA2084202A442B00E80BAC /* Post.swift in Sources */,
@@ -480,7 +481,6 @@
 				81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
-				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
 				816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
@@ -640,9 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-
 				DEVELOPMENT_TEAM = 3B9BY3LUJD;
-
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -662,9 +660,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-
 				DEVELOPMENT_TEAM = 3B9BY3LUJD;
-
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

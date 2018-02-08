@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class AddCommentTableViewCell: UITableViewCell {
 
@@ -24,8 +25,8 @@ class AddCommentTableViewCell: UITableViewCell {
         return lb
     }()
     
-    lazy var commentTF: UITextField = {
-        let tf = UITextField()
+    lazy var commentTF: TextField = {
+        let tf = TextField()
         tf.font = UIFont.systemFont(ofSize: 20, weight: .light)
         tf.allowsEditingTextAttributes = false
         return tf
@@ -33,7 +34,7 @@ class AddCommentTableViewCell: UITableViewCell {
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
-        super.init(style: style, reuseIdentifier: "CommentCell")
+        super.init(style: style, reuseIdentifier: "AddCommentCell")
         commonInit()
     }
     

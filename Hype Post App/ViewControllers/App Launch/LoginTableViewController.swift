@@ -16,6 +16,10 @@ import SVProgressHUD
 
 class LoginTableViewController: UITableViewController {
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
     let constant: CGFloat = 32
     var email: String?
     var password: String?

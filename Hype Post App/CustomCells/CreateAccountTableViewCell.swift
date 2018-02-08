@@ -11,12 +11,21 @@ import Material
 import SnapKit
 import Firebase
 
+protocol CreateAccountTableViewCellDelegate: class{
+    func createAccountButtonPressed()
+}
+
+
+
 class CreateAccountTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         firstNameTF.resignFirstResponder()
         lastNameTF.resignFirstResponder()
     }
+    
+    weak var delegate: CreateAccountTableViewCellDelegate?
+    
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
@@ -85,6 +94,17 @@ class CreateAccountTableViewCell: UITableViewCell {
         return tf
     }()
     
+    lazy var createButton: RaisedButton = {
+        let btn = RaisedButton(title: "Create", titleColor: Color.red.base)
+        btn.addTarget(self, action: #selector(segueToLoginAfterCreate), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func segueToLoginAfterCreate(){
+        self.delegate?.createAccountButtonPressed()
+    }
+    
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "CreateAccountCell")
@@ -116,6 +136,7 @@ class CreateAccountTableViewCell: UITableViewCell {
         setupLastNameTF()
         setupPasswordTF()
         setupSecondPasswordTF()
+        prepareCreateAccountButton()
         }
     
     
@@ -185,6 +206,15 @@ class CreateAccountTableViewCell: UITableViewCell {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(100)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             
+        }
+    }
+    
+    private func prepareCreateAccountButton() {
+        addSubview(createButton)
+        createButton.snp.makeConstraints { (make) in
+            make.top.equalTo(secondPasswordField).offset(60)
+            make.centerX.equalTo(safeAreaLayoutGuide)
+            make.width.equalTo(safeAreaLayoutGuide).multipliedBy(0.25)
         }
     }
 

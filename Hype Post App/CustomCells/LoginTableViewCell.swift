@@ -10,23 +10,14 @@ import UIKit
 import SnapKit
 import Material
 
-class LoginTableViewCell: UITableViewCell, UITextFieldDelegate {
+class LoginTableViewCell: UITableViewCell{
 
     override func awakeFromNib() {
-        self.emailField.delegate = self
-        self.passwordField.delegate = self
+//        self.emailField.delegate = self
+//        self.passwordField.delegate = self
     }
     
-    var infoDictionary = [String:String]()
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == emailField{
-            infoDictionary["email"] = textField.text!
-        }
-        else{
-            infoDictionary["password"] = textField.text!
-        }
-    }
     
     
     let constant: CGFloat = 32
@@ -125,9 +116,7 @@ class LoginTableViewCell: UITableViewCell, UITextFieldDelegate {
         
     }
     
-    func getEmailAndPassword() -> [String:String]{
-        return infoDictionary
-    }
+ 
     
     
     

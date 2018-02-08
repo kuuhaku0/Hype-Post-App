@@ -19,6 +19,7 @@ pod 'Material', '~> 2.13.5'
 pod 'Toucan'
 pod 'HMSegmentedControl'
 pod 'ImagePicker'
+pod 'SDWebImage', '~> 4.0'
 
 
  swift4pods = ['Material']

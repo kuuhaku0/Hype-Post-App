@@ -16,6 +16,10 @@ import SVProgressHUD
 
 class LoginTableViewController: UITableViewController {
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
     let constant: CGFloat = 32
     var email: String?
     var password: String?
@@ -77,7 +81,6 @@ class LoginTableViewController: UITableViewController {
         tableView.register(LoginTableViewCell.self, forCellReuseIdentifier: "LoginCell")
         setupCPB()
         prepareLoginButton()
-    
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -109,6 +112,15 @@ extension LoginTableViewController: UITextFieldDelegate {
         }
         textField.resignFirstResponder()
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 0{
+            print(textField.text!)
+            email = textField.text!
+        }else{
+            password = textField.text!
+        }
+        textField.resignFirstResponder()
     }
     
     

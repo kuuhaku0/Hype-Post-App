@@ -14,7 +14,7 @@ import FirebaseStorage
 extension StorageService {
     func storeImage(_ image: UIImage, imageID: String) -> StorageUploadTask? {
         let ref = getImagesRef().child(imageID)
-        guard let resizedImage = Toucan(image: image).resize(CGSize(width: 100, height: 100)).image, let imageData = UIImagePNGRepresentation(resizedImage) else {
+        guard let resizedImage = Toucan(image: image).resize(CGSize(width: 500, height: 500)).image, let imageData = UIImageJPEGRepresentation(resizedImage, 1.0) else {
             return nil
         }
         let metaData = StorageMetadata()

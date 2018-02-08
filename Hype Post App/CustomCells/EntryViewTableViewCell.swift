@@ -113,7 +113,7 @@ class EntryViewTableViewCell: UITableViewCell {
                     
                 }
                 print("iPhone 6/6S/7/8")
-            case 2208:
+            case 1920,2208:
                 btn.snp.makeConstraints { (make) in
                     make.top.equalTo(imageLogo.snp.bottom).offset(11)
                     make.size.equalTo(CGSize(width: 150, height: constant))
@@ -126,7 +126,6 @@ class EntryViewTableViewCell: UITableViewCell {
                     make.top.equalTo(imageLogo.snp.bottom).offset(11)
                     make.size.equalTo(CGSize(width: 150, height: constant))
                     make.left.equalTo(imageLogo.snp.left).offset(10)
-                    
                 }
                 print("iPhone X")
             default:
@@ -172,12 +171,11 @@ class EntryViewTableViewCell: UITableViewCell {
                     
                 }
                 print("iPhone 6/6S/7/8")
-            case 2208:
+            case 1920,2208:
                 btn.snp.makeConstraints { (make) in
                     make.top.equalTo(imageLogo.snp.bottom).offset(11)
                     make.size.equalTo(CGSize(width: 150, height: constant))
                     make.right.equalTo(imageLogo.snp.right).offset(-10)
-                    
                 }
                 print("iPhone 6+/6S+/7+/8+")
             case 2436:

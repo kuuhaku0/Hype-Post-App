@@ -314,9 +314,7 @@
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
 				81C4A34D202CAFDC0023B5D8 /* AddCommentViews */,
-
 				817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */,
-
 				816DCFCC2028241400D263D9 /* Profile */,
 			);
 			path = CustomCells;
@@ -507,10 +505,7 @@
 				81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
-
-				8152AD962020D7EC00E1AD03 /* CommentViewController.swift in Sources */,
 				81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */,
-
 				816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */,
 				8190FAF5201FCAE1005BED8E /* AppDelegate.swift in Sources */,
 				81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */,
@@ -605,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -656,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -671,7 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -691,7 +686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -83,7 +83,7 @@ class FeedTableViewCell: TableViewCell {
     
     public func configureCell(post: Post) {
         content.text = post.body
-        toolbar.title = post.header
+        toolbar.title = post.byUser
         upvoteButton.title = post.upVotes.description
         toolbar.detail = post.time.components(separatedBy: "+0000").joined()
     }

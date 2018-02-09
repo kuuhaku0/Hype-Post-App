@@ -38,7 +38,8 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView! {
         didSet {
-            feedTableView.estimatedRowHeight = 100
+            feedTableView.estimatedRowHeight = 400
+            feedTableView.rowHeight = UITableViewAutomaticDimension
         }
     }
 
@@ -55,6 +56,9 @@ class FeedViewController: UIViewController {
         }
     }
     
+    var user: AppUser?
+    let currentUser = AuthUserService.getCurrentUser()
+
     var postsRef: DatabaseReference!
 
     override func viewDidLoad() {
@@ -64,14 +68,16 @@ class FeedViewController: UIViewController {
         view.layout(createPostButton).width(55).height(55)
         setupCPB()
         loadData()
-       let user = AuthUserService.getCurrentUser()
-        print(user?.displayName)
         prepareTabItem()
-        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+//        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none
         feedTableView.backgroundColor = Color.grey.lighten4
+        
+        DBService.manager.getAppUser(with: currentUser!.uid) { (appUser) in
+            self.user = appUser
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,36 +109,53 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
-        cell.delegate = self
+//        cell.delegate = self
         
-//        cell.clipsToBounds = true
-//        if let imgURL = post.imageURL {
-//            let img1str = imgURL
-//            let url1 = URL(string: img1str)
-//
-//            cell.postImage.sd_setImage(with: url1) { (image, error, cache, url) in
+        cell.clipsToBounds = true
+        if let imgURL = post.imageURL {
+            let img1str = imgURL
+            let url1 = URL(string: img1str)
+//            cell.presenterView.sd_setImage(with: url1) { (image, error, cache, url) in
 //                if let image = image {
 //                    let ratio = image.size.width / image.size.height
 //                    if ratio > 1 {
-//                        let newHeight = cell.frame.width * 0.8 / ratio
-//                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+//                        let newHeight = cell.frame.width / ratio
+//                        cell.presenterView.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+//                        self.refreshTableView()
 //                    } else {
 //                        let newWidth = cell.frame.height * ratio
-//                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+//                        cell.presenterView.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+//                        self.refreshTableView()
 //                    }
 //                }
 //            }
-//        }
+        }
+        
         return cell
+    }
+    
+    func refreshTableView() {
+        feedTableView.beginUpdates()
+        feedTableView.setNeedsDisplay()
+        feedTableView.endUpdates()
     }
 }
 
-extension FeedViewController: FeedTableViewCellDelegate {
-    func feedTableViewCellCommentPressed(_ sender: FeedTableViewCell) {
+//extension FeedViewController: FeedTableViewCellDelegate {
+//    func feedTableViewCellCommentPressed(_ sender: FeedTableViewCell) {
+//=======
+extension FeedViewController: DynamicFeedTableViewCellDelegate {
+
+    
+    
+    func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell) {
         
+    }
+    
+    func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell) {
         guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
         let post = posts[tappedIndexPath.row]
         let vc = AddCommentViewController(post: post)
@@ -141,17 +164,17 @@ extension FeedViewController: FeedTableViewCellDelegate {
         present(vc, animated: true) {}
     }
     
-    func feedTableViewCellLikedPost(_ sender: FeedTableViewCell) {
+    func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell) {
         guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
         let post = posts[tappedIndexPath.row]
         if let currentUser = AuthUserService.getCurrentUser(){
             DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
-//            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
+            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
         }
     }
     
     
-    func feedTableViewCellDidFlagPost(_ sender: FeedTableViewCell) {
+    func dynamicFeedTableViewCellDidFlagPost(_ sender: DynamicFeedTableViewCell) {
        
         guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
         let post = recentPosts[tappedIndexPath.row]
@@ -159,6 +182,7 @@ extension FeedViewController: FeedTableViewCellDelegate {
         DBService.manager.flagPost(postID: post.postID, userFlaggedById: currentUser.uid)
         }
     }
+    
 }
 
 extension FeedViewController {
@@ -171,7 +195,7 @@ extension FeedViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
     }
-    
+
     fileprivate func prepareTabItem() {
         tabItem.title = "recent"
     }

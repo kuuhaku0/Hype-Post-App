@@ -25,6 +25,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var hiddenLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var segmentedView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -112,7 +113,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         
         handleLabel.text = currentUser!.displayName
         atDisplayNameLabel.text = "@" + currentUser!.displayName!
-        
+        hiddenLabel.text = "@" + currentUser!.displayName!
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -130,7 +131,6 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     
     private func setupUI() {
         
-            
         // Header - Profile image
         profileImage.layer.borderWidth = 4
         profileImage.borderColor = .white

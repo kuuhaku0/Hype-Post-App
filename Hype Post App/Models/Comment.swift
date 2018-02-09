@@ -16,10 +16,11 @@ class Comment: NSObject {
     var downVotes: Int = 0
     var flags: UInt = 0
     var time: Double = Date.timeIntervalSinceReferenceDate
-    init(commentID: String, uID: String, postID: String, text: String, upVotes: Int, downVotes: Int, time: Double, flags: UInt) {
-        self.commentID = commentID; self.uID = uID; self.postID = postID; self.text = text; self.upVotes = upVotes; self.downVotes = downVotes; self.time = time; self.flags = flags
+    var userName: String
+    init(commentID: String, uID: String, postID: String, text: String, upVotes: Int, downVotes: Int, time: Double, flags: UInt, userName: String) {
+        self.commentID = commentID; self.uID = uID; self.postID = postID; self.text = text; self.upVotes = upVotes; self.downVotes = downVotes; self.time = time; self.flags = flags; self.userName = userName
     }
-    init (commentID: String, uID: String, postID: String, text: String) {
-        self.commentID = commentID; self.uID = uID; self.postID = postID; self.text = text
+    init (commentID: String, uID: String, postID: String, text: String, userName: String) {
+        self.commentID = commentID; self.uID = uID; self.postID = postID; self.text = text; self.userName = userName
     }
 }

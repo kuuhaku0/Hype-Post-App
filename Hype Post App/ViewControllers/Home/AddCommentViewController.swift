@@ -95,7 +95,8 @@ class AddCommentViewController: UIViewController {
             self.textfieldView.textfield.snp.remakeConstraints({ (make) in
                 make.leading.equalTo(view.snp.leading)
                 make.trailing.equalTo(view.snp.trailing)
-                make.height.equalTo(60)
+                make.height.equalTo(50)
+                make.width.equalTo(view.snp.width)//.multipliedBy(0.7)
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset( -keyboardHeight - 8.0)
             })
         }
@@ -106,7 +107,8 @@ class AddCommentViewController: UIViewController {
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(60)
+            make.width.equalTo(view.snp.width)//.multipliedBy(0.7)
+            make.height.equalTo(50)
         }
     }
 }
@@ -131,8 +133,6 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
         let comment = comments[indexPath.row]
         cell.userNameLabel.text = comment.text
-       
-        
         return cell
         
     }

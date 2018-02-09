@@ -9,16 +9,20 @@
 import UIKit
 
 class PoppinViewController: UIViewController {
-
-    var posts = [Post]().sorted { (current, next) -> Bool in
-            current.upVotes > next.upVotes
-        } {
+    
+    var posts = [Post]() {
         didSet {
             tableView.reloadData()
+            print(posts)
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.estimatedRowHeight = 400
+            tableView.rowHeight = UITableViewAutomaticDimension
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         constrainTableView()
@@ -26,15 +30,11 @@ class PoppinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.hidesBarsOnSwipe = true
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.hidesBarsOnSwipe = true
-        
-        tableView.dataSource = self
-        prepareTabItem()
         loadData()
-        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "PopularCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(DynamicFeedTableViewCell.self, forCellReuseIdentifier: "PopularCell")
+        prepareTabItem()
     }
     
     
@@ -46,7 +46,8 @@ class PoppinViewController: UIViewController {
     
     private func loadData() {
         DBService.manager.getAllPosts { (posts) in
-            self.posts = posts
+            self.posts = posts.reversed()
+            print(posts)
         }
     }
     
@@ -60,14 +61,15 @@ class PoppinViewController: UIViewController {
     }
 }
 
-extension PoppinViewController: UITableViewDataSource {
+extension PoppinViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath) as! FeedTableViewCell
-        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath) as! DynamicFeedTableViewCell
+        let post = self.posts[indexPath.row]
+        print("IN TABLEVIEW:\(post.byUser)")
         cell.configureCell(post: post)
         return cell
     }
@@ -77,4 +79,38 @@ extension PoppinViewController{
         fileprivate func prepareTabItem() {
             tabItem.title = "poppin'"
         }
+}
+
+extension PoppinViewController: DynamicFeedTableViewCellDelegate {
+    func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell) {
+        
+    }
+    
+    func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        let post = posts[tappedIndexPath.row]
+        let vc = AddCommentViewController(post: post)
+        vc.modalPresentationStyle = .currentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true) {}
+    }
+    
+    func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        let post = posts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
+            tableView.reloadRows(at: [tableView.indexPath(for: sender)!], with: .none)
+        }
+    }
+    
+    
+    func dynamicFeedTableViewCellDidFlagPost(_ sender: DynamicFeedTableViewCell) {
+        
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        let post = posts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            DBService.manager.flagPost(postID: post.postID, userFlaggedById: currentUser.uid)
+        }
+    }
 }

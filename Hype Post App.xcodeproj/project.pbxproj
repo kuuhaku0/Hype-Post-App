@@ -248,12 +248,12 @@
 		81BA30E8202663C70097D3BF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
 				816DCFAE2027C73800D263D9 /* SettingsViewController.swift */,
 				816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */,
 				816DCFC7202819A400D263D9 /* HMSegmentedControl.h */,
 				816DCFC8202819A500D263D9 /* HMSegmentedControl.m */,
 				816DCFC6202819A300D263D9 /* Hype Post App-Bridging-Header.h */,
+				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";

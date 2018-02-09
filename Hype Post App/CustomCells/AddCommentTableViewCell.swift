@@ -25,10 +25,11 @@ class AddCommentTableViewCell: UITableViewCell {
         return lb
     }()
     
-    lazy var commentTF: TextField = {
-        let tf = TextField()
+    lazy var commentTF: UILabel = {
+        let tf = UILabel()
         tf.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        tf.allowsEditingTextAttributes = false
+        tf.numberOfLines = 0
+//        tf.allowsEditingTextAttributes = false
         return tf
     }()
     

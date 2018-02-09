@@ -99,6 +99,7 @@ class DynamicFeedTableViewCell: TableViewCell {
         username.text = post.byUser
         postBody.text = post.header
         postTitle.text = post.body
+
         
 //        if let imgURL = post.imageURL {
 //            let img1str = imgURL

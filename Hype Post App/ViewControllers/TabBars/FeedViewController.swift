@@ -187,6 +187,15 @@ extension FeedViewController: DynamicFeedTableViewCellDelegate {
         }
     }
     
+    func dynamicFeedTableViewCellDidFlagUser(_ sender: DynamicFeedTableViewCell) {
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = recentPosts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            if let user = self.user {
+                DBService.manager.flagUser(flaggedUID: user.uID, userFlaggedById: currentUser.uid)
+            } }
+    }
+    
 }
 
 extension FeedViewController {

@@ -48,11 +48,7 @@ class DynamicFeedTableViewCell: TableViewCell {
     }
     
     // Content
-    @IBOutlet weak var postImage: UIImageView! {
-        didSet {
-            postImage.image = #imageLiteral(resourceName: "fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962")
-        }
-    }
+    @IBOutlet weak var postImage: UIImageView!
     
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postBody: UILabel!
@@ -101,8 +97,18 @@ class DynamicFeedTableViewCell: TableViewCell {
         upVoteCountLabel.text = String(post.upVotes)
         timeLabel.text = post.time.components(separatedBy: "+0000").joined()
         username.text = post.byUser
-        postBody.text = post.body
-        postTitle.text = post.header
+        postBody.text = post.header
+        postTitle.text = post.body
+        
+//        if let imgURL = post.imageURL {
+//            let img1str = imgURL
+//            let url1 = URL(string: img1str)
+//            postImage.kf.setImage(with: url1) { (image, error, cache, url) in
+//                self.postImage.kf.indicatorType = .activity
+//            }
+//        }
+        
+        delegate?.refreshTableView()
     }
     
     fileprivate func upvoting(){
@@ -117,6 +123,7 @@ class DynamicFeedTableViewCell: TableViewCell {
         alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in})
         alert.show()
     }
+    
     // Delgate method
     func setCustomImage(image: UIImage) {
         let aspect = image.size.width / image.size.height
@@ -124,10 +131,11 @@ class DynamicFeedTableViewCell: TableViewCell {
         constraint.priority = UILayoutPriority(rawValue: 999)
         aspectConstraint = constraint
         postImage.image = image
-        
         // call this to refresh table
         delegate?.refreshTableView()
     }
+    
+    
 }
 
 extension UIAlertController {

@@ -13,7 +13,6 @@ class PoppinViewController: UIViewController {
     var posts = [Post]() {
         didSet {
             tableView.reloadData()
-            print(posts)
         }
     }
     
@@ -71,6 +70,26 @@ extension PoppinViewController: UITableViewDataSource, UITableViewDelegate {
         let post = self.posts[indexPath.row]
         print("IN TABLEVIEW:\(post.byUser)")
         cell.configureCell(post: post)
+        cell.delegate = self
+        if let imgURL = post.imageURL {
+            let img1str = imgURL
+            let url1 = URL(string: img1str)
+            cell.postImage.kf.setImage(with: url1) { (image, error, cache, url) in
+                if let image = image {
+                    let ratio = image.size.width / image.size.height
+                    if ratio > 1 {
+                        let newHeight = cell.frame.width / ratio
+                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+                        self.refreshTableView()
+                    } else {
+                        let newWidth = cell.frame.height * ratio
+                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+                        self.refreshTableView()
+                    }
+                }
+            }
+        }
+        
         return cell
     }
 }
@@ -82,6 +101,12 @@ extension PoppinViewController{
 }
 
 extension PoppinViewController: DynamicPopularTableViewCellDelegate {
+    func refreshTableView() {
+        tableView.beginUpdates()
+        tableView.setNeedsDisplay()
+        tableView.endUpdates()
+    }
+    
     func dynamicPopularTableViewCellDislikedPist(_ sender: DynamicPopularTableViewCell ) {
         
     }

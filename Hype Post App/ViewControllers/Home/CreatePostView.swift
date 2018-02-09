@@ -14,11 +14,16 @@ class CreatePostView: UIView {
     
     lazy var closeButton: FABButton = {
         let button = FABButton(image: Icon.cm.close)
-        button.tintColor = Color.red.base
+        button.tintColor = Color.darkGray
         button.pulseColor = .gray
         button.backgroundColor = .clear
-        //        button.addTarget(self, action: #selector(createPost), for: .touchUpInside)
         return button
+    }()
+    
+    lazy var line: UIView = {
+        let line = UIView()
+        line.backgroundColor = .gray
+        return line
     }()
     
     lazy var postButton: RaisedButton = {
@@ -29,7 +34,6 @@ class CreatePostView: UIView {
         button.layer.cornerRadius = 17
         return button
     }()
-    
     
     lazy var userImage: UIImageView = {
         let iv = UIImageView()
@@ -51,6 +55,7 @@ class CreatePostView: UIView {
         let tf = UITextView()
         tf.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         tf.backgroundColor = .white
+//        tf.sc = false
         //        tf.layer.cornerRadius = 20
         //        tf.text = "Experience the Hype"
         //        tf.textColor = UIColor.white
@@ -107,6 +112,14 @@ class CreatePostView: UIView {
         prepareCommentTV()
         preparePostImage()
         prepareCameraButton()
+
+        addSubview(line)
+        line.snp.makeConstraints { (make) in
+            make.leading.equalTo(userImage.snp.trailing).offset(6)
+            make.trailing.equalTo(self.snp.trailing).offset(-16)
+            make.top.equalTo(postTitle.snp.bottom).offset(2)
+            make.height.equalTo(0.2)
+        }
     }
     
     private func setupCB() {
@@ -152,8 +165,8 @@ class CreatePostView: UIView {
         addSubview(commentTV)
         commentTV.snp.makeConstraints({ (make) in
             make.top.equalTo(postTitle.snp.bottom)
-            make.leading.equalTo(userImage.snp.trailing).offset(10)
-            make.height.equalTo(safeAreaLayoutGuide.snp.height).multipliedBy(0.06)
+            make.leading.equalTo(userImage.snp.trailing).offset(6)
+            make.height.equalTo(safeAreaLayoutGuide.snp.height).multipliedBy(0.1)
             make.trailing.equalTo(postButton.snp.trailing)
             
         })

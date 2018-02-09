@@ -15,9 +15,22 @@ protocol DynamicPopularTableViewCellDelegate : class {
     func dynamicPopularTableViewCellLikedPost(_ sender: DynamicPopularTableViewCell)
     func dynamicPopularTableViewCellCommentPressed(_ sender: DynamicPopularTableViewCell)
     func dynamicPopularTableViewCellDislikedPist(_ sender: DynamicPopularTableViewCell)
+    func refreshTableView()
+
 }
 
 class DynamicPopularTableViewCell: TableViewCell {
+    
+    internal var aspectConstraint: NSLayoutConstraint? {
+        didSet {
+            if oldValue != nil {
+                postImage.removeConstraint(oldValue!)
+            }
+            if aspectConstraint != nil {
+                postImage.addConstraint(aspectConstraint!)
+            }
+        }
+    }
     
     // Header
     @IBOutlet weak var timeLabel: UILabel!
@@ -89,8 +102,8 @@ class DynamicPopularTableViewCell: TableViewCell {
         upVoteCountLabel.text = post.upVotes.description
         timeLabel.text = post.time.components(separatedBy: "+0000").joined()
         username.text = post.byUser
-        postBody.text = post.body
-        postTitle.text = post.header
+        postBody.text = post.header
+        postTitle.text = post.body
     }
     
     fileprivate func upvoting(){
@@ -107,6 +120,16 @@ class DynamicPopularTableViewCell: TableViewCell {
         
         alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in})
         alert.showAlert()
+    }
+    func setCustomImage(image: UIImage) {
+        let aspect = image.size.width / image.size.height
+        let constraint = NSLayoutConstraint(item: postImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: postImage, attribute: NSLayoutAttribute.height, multiplier: aspect, constant: 0.0)
+        constraint.priority = UILayoutPriority(rawValue: 999)
+        aspectConstraint = constraint
+        postImage.image = image
+        
+        // call this to refresh table
+        delegate?.refreshTableView()
     }
 }
 

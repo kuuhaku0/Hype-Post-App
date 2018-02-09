@@ -94,7 +94,7 @@ class AddCommentViewController: UIViewController {
             if keyboardHeight == 0 {
                 keyboardHeight = keyboardSize.height
             }
-            self.textfieldView.textfield.snp.remakeConstraints({ (make) in
+            self.textfieldView.snp.remakeConstraints({ (make) in
                 make.leading.equalTo(view.snp.leading)
                 make.trailing.equalTo(view.snp.trailing)
                 make.height.equalTo(50)
@@ -105,7 +105,7 @@ class AddCommentViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.textfieldView.textfield.snp.remakeConstraints { (make) in
+        self.textfieldView.snp.remakeConstraints { (make) in
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)

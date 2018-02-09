@@ -61,7 +61,7 @@ class CreatePostView: UIView {
     lazy var postImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .white
+        iv.backgroundColor = .clear
         return iv
     }()
     

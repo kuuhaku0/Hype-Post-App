@@ -112,7 +112,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
-//        cell.delegate = self
+        cell.delegate = self
         
         cell.clipsToBounds = true
         if let imgURL = post.imageURL {

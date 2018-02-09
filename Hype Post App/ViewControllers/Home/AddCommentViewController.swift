@@ -23,7 +23,11 @@ class AddCommentViewController: UIViewController {
     }
     
     
-    var posts: Post!
+    var posts: Post!{
+        didSet{
+            
+        }
+    }
 
     var tableViewCell = AddCommentTableViewCell()
     let tView = AddCommentTableView()
@@ -55,7 +59,7 @@ class AddCommentViewController: UIViewController {
         super.viewDidLoad()
         tView.tableView.delegate = self
         tView.tableView.dataSource = self
-        tView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+        tView.tableView.register(DynamicFeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         textfieldView.textfield.delegate = self
         view.backgroundColor = Color.grey.lighten5
         view.addSubview(tView)
@@ -113,14 +117,15 @@ class AddCommentViewController: UIViewController {
 extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return (1 + comments.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
             let post = posts
-            cell.configureCell(post: post!)
+           
+//            cell.configureCell(post: post!)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
@@ -136,7 +141,7 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
-        return 100
+        return 500
         
         
     }

@@ -314,21 +314,6 @@
             </objects>
             <point key="canvasLocation" x="780" y="-126.38680659670166"/>
         </scene>
-        <!--Add Comment View Controller-->
-        <scene sceneID="wnA-hp-QkV">
-            <objects>
-                <viewController id="g98-aC-Ppe" customClass="AddCommentViewController" customModule="Hype_Post_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kxp-LK-RrK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Y9h-AK-UN9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ixG-7T-zI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1485" y="43"/>
-        </scene>
         <!--Poppin View Controller-->
         <scene sceneID="bd1-AO-V5r">
             <objects>

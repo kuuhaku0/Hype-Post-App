@@ -17,11 +17,12 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     // Storyboard is great
     
    //private let dbService = DBService()
+    
+    @IBOutlet weak var postsCount: UILabel!
+    @IBOutlet weak var commentsCount: UILabel!
+    @IBOutlet weak var upvotesCount: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
-    
     @IBOutlet weak var atDisplayNameLabel: UILabel!
-    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var handleLabel: UILabel!
@@ -111,6 +112,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
             self.user = appUser
         }
         
+        postsCount.text = "Posts: " + posts.count.description
         handleLabel.text = currentUser!.displayName
         atDisplayNameLabel.text = "@" + currentUser!.displayName!
         hiddenLabel.text = "@" + currentUser!.displayName!

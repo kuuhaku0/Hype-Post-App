@@ -69,6 +69,7 @@ class DynamicFeedTableViewCell: TableViewCell {
     @IBOutlet weak var commentStack: UIStackView!
     @IBAction func commentButtonPressed(_ sender: UIButton) {
         //TODO: - GOTO COMMENTS
+        self.delegate?.dynamicFeedTableViewCellCommentPressed(self)
     }
     /******************************************/
     
@@ -85,7 +86,8 @@ class DynamicFeedTableViewCell: TableViewCell {
     
     //MARK: - FUNCTIONAL METHODS
     public func configureCell(post: Post) {
-        upVoteCountLabel.text = post.upVotes.description
+        
+        upVoteCountLabel.text = String(post.upVotes)
         timeLabel.text = post.time.components(separatedBy: "+0000").joined()
         username.text = post.byUser
         postBody.text = post.body

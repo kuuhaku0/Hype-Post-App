@@ -307,8 +307,8 @@
 				81C4A31C202A739B0023B5D8 /* LoginTableViewCell.swift */,
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
-				81C4A34D202CAFDC0023B5D8 /* AddCommentViews */,
 				817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */,
+				81C4A34D202CAFDC0023B5D8 /* AddCommentViews */,
 				816DCFCC2028241400D263D9 /* Profile */,
 			);
 			path = CustomCells;
@@ -658,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3B9BY3LUJD;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -678,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3B9BY3LUJD;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
 				INFOPLIST_FILE = "$(SRCROOT)/Hype Post App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

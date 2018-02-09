@@ -24,6 +24,7 @@ extension DBService {
                 guard let postObject = postSnapshot.value as? [String: Any] else {
                     return
                 }
+                print(postSnapshots)
                 guard let header = postObject["header"] as? String,
                 let body = postObject["body"] as? String,
                 let uID = postObject["uID"] as? String,
@@ -38,6 +39,7 @@ extension DBService {
                 let downVoted = postObject["downVoted"] as? Bool,
                 let byUser = postObject["byUser"] as? String,
                 let commentCount = postObject["commentCount"] as? Int
+                
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String

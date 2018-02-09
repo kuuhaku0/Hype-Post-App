@@ -150,7 +150,12 @@ extension FeedViewController: DynamicFeedTableViewCellDelegate {
     }
     
     func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell) {
-        
+        guard let tappedIndexPath = feedTableView.indexPath(for: sender) else { return }
+        let post = posts[tappedIndexPath.row]
+        if let currentUser = AuthUserService.getCurrentUser(){
+            DBService.manager.downVotePost(postID: post.postID, likedByUID: currentUser.uid)
+            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
+        }
     }
     
     func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell) {

@@ -126,8 +126,6 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
         let comment = comments[indexPath.row]
         cell.userNameLabel.text = comment.text
-       
-        
         return cell
         
     }

@@ -14,6 +14,7 @@ protocol DynamicFeedTableViewCellDelegate : class {
     func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell)
     func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell)
     func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell)
+    func refreshTableView()
 }
 
 class DynamicFeedTableViewCell: TableViewCell {
@@ -72,6 +73,16 @@ class DynamicFeedTableViewCell: TableViewCell {
     }
     /******************************************/
     
+    internal var aspectConstraint: NSLayoutConstraint? {
+        didSet {
+            if oldValue != nil {
+                postImage.removeConstraint(oldValue!)
+            }
+            if aspectConstraint != nil {
+                postImage.addConstraint(aspectConstraint!)
+            }
+        }
+    }
     
     weak var delegate: DynamicFeedTableViewCellDelegate?
 
@@ -98,14 +109,22 @@ class DynamicFeedTableViewCell: TableViewCell {
     
     fileprivate func moreMenu(){
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in})
-        
         alert.addAction(UIAlertAction(title: "Flag Post", style: .destructive) { _ in
             self.delegate?.dynamicFeedTableViewCellDidFlagPost(self)})
-        
         alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in})
         alert.show()
+    }
+    // Delgate method
+    func setCustomImage(image: UIImage) {
+        let aspect = image.size.width / image.size.height
+        let constraint = NSLayoutConstraint(item: postImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: postImage, attribute: NSLayoutAttribute.height, multiplier: aspect, constant: 0.0)
+        constraint.priority = UILayoutPriority(rawValue: 999)
+        aspectConstraint = constraint
+        postImage.image = image
+        
+        // call this to refresh table
+        delegate?.refreshTableView()
     }
 }
 

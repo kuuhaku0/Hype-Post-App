@@ -250,7 +250,7 @@ extension UserActivityViewController: UIScrollViewDelegate {
         var profileImageTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
         
-        // PULL DOWN
+        // PULL DOWN - Sticky Header
         if offset < 0 {
             let headerScaleFactor: CGFloat = -(offset) / headerView.bounds.height
             let headerSizevariation = ((headerView.bounds.height * (1.0 + headerScaleFactor)) - headerView.bounds.height)/2

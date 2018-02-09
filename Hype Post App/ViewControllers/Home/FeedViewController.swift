@@ -32,7 +32,7 @@ class FeedViewController: UIViewController {
     }
     
     @objc func createPost() {
-        let createPostVC = CreatePostTwoViewController()//CreatePostViewController.storyboardInstance()
+        let createPostVC = CreatePostTwoViewController.storyboardInstance()//CreatePostViewController.storyboardInstance()
         self.present(createPostVC, animated: true, completion: nil)
     }
     
@@ -136,12 +136,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    func refreshTableView() {
-        feedTableView.beginUpdates()
-        feedTableView.setNeedsDisplay()
-        feedTableView.endUpdates()
-    }
 }
 
 //extension FeedViewController: FeedTableViewCellDelegate {
@@ -149,7 +143,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 //=======
 extension FeedViewController: DynamicFeedTableViewCellDelegate {
 
-    
+    func refreshTableView() {
+        feedTableView.beginUpdates()
+        feedTableView.setNeedsDisplay()
+        feedTableView.endUpdates()
+    }
     
     func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell) {
         

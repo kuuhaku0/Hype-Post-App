@@ -95,21 +95,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="642.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk1-4t-m3s">
-                                                    <rect key="frame" x="0.0" y="28" width="375" height="614.5"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk1-4t-m3s">
+                                                    <rect key="frame" x="0.0" y="28" width="375" height="420"/>
                                                     <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EH0-zc-j4S">
-                                                        <size key="itemSize" width="356" height="484"/>
+                                                        <size key="itemSize" width="356" height="315"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
+                                                    <containerView key="backgroundView" opaque="NO" contentMode="scaleToFill" id="5qs-h4-FUE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    </containerView>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCell" id="ASI-S8-Qpb" customClass="UserActivityCollectionViewCell" customModule="Hype_Post_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="65.5" width="356" height="484"/>
+                                                            <rect key="frame" x="0.0" y="52.5" width="356" height="315"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="484"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="315"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
                                                             <color key="backgroundColor" red="0.9882352941176471" green="0.12941176470588234" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>

@@ -23,11 +23,11 @@ extension DBService {
                     let time = commentObject["time"] as? Double,
                     let upVotes = commentObject["upVotes"] as? Int,
                     let downVotes = commentObject["downVotes"] as? Int,
-                    let flags = commentObject["flags"] as? UInt
-                    
+                    let flags = commentObject["flags"] as? UInt,
+                    let userName = commentObject["userName"] as? String
                     else {print("error getting comments");return}
                 
-                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags)
+                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags, userName: userName)
                 comments.append(thisComment)
                 
             }
@@ -58,13 +58,14 @@ extension DBService {
                     let time = commentObject["time"] as? Double,
                     let upVotes = commentObject["upVotes"] as? Int,
                    let downVotes = commentObject["downVotes"] as? Int,
-                  let flags = commentObject["flags"] as? UInt
+                  let flags = commentObject["flags"] as? UInt,
+                  let userName = commentObject["userName"] as? String
                     else {return}
                 
                 if postID != certainPostID {
                     continue
                 }
-                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags)
+                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags, userName: userName)
                 comments.append(thisComment)
             }
             completion(comments)
@@ -86,14 +87,14 @@ extension DBService {
                     let time = commentObject["time"] as? Double,
                     let upVotes = commentObject["upVotes"] as? Int,
                     let downVotes = commentObject["downVotes"] as? Int,
-                    let flags = commentObject["flags"] as? UInt
-                    
+                    let flags = commentObject["flags"] as? UInt,
+                    let userName = commentObject["userName"] as? String
                     else {return}
                 
                 if uID != certainUID {
                     continue
                 }
-                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags)
+                let thisComment = Comment(commentID: commentID, uID: uID, postID: postID, text: text, upVotes: upVotes, downVotes: downVotes, time: time, flags: flags, userName: userName)
                 comments.append(thisComment)
             }
             completion(comments)
@@ -103,8 +104,9 @@ extension DBService {
     
     public func newComment(text: String, postID: String) {
         guard let uID = AuthUserService.getCurrentUser()?.uid else {print("could not get current user"); return}
+        guard let userName = AuthUserService.getCurrentUser()?.displayName else {print("cannot get current userName"); return}
         let ref = commentsRef.childByAutoId()
-        let comment = Comment(commentID: ref.key, uID: uID, postID: postID, text: text)
+        let comment = Comment(commentID: ref.key, uID: uID, postID: postID, text: text, userName: userName)
         ref.setValue(["postID": postID,
                       "commentID": comment.commentID,
                       "uID": comment.uID,
@@ -112,7 +114,8 @@ extension DBService {
                       "time": comment.time,
                       "upVotes": comment.upVotes,
                       "downVotes": comment.downVotes,
-                      "flags": comment.flags])
+                      "flags": comment.flags,
+                      "userName": userName])
         print("new comment added")
     }
     

@@ -72,6 +72,14 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    private var comments = [Comment]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
     private var about = ["Account", "Your Hypes","Posts You've Hypped", "Your Posts", "Your Comments", "History", "Blocked Users", "Flagged Posts"]
     
     private lazy var headerBlurImageView: UIImageView = {
@@ -126,6 +134,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
 //            self.posts = posts
 //        }
         self.posts = DBService.manager.getCurrentUserPosts().reversed()//DBService.manager.getPost().filter()
+        self.comments = DBService.manager.getCurrentUserComments().reversed()
         
     }
     
@@ -218,10 +227,12 @@ extension UserActivityViewController: UITableViewDataSource {
                 cell.detailTextLabel?.text = post.body
                 cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
             case 1: // All comments
+                let comment = comments[indexPath.row]
+                
                 cell.isUserInteractionEnabled = true
                 cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-                cell.textLabel?.text = "ayyyyyyyeeeee"
-                cell.detailTextLabel?.text = "sdfgsdfgsdfgsdfgsdfgsdfg"
+                cell.textLabel?.text = comment.userName
+                cell.detailTextLabel?.text = comment.text
             case 2: // About
                 let about = self.about[indexPath.row]
                 if indexPath.row == 0 && indexPath.section == 0 {

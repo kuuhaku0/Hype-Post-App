@@ -75,7 +75,7 @@ extension DBService {
                           "body": post.body,
                           "postID": post.postID,
                           "uID": post.uID,
-                          "upVotes": post.upVotes,
+                          "upVote s": post.upVotes,
                           "downVotes": post.downVotes,
                           "flags": post.flags,
                           "time": post.time,

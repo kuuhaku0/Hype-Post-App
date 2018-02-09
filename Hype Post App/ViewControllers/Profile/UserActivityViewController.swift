@@ -136,7 +136,11 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
 //            self.posts = posts
 //        }
         self.posts = DBService.manager.getCurrentUserPosts().reversed()//DBService.manager.getPost().filter()
-        self.comments = DBService.manager.getCurrentUserComments().reversed()
+        DBService.manager.getAllComments { (allComments) in
+            self.comments = DBService.manager.getCurrentUserComments().reversed()
+            print(self.comments.first?.text)
+        }
+        
         
     }
     

@@ -40,7 +40,9 @@ extension DBService {
         guard let userID = AuthUserService.getCurrentUser()?.uid else {
             print("cant get current users comments"); return []
         }
+         print(comments.count)
         return comments.filter({$0.uID == userID})
+        
     }
     
     func getCommentsFromPost(from certainPostID: String, completion: @escaping (_ comments: [Comment]) -> Void) {

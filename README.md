@@ -1,6 +1,7 @@
 # Hype-Post-App
 
-What does the app do 
+An app that allows you to share and hype the post of people when you want.
+
 
 ## Getting Started 
 
@@ -75,6 +76,6 @@ It is possible to sideload this project app into your iOS device by following th
 
 ## Authors 
  * **Caroline Cruz** - [Github](https://github.com/caroline608)
- * **Iram Fattah** - [Github]()
- * **Alan Holguin** - [Githhub]()
- * **Tyler Zhao** - [Github]()
+ * **Iram Fattah** - [Github](https://github.com/Ifattah94)
+ * **Alan Holguin** - [Githhub](https://github.com/lynksdomain)
+ * **Tyler Zhao** - [Github](https://github.com/kuuhaku0)

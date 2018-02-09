@@ -32,7 +32,7 @@ class FeedViewController: UIViewController {
     }
     
     @objc func createPost() {
-        let createPostVC = CreatePostViewController.storyboardInstance()
+        let createPostVC = CreatePostTwoViewController()//CreatePostViewController.storyboardInstance()
         self.present(createPostVC, animated: true, completion: nil)
     }
     

@@ -45,8 +45,8 @@ class FeedViewController: UIViewController {
 
     public var posts = [Post]() {
         didSet {
-            recentPosts = posts.reversed()
             feedTableView.reloadData()
+            recentPosts = posts.reversed()
         }
     }
     
@@ -87,6 +87,7 @@ class FeedViewController: UIViewController {
     func loadData() {
         DBService.manager.getAllPosts { (posts) in
             self.posts = posts.reversed()
+//            self.feedTableView.reloadData()
         }
     }
 }

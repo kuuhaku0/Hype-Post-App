@@ -35,12 +35,14 @@ extension DBService {
                 let postID = postObject["postID"] as? String,
                 let flags = postObject["flags"] as? UInt,
                 let upVoted = postObject["upVoted"] as? Bool,
-                let downVoted = postObject["downVoted"] as? Bool
+                let downVoted = postObject["downVoted"] as? Bool,
+                let byUser = postObject["byUser"] as? String,
+                let commentCount = postObject["commentCount"] as? Int
                     else { print("error getting posts");return}
                 
                 let imageURL = postObject["imageURL"] as? String
                
-                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags, upVoted: upVoted, downVoted: downVoted)
+                let thisPost = Post(header: header, body: body, postID: postID, uID: uID, imageURL: imageURL, time: time, downVotes: downVotes, upVotes: upVotes, flags: flags, upVoted: upVoted, downVoted: downVoted, byUser: byUser, commentCount: commentCount)
                 posts.append(thisPost)
 
             }
@@ -65,10 +67,10 @@ extension DBService {
     
     
 
-        func newPost(header: String, body: String, image: UIImage?) {
+    func newPost(header: String, body: String, image: UIImage?, byUser: String) {
             guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
             let ref = postsRef.childByAutoId()
-            let post = Post(header: header, body: body, postID: ref.key, uID: currentUser.uid)
+        let post = Post(header: header, body: body, postID: ref.key, uID: currentUser.uid, byUser: byUser)
             ref.setValue(["header": post.header,
                           "body": post.body,
                           "postID": post.postID,
@@ -78,7 +80,9 @@ extension DBService {
                           "flags": post.flags,
                           "time": post.time,
                           "upVoted": post.upVoted,
-                          "downVoted": post.downVoted
+                          "downVoted": post.downVoted,
+                          "byUser": post.byUser,
+                          "commentCount": post.commentCount
                           
                 ])
             

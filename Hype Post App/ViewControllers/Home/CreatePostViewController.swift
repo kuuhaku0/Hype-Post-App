@@ -29,8 +29,9 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, image: imageView.image ?? nil)
-        
+        if let currentUserDisplayName = AuthUserService.getCurrentUser()?.displayName {
+        DBService.manager.newPost(header: postTitle.text!, body: postBody.text!, image: imageView.image ?? nil, byUser: currentUserDisplayName)
+        }
         let alertController = UIAlertController(title: "Success!", message: "post sucessful!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (alert) in
             self.dismiss(animated: true, completion: {self.resignFirstResponder()})

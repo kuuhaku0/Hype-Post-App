@@ -11,7 +11,21 @@ import Material
 import SnapKit
 
 class AddCommentViewController: UIViewController {
-  
+    
+    lazy var closeButton: FABButton = {
+        let button = FABButton(image: Icon.cm.close)
+        button.tintColor = Color.red.base
+        button.pulseColor = .gray
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        return button
+    }()
+    @objc func dismissView(){
+        self.dismiss(animated: true) {
+        }
+    }
+ 
+    
     init(post: Post){
         super.init(nibName: nil, bundle: nil)
         posts = post
@@ -60,7 +74,6 @@ class AddCommentViewController: UIViewController {
         tView.tableView.delegate = self
         tView.tableView.dataSource = self
         let nib = UINib(nibName: "PostCommentTableViewCell", bundle: nil)
-
         tView.tableView.register(nib, forCellReuseIdentifier: "PostCommentCell")
         textfieldView.textfield.delegate = self
         view.backgroundColor = Color.grey.lighten5
@@ -86,6 +99,8 @@ class AddCommentViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+        
+        setupCPB()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -101,6 +116,12 @@ class AddCommentViewController: UIViewController {
                 make.width.equalTo(view.snp.width)//.multipliedBy(0.7)
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset( -keyboardHeight - 8.0)
             })
+        }
+    }
+    func setupCPB() {
+        closeButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.tView.snp.top).offset(-16)
+            make.leading.equalTo(self.tView.snp.leading).offset(-16)
         }
     }
     

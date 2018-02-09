@@ -100,7 +100,7 @@ class AddCommentViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
         
-        setupCPB()
+//        setupCPB()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

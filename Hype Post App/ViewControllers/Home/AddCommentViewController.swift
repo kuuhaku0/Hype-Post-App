@@ -140,14 +140,7 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
-        
-        return 500
-        
-        
-    }
+   
 }
 
 extension AddCommentViewController: TextFieldDelegate {

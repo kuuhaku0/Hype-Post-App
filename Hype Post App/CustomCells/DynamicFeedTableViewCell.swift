@@ -89,6 +89,7 @@ class DynamicFeedTableViewCell: TableViewCell {
         postTitle.text = post.header
         upVoteCountLabel.text = post.upVotes.description
         timeLabel.text = post.time.components(separatedBy: "+0000").joined()
+        username.text = post.byUser
     }
     
     fileprivate func upvoting(){

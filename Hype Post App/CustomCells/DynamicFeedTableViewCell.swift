@@ -85,11 +85,11 @@ class DynamicFeedTableViewCell: TableViewCell {
     
     //MARK: - FUNCTIONAL METHODS
     public func configureCell(post: Post) {
-        postTitle.text = post.header
         upVoteCountLabel.text = post.upVotes.description
         timeLabel.text = post.time.components(separatedBy: "+0000").joined()
         username.text = post.byUser
         postBody.text = post.body
+        postTitle.text = post.header
     }
     
     fileprivate func upvoting(){

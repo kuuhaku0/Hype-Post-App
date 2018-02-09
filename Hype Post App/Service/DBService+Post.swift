@@ -83,7 +83,6 @@ extension DBService {
                           "downVoted": post.downVoted,
                           "byUser": post.byUser,
                           "commentCount": post.commentCount
-                          
                 ])
             
             StorageService.manager.storePostImage(image: image, postID: post.postID)

@@ -10,6 +10,9 @@
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
 		812C56F9202D4E3E00BC8DC7 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C56F8202D4E3E00BC8DC7 /* PopularTableViewCell.swift */; };
+		813286F0202E04770003C037 /* CommentPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813286EF202E04770003C037 /* CommentPostView.xib */; };
+		813286F3202E06890003C037 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813286F1202E06890003C037 /* TableViewCell.swift */; };
+		813286F4202E06890003C037 /* PostCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813286F2202E06890003C037 /* PostCommentTableViewCell.xib */; };
 		813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */; };
 		81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */; };
 		816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFAE2027C73800D263D9 /* SettingsViewController.swift */; };
@@ -64,6 +67,9 @@
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
 		8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		812C56F8202D4E3E00BC8DC7 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		813286EF202E04770003C037 /* CommentPostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentPostView.xib; sourceTree = "<group>"; };
+		813286F1202E06890003C037 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		813286F2202E06890003C037 /* PostCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCommentTableViewCell.xib; sourceTree = "<group>"; };
 		813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +247,6 @@
 		81BA30E72026637D0097D3BF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
@@ -267,6 +272,7 @@
 		81BA30E9202663DF0097D3BF /* TabBars */ = {
 			isa = PBXGroup;
 			children = (
+				8152AD90201FCE9100E1AD03 /* FeedViewController.swift */,
 				817C8BD72025047200660FA8 /* tabController.swift */,
 				817C8BDD20250D8E00660FA8 /* TabViewController.swift */,
 			);
@@ -279,6 +285,9 @@
 				81BA30E220265DFA0097D3BF /* ProfileView.storyboard */,
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FAF8201FCAE1005BED8E /* Main.storyboard */,
+				813286EF202E04770003C037 /* CommentPostView.xib */,
+				813286F1202E06890003C037 /* TableViewCell.swift */,
+				813286F2202E06890003C037 /* PostCommentTableViewCell.xib */,
 				81B7973720278009001A002E /* CreatePost.storyboard */,
 			);
 			path = Storyboards;
@@ -384,9 +393,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B7973820278009001A002E /* CreatePost.storyboard in Resources */,
+				813286F0202E04770003C037 /* CommentPostView.xib in Resources */,
 				8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */,
 				8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */,
 				8190FAFC201FCAE1005BED8E /* Assets.xcassets in Resources */,
+				813286F4202E06890003C037 /* PostCommentTableViewCell.xib in Resources */,
 				8190FAFA201FCAE1005BED8E /* Main.storyboard in Resources */,
 				81BA30E320265DFA0097D3BF /* ProfileView.storyboard in Resources */,
 			);
@@ -501,6 +512,7 @@
 				817290F3202C195C0004C35D /* DynamicFeedTableViewCell.swift in Sources */,
 				81892596202B7527002D07C5 /* EditProfileCell.swift in Sources */,
 				81AA2079202A43FC00E80BAC /* DBService.swift in Sources */,
+				813286F3202E06890003C037 /* TableViewCell.swift in Sources */,
 				817C8BD82025047200660FA8 /* tabController.swift in Sources */,
 				81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */,
 				816DCFCB20281EE900D263D9 /* UserActivityCell.swift in Sources */,

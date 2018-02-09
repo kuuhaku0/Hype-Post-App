@@ -165,6 +165,7 @@ extension FeedViewController: DynamicFeedTableViewCellDelegate {
         vc.modalPresentationStyle = .currentContext
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true) {}
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell) {

@@ -59,7 +59,9 @@ class AddCommentViewController: UIViewController {
         super.viewDidLoad()
         tView.tableView.delegate = self
         tView.tableView.dataSource = self
-        tView.tableView.register(DynamicFeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+        let nib = UINib(nibName: "PostCommentTableViewCell", bundle: nil)
+
+        tView.tableView.register(nib, forCellReuseIdentifier: "PostCommentCell")
         textfieldView.textfield.delegate = self
         view.backgroundColor = Color.grey.lighten5
         view.addSubview(tView)
@@ -124,10 +126,10 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCommentCell", for: indexPath) as! DynamicFeedTableViewCell
             let post = posts
            
-//            cell.configureCell(post: post!)
+            cell.configureCell(post: post!)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell

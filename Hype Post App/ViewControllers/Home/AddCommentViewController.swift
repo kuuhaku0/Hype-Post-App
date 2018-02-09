@@ -23,7 +23,11 @@ class AddCommentViewController: UIViewController {
     }
     
     
-    var posts: Post!
+    var posts: Post!{
+        didSet{
+            
+        }
+    }
 
     var tableViewCell = AddCommentTableViewCell()
     let tView = AddCommentTableView()
@@ -55,7 +59,9 @@ class AddCommentViewController: UIViewController {
         super.viewDidLoad()
         tView.tableView.delegate = self
         tView.tableView.dataSource = self
-        tView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+        let nib = UINib(nibName: "PostCommentTableViewCell", bundle: nil)
+
+        tView.tableView.register(nib, forCellReuseIdentifier: "PostCommentCell")
         textfieldView.textfield.delegate = self
         view.backgroundColor = Color.grey.lighten5
         view.addSubview(tView)
@@ -88,21 +94,23 @@ class AddCommentViewController: UIViewController {
             if keyboardHeight == 0 {
                 keyboardHeight = keyboardSize.height
             }
-            self.textfieldView.textfield.snp.remakeConstraints({ (make) in
+            self.textfieldView.snp.remakeConstraints({ (make) in
                 make.leading.equalTo(view.snp.leading)
                 make.trailing.equalTo(view.snp.trailing)
-                make.height.equalTo(60)
+                make.height.equalTo(50)
+                make.width.equalTo(view.snp.width)//.multipliedBy(0.7)
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset( -keyboardHeight - 8.0)
             })
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.textfieldView.textfield.snp.remakeConstraints { (make) in
+        self.textfieldView.snp.remakeConstraints { (make) in
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(60)
+            make.width.equalTo(view.snp.width)//.multipliedBy(0.7)
+            make.height.equalTo(50)
         }
     }
 }
@@ -113,19 +121,21 @@ class AddCommentViewController: UIViewController {
 extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return (1 + comments.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCommentCell", for: indexPath) as! DynamicFeedTableViewCell
             let post = posts
+           
             cell.configureCell(post: post!)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
-        let comment = comments[indexPath.row]
-        cell.userNameLabel.text = comment.text
+        let comment = comments[indexPath.row - 1]
+        cell.userNameLabel.text = comment.userName
+        cell.textLabel?.text = comment.text
         return cell
         
     }
@@ -134,7 +144,7 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
-        return 100
+        return 500
         
         
     }

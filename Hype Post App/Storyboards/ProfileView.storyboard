@@ -245,7 +245,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYY-Qh-bcM">
-                                            <rect key="frame" x="16" y="95" width="343" height="32"/>
+                                            <rect key="frame" x="16" y="66" width="343" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="w5m-Kn-TZ6"/>
                                             </constraints>
@@ -254,7 +254,7 @@
                                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7-R5CLfl_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="w8V-1k-BKD" userLabel="Avatar Image">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="w8V-1k-BKD" userLabel="Avatar Image">
                                             <rect key="frame" x="16" y="-38" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="bID-cy-T4x"/>
@@ -282,8 +282,8 @@
                                                 <segue destination="zac-Rr-CRg" kind="presentation" id="BdR-0K-lha"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tyler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-hv-HRN">
-                                            <rect key="frame" x="16" y="62" width="120" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-hv-HRN">
+                                            <rect key="frame" x="16" y="62" width="120" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                             <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -399,6 +399,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="atDisplayNameLabel" destination="Gbi-jQ-JXA" id="V6F-7o-B6g"/>
+                        <outlet property="commentsCount" destination="0qD-5n-TKL" id="9Jr-4R-rly"/>
                         <outlet property="constraintHeightHeaderImages" destination="ItI-0g-7k2" id="VAn-KY-kz3"/>
                         <outlet property="editProfileButton" destination="zyb-oJ-fOj" id="0tk-Se-Yjc"/>
                         <outlet property="handleLabel" destination="RZD-G6-9fx" id="UeM-iZ-Ck9"/>
@@ -406,12 +407,14 @@
                         <outlet property="headerView" destination="hHa-Iw-pr8" id="pEz-xo-QwM"/>
                         <outlet property="hiddenLabel" destination="cGe-Eb-Ct4" id="YBk-Am-NXD"/>
                         <outlet property="nameLabel" destination="6A5-hv-HRN" id="Fk2-0B-z3Z"/>
+                        <outlet property="postsCount" destination="CDP-JP-1bb" id="3Q7-7h-aRM"/>
                         <outlet property="profileImage" destination="w8V-1k-BKD" id="l6w-R3-B6b"/>
                         <outlet property="profileView" destination="PIx-iE-URw" id="Vqh-IB-fqj"/>
                         <outlet property="segmentedControl" destination="Gob-yc-kMa" id="2xy-vi-Jwi"/>
                         <outlet property="segmentedView" destination="HY7-VU-fXi" id="qJb-Kz-rHw"/>
                         <outlet property="statsContainerView" destination="9zy-1f-bOk" id="aMr-an-Eh0"/>
                         <outlet property="tableView" destination="lDu-zM-7lr" id="Le7-dV-OCu"/>
+                        <outlet property="upvotesCount" destination="L1V-Qo-Iju" id="vwb-Aw-PYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kl8-68-2Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,8 +461,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8d-Vb-H4S">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962" translatesAutoresizingMaskIntoConstraints="NO" id="At8-nV-Qsb">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="At8-nV-Qsb">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
                                                         <button alpha="0.80000000000000004" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h13-EW-x8S">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
@@ -485,8 +489,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrq-4f-CeV">
                                                     <rect key="frame" x="16" y="118.5" width="100" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7-R5CLfl_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-2D-bVJ">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-2D-bVJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
                                                         <button alpha="0.80000000000000004" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-Sg-EQ2">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -675,11 +680,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7-R5CLfl_400x400" width="400" height="400"/>
-        <image name="fate-stay-night-saber-armored-ruler-fate-apocrypha-fate-grand-order-omgmuchlove-anime-7962" width="2250" height="1000"/>
         <image name="icons8-cancel-100" width="33" height="33"/>
         <image name="icons8-google-images-filled-100 (1)" width="33" height="33"/>
         <image name="icons8-ok-100" width="33" height="33"/>
         <image name="profile" width="24" height="24"/>
+        <image name="profilePlaceholder" width="1464" height="1464"/>
     </resources>
 </document>

@@ -33,20 +33,20 @@ class PoppinViewController: UIViewController {
         loadData()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(DynamicFeedTableViewCell.self, forCellReuseIdentifier: "PopularCell")
+//        tableView.register(DynamicPopularTableViewCell.self, forCellReuseIdentifier: "PopularCell")
         prepareTabItem()
     }
     
     
     public static func storyboardInstance() -> PoppinViewController {
-        let storyboard = UIStoryboard(name: "PopularPosts", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let poppinVC = storyboard.instantiateViewController(withIdentifier: "PoppinViewController") as! PoppinViewController
         return poppinVC
     }
     
     private func loadData() {
         DBService.manager.getAllPosts { (posts) in
-            self.posts = posts.reversed()
+            self.posts = posts.sortedByUpVotes()
             print(posts)
         }
     }
@@ -67,7 +67,7 @@ extension PoppinViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath) as! DynamicFeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath) as! DynamicPopularTableViewCell
         let post = self.posts[indexPath.row]
         print("IN TABLEVIEW:\(post.byUser)")
         cell.configureCell(post: post)
@@ -81,12 +81,12 @@ extension PoppinViewController{
         }
 }
 
-extension PoppinViewController: DynamicFeedTableViewCellDelegate {
-    func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell) {
+extension PoppinViewController: DynamicPopularTableViewCellDelegate {
+    func dynamicPopularTableViewCellDislikedPist(_ sender: DynamicPopularTableViewCell ) {
         
     }
     
-    func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell) {
+    func dynamicPopularTableViewCellCommentPressed(_ sender: DynamicPopularTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         let post = posts[tappedIndexPath.row]
         let vc = AddCommentViewController(post: post)
@@ -95,7 +95,7 @@ extension PoppinViewController: DynamicFeedTableViewCellDelegate {
         present(vc, animated: true) {}
     }
     
-    func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell) {
+    func dynamicPopularTableViewCellLikedPost(_ sender: DynamicPopularTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         let post = posts[tappedIndexPath.row]
         if let currentUser = AuthUserService.getCurrentUser(){
@@ -105,7 +105,7 @@ extension PoppinViewController: DynamicFeedTableViewCellDelegate {
     }
     
     
-    func dynamicFeedTableViewCellDidFlagPost(_ sender: DynamicFeedTableViewCell) {
+    func dynamicPopularTableViewCellDidFlagPost(_ sender: DynamicPopularTableViewCell) {
         
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         let post = posts[tappedIndexPath.row]

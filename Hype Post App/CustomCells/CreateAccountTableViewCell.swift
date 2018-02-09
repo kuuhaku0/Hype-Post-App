@@ -118,12 +118,22 @@ class CreateAccountTableViewCell: UITableViewCell {
     }
     
   
-    
+    @objc func dismissKeyboard() {
+       self.emailField.endEditing(true)
+        self.userNameTF.endEditing(true)
+        self.firstNameTF.endEditing(true)
+        self.lastNameTF.endEditing(true)
+        self.passwordField.endEditing(true)
+        self.secondPasswordField.endEditing(true)
+
+    }
     
     
     private func commonInit() {
         backgroundColor = .white
-    
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
         setupViews()
         self.isSelected = false
     }

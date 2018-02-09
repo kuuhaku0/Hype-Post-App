@@ -13,12 +13,20 @@ import SnapKit
 
 class ResetPasswordViewController: UIViewController {
     
+    
+    @objc func dismissKeyboard() {
+        self.emailField.endEditing(true)
+    }
+    
     let constant: CGFloat = 32
 
     var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         self.view.backgroundColor = .white
         emailField.delegate = self
         setupCPB()
@@ -58,12 +66,7 @@ class ResetPasswordViewController: UIViewController {
         }
     }
     
-    func prepareResetButton() {
-        let btn = RaisedButton(title: "Reset", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(resetPassword), for: .touchUpInside)
-        
-        self.view.layout(btn).width(100).height(constant).bottom(300).center()
-    }
+  
     
     @objc private func resetPassword(){
         SVProgressHUD.show()
@@ -118,28 +121,21 @@ class ResetPasswordViewController: UIViewController {
             
         }
     }
-    
-    
-    
-    @IBAction func sendPassResetButtonPressed(_ sender: UIButton) {
-        SVProgressHUD.show()
-        FirebaseAPIClient.manager.resetPassword(withEmail: emailField.text!) { (error) in
-            if error != nil {
-                SVProgressHUD.dismiss()
-                print(error!)
-            } else {
-                SVProgressHUD.dismiss()
-                print("password reset sent")
-                let alert = UIAlertController(title: "Sent", message: "Password reset email has been sent", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default) { (complete) in
-                    //TODO: SEGUE BACK TO LOGIN!
-                }
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
-                self.resignFirstResponder()
-            }
+    func prepareResetButton() {
+        let btn = RaisedButton(title: "Reset", titleColor: Color.red.base)
+        btn.addTarget(self, action: #selector(resetPassword), for: .touchUpInside)
+        self.view.addSubview(btn)
+        
+        btn.snp.makeConstraints { (make) in
+            make.top.equalTo(emailField.snp.bottom).offset(33)
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.size.equalTo(CGSize(width: 100, height: constant))
         }
+        
+        
     }
+    
+    
 }
 
 

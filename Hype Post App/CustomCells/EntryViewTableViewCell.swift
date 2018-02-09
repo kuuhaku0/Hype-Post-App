@@ -100,8 +100,8 @@ class EntryViewTableViewCell: UITableViewCell {
             case 1136:
                 btn.snp.makeConstraints { (make) in
                     make.top.equalTo(imageLogo.snp.bottom).offset(11)
-                    make.size.equalTo(CGSize(width: 130, height: constant))
-                    make.left.equalTo(imageLogo.snp.left).offset(10)
+                    make.size.equalTo(CGSize(width: 135, height: constant))
+                    make.left.equalTo(imageLogo.snp.left).offset(3)
                     
                 }
                 print("iPhone 5 or 5S or 5C")
@@ -158,8 +158,8 @@ class EntryViewTableViewCell: UITableViewCell {
             case 1136:
                 btn.snp.makeConstraints { (make) in
                     make.top.equalTo(imageLogo.snp.bottom).offset(11)
-                    make.size.equalTo(CGSize(width: 130, height: constant))
-                    make.right.equalTo(imageLogo.snp.right).offset(-10)
+                    make.size.equalTo(CGSize(width: 135, height: constant))
+                    make.right.equalTo(imageLogo.snp.right).offset(-3)
                     
                 }
                 print("iPhone 5 or 5S or 5C")

@@ -29,12 +29,7 @@ class LoginTableViewCell: UITableViewCell{
     
     let constant: CGFloat = 32
     
-    func prepareLoginButton() {
-        let btn = RaisedButton(title: "Log In", titleColor: Color.red.base)
-        btn.addTarget(self, action: #selector(handleResignResponderButton(button:)), for: .touchUpInside)
-        
-        self.layout(btn).width(100).height(constant).bottom(300).center()
-    }
+    
     
     /// Handle the resign responder button.
     @objc
@@ -71,7 +66,7 @@ class LoginTableViewCell: UITableViewCell{
     
     lazy var createAccountLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Log in to HypePost"
+        lb.text = "Sign in to HypePost"
         lb.textColor = Color.red.base
         lb.textAlignment = .center
         lb.font = UIFont.systemFont(ofSize: 24, weight: .medium)
@@ -115,8 +110,20 @@ class LoginTableViewCell: UITableViewCell{
         commonInit()
     }
     
+    
+    
+    @objc func dismissKeyboard() {
+        self.emailField.endEditing(true)
+        self.passwordField.endEditing(true)
+    }
+    
+    
+    
     private func commonInit() {
         backgroundColor = .white
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
         setupViews()
     }
     
@@ -176,6 +183,51 @@ class LoginTableViewCell: UITableViewCell{
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             
         }
+    }
+    
+    func prepareLoginButton() {
+        
+        let btn = RaisedButton(title: "Sign In", titleColor: Color.red.base)
+        btn.addTarget(self, action: #selector(handleResignResponderButton(button:)), for: .touchUpInside)
+        addSubview(btn)
+        
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(resetPasswordButton.snp.bottom).offset(22)
+                    make.size.equalTo((CGSize(width: 100, height: constant)))
+                    make.centerX.equalTo(self.snp.centerX)
+                }
+             
+//                print("iPhone 5 or 5S or 5C")
+            case 1334:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(resetPasswordButton.snp.bottom).offset(22)
+                    make.size.equalTo((CGSize(width: 150, height: constant)))
+                    make.centerX.equalTo(self.snp.centerX)
+                }
+//                print("iPhone 6/6S/7/8")
+            case 1920,2208:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(resetPasswordButton.snp.bottom).offset(22)
+                    make.size.equalTo((CGSize(width: 150, height: constant)))
+                    make.centerX.equalTo(self.snp.centerX)
+                }
+//                print("iPhone 6+/6S+/7+/8+")
+            case 2436:
+                btn.snp.makeConstraints { (make) in
+                    make.top.equalTo(resetPasswordButton.snp.bottom).offset(22)
+                    make.size.equalTo((CGSize(width: 150, height: constant)))
+                    make.centerX.equalTo(self.snp.centerX)
+                }
+//                print("iPhone X")
+            default:
+                print("unknown")
+            }
+        }
+
+       
     }
     
 

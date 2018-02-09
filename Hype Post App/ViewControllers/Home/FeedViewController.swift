@@ -32,7 +32,7 @@ class FeedViewController: UIViewController {
     }
     
     @objc func createPost() {
-        let createPostVC = CreatePostTwoViewController.storyboardInstance()//CreatePostViewController.storyboardInstance()
+        let createPostVC = CreatePostTwoViewController()//CreatePostViewController.storyboardInstance()
         self.present(createPostVC, animated: true, completion: nil)
     }
     
@@ -112,26 +112,25 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! DynamicFeedTableViewCell
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
-//        cell.delegate = self
-        
+        cell.delegate = self
         cell.clipsToBounds = true
         if let imgURL = post.imageURL {
             let img1str = imgURL
             let url1 = URL(string: img1str)
-//            cell.presenterView.sd_setImage(with: url1) { (image, error, cache, url) in
-//                if let image = image {
-//                    let ratio = image.size.width / image.size.height
-//                    if ratio > 1 {
-//                        let newHeight = cell.frame.width / ratio
-//                        cell.presenterView.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
-//                        self.refreshTableView()
-//                    } else {
-//                        let newWidth = cell.frame.height * ratio
-//                        cell.presenterView.frame.size = CGSize(width: newWidth, height: cell.frame.height)
-//                        self.refreshTableView()
-//                    }
-//                }
-//            }
+            cell.postImage.kf.setImage(with: url1) { (image, error, cache, url) in
+                if let image = image {
+                    let ratio = image.size.width / image.size.height
+                    if ratio > 1 {
+                        let newHeight = cell.frame.width / ratio
+                        cell.postImage.bounds.size = CGSize(width: cell.frame.width, height: newHeight)
+                        self.refreshTableView()
+                    } else {
+                        let newWidth = cell.frame.height * ratio
+                        cell.postImage.frame.size = CGSize(width: newWidth, height: cell.frame.height)
+                        self.refreshTableView()
+                    }
+                }
+            }
         }
         
         return cell
@@ -154,7 +153,7 @@ extension FeedViewController: DynamicFeedTableViewCellDelegate {
         let post = posts[tappedIndexPath.row]
         if let currentUser = AuthUserService.getCurrentUser(){
             DBService.manager.downVotePost(postID: post.postID, likedByUID: currentUser.uid)
-            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
+//            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
         }
     }
     
@@ -172,7 +171,7 @@ extension FeedViewController: DynamicFeedTableViewCellDelegate {
         let post = posts[tappedIndexPath.row]
         if let currentUser = AuthUserService.getCurrentUser(){
             DBService.manager.upVotePost(postID: post.postID, likedByUID: currentUser.uid)
-            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
+//            feedTableView.reloadRows(at: [feedTableView.indexPath(for: sender)!], with: .none)
         }
     }
     

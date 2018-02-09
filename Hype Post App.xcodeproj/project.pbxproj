@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B0138EAFE60B26D9BDA1D61 /* Pods_Hype_Post_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */; };
 		8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */; };
+		812C56F9202D4E3E00BC8DC7 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C56F8202D4E3E00BC8DC7 /* PopularTableViewCell.swift */; };
 		813B8BE0202AA9CD00C99FA1 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */; };
 		81455AE020296EF100280F68 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */; };
 		816DCFAF2027C73800D263D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DCFAE2027C73800D263D9 /* SettingsViewController.swift */; };
@@ -44,7 +45,6 @@
 		81B7973820278009001A002E /* CreatePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B7973720278009001A002E /* CreatePost.storyboard */; };
 		81BA30E320265DFA0097D3BF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA30E220265DFA0097D3BF /* ProfileView.storyboard */; };
 		81BA30E5202663180097D3BF /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA30E4202663180097D3BF /* CreatePostViewController.swift */; };
-		81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C00C312027953B0055C061 /* PopularPosts.storyboard */; };
 		81C2C846202B63A3002BF0CE /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */; };
 		81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */; };
 		81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */; };
@@ -53,6 +53,7 @@
 		81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A349202CAEA40023B5D8 /* TextfieldView.swift */; };
 		81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */; };
 		81DE4D9B202D34A300FFC969 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE4D9A202D34A300FFC969 /* CreatePostView.swift */; };
+		81DE4D9D202D4E4300FFC969 /* CreatePostTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE4D9C202D4E4300FFC969 /* CreatePostTwoViewController.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
@@ -62,6 +63,7 @@
 		52579D35227ADCB242CD8CAE /* Pods_Hype_Post_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hype_Post_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7019AA4D2828ED8483933711 /* Pods-Hype Post App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hype Post App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hype Post App/Pods-Hype Post App.debug.xcconfig"; sourceTree = "<group>"; };
 		8118C54A2023AEA100975C97 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		812C56F8202D4E3E00BC8DC7 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		813B8BDF202AA9CD00C99FA1 /* DBService+Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		81455ADF20296EF100280F68 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		8152AD90201FCE9100E1AD03 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +103,6 @@
 		81B7973720278009001A002E /* CreatePost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePost.storyboard; sourceTree = "<group>"; };
 		81BA30E220265DFA0097D3BF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		81BA30E4202663180097D3BF /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
-		81C00C312027953B0055C061 /* PopularPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularPosts.storyboard; sourceTree = "<group>"; };
 		81C2C845202B63A3002BF0CE /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewCell.swift; sourceTree = "<group>"; };
 		81C4A31A202A73870023B5D8 /* EntryViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		81C4A349202CAEA40023B5D8 /* TextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldView.swift; sourceTree = "<group>"; };
 		81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableView.swift; sourceTree = "<group>"; };
 		81DE4D9A202D34A300FFC969 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		81DE4D9C202D4E4300FFC969 /* CreatePostTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTwoViewController.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
+				81DE4D9C202D4E4300FFC969 /* CreatePostTwoViewController.swift */,
 				81DE4D9A202D34A300FFC969 /* CreatePostView.swift */,
 			);
 			path = Home;
@@ -251,12 +254,12 @@
 		81BA30E8202663C70097D3BF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
 				816DCFAE2027C73800D263D9 /* SettingsViewController.swift */,
 				816DCFB02027D08A00D263D9 /* UserActivityViewController.swift */,
 				816DCFC7202819A400D263D9 /* HMSegmentedControl.h */,
 				816DCFC8202819A500D263D9 /* HMSegmentedControl.m */,
 				816DCFC6202819A300D263D9 /* Hype Post App-Bridging-Header.h */,
+				817C8BDB20250BAB00660FA8 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -277,7 +280,6 @@
 				8190FAFD201FCAE1005BED8E /* LaunchScreen.storyboard */,
 				8190FAF8201FCAE1005BED8E /* Main.storyboard */,
 				81B7973720278009001A002E /* CreatePost.storyboard */,
-				81C00C312027953B0055C061 /* PopularPosts.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -311,6 +313,7 @@
 				81C4A30E202A508B0023B5D8 /* CreateAccountTableViewCell.swift */,
 				CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */,
 				817290F2202C195C0004C35D /* DynamicFeedTableViewCell.swift */,
+				812C56F8202D4E3E00BC8DC7 /* PopularTableViewCell.swift */,
 				81C4A34D202CAFDC0023B5D8 /* AddCommentViews */,
 				816DCFCC2028241400D263D9 /* Profile */,
 			);
@@ -380,7 +383,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81C00C322027953B0055C061 /* PopularPosts.storyboard in Resources */,
 				81B7973820278009001A002E /* CreatePost.storyboard in Resources */,
 				8190FAFF201FCAE1005BED8E /* LaunchScreen.storyboard in Resources */,
 				8190FB07201FCEAC005BED8E /* GoogleService-Info.plist in Resources */,
@@ -507,6 +509,7 @@
 				81AA207C202A43FC00E80BAC /* DBService+Post.swift in Sources */,
 				81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */,
 				81C4A31D202A739B0023B5D8 /* LoginTableViewCell.swift in Sources */,
+				812C56F9202D4E3E00BC8DC7 /* PopularTableViewCell.swift in Sources */,
 				818136EC202D18430007415D /* CreateAccountTableViewController.swift in Sources */,
 				81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */,
 				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,
@@ -521,6 +524,7 @@
 				8118C54B2023AEA100975C97 /* FeedTableViewCell.swift in Sources */,
 				81AA2077202A43FC00E80BAC /* AuthUserService.swift in Sources */,
 				818A576D202B659600761FE0 /* EntryTableViewController.swift in Sources */,
+				81DE4D9D202D4E4300FFC969 /* CreatePostTwoViewController.swift in Sources */,
 				81C4A30F202A508B0023B5D8 /* CreateAccountTableViewCell.swift in Sources */,
 				817C8BDE20250D8E00660FA8 /* TabViewController.swift in Sources */,
 			);

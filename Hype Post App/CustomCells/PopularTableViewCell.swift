@@ -1,5 +1,5 @@
 //
-//  DynamicFeedTableViewCell.swift
+//  PopularTableViewCell.swift
 //  Hype Post App
 //
 //  Created by C4Q on 2/8/18.
@@ -9,14 +9,15 @@
 import UIKit
 import Material
 
-protocol DynamicFeedTableViewCellDelegate : class {
-    func dynamicFeedTableViewCellDidFlagPost(_ sender: DynamicFeedTableViewCell)
-    func dynamicFeedTableViewCellLikedPost(_ sender: DynamicFeedTableViewCell)
-    func dynamicFeedTableViewCellCommentPressed(_ sender: DynamicFeedTableViewCell)
-    func dynamicFeedTableViewCellDislikedPist(_ sender: DynamicFeedTableViewCell)
+
+protocol DynamicPopularTableViewCellDelegate : class {
+    func dynamicPopularTableViewCellDidFlagPost(_ sender: DynamicPopularTableViewCell)
+    func dynamicPopularTableViewCellLikedPost(_ sender: DynamicPopularTableViewCell)
+    func dynamicPopularTableViewCellCommentPressed(_ sender: DynamicPopularTableViewCell)
+    func dynamicPopularTableViewCellDislikedPist(_ sender: DynamicPopularTableViewCell)
 }
 
-class DynamicFeedTableViewCell: TableViewCell {
+class DynamicPopularTableViewCell: TableViewCell {
     
     // Header
     @IBOutlet weak var timeLabel: UILabel!
@@ -73,12 +74,12 @@ class DynamicFeedTableViewCell: TableViewCell {
     /******************************************/
     
     
-    weak var delegate: DynamicFeedTableViewCellDelegate?
-
+    weak var delegate: DynamicPopularTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -93,7 +94,7 @@ class DynamicFeedTableViewCell: TableViewCell {
     }
     
     fileprivate func upvoting(){
-        self.delegate?.dynamicFeedTableViewCellLikedPost(self)
+        self.delegate?.dynamicPopularTableViewCellLikedPost(self)
     }
     
     fileprivate func moreMenu(){
@@ -102,15 +103,15 @@ class DynamicFeedTableViewCell: TableViewCell {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in})
         
         alert.addAction(UIAlertAction(title: "Flag Post", style: .destructive) { _ in
-            self.delegate?.dynamicFeedTableViewCellDidFlagPost(self)})
+            self.delegate?.dynamicPopularTableViewCellDidFlagPost(self)})
         
         alert.addAction(UIAlertAction(title: "Flag User", style: .destructive) { _ in})
-        alert.show()
+        alert.showAlert()
     }
 }
 
 extension UIAlertController {
-    func show() {
+    func showAlert() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIViewController()
         window.windowLevel = UIWindowLevelAlert

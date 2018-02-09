@@ -32,7 +32,7 @@ class FeedViewController: UIViewController {
     }
     
     @objc func createPost() {
-        let createPostVC = CreatePostViewController.storyboardInstance()
+        let createPostVC = CreatePostTwoViewController()//CreatePostViewController.storyboardInstance()
         self.present(createPostVC, animated: true, completion: nil)
     }
     
@@ -69,7 +69,7 @@ class FeedViewController: UIViewController {
         setupCPB()
         loadData()
         prepareTabItem()
-//        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+//        feedTableView.register(DynamicFeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.separatorStyle = .none

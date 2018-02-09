@@ -1,6 +1,6 @@
 # Hype-Post-App
 
-An app that allows you to share and hype the post of people when you want.
+An app that allows you to share and hype up the post of people when you want.
 
 
 ## Getting Started 

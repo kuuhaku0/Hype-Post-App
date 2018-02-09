@@ -52,6 +52,7 @@
 		81C4A348202CAE280023B5D8 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */; };
 		81C4A34A202CAEA40023B5D8 /* TextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A349202CAEA40023B5D8 /* TextfieldView.swift */; };
 		81C4A34C202CAFD30023B5D8 /* AddCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */; };
+		81DE4D9B202D34A300FFC969 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE4D9A202D34A300FFC969 /* CreatePostView.swift */; };
 		81E62289201FE3AD00A00F93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E62288201FE3AD00A00F93 /* LoginViewController.swift */; };
 		81FBF095202A581C00E0179D /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF094202A581C00E0179D /* StorageService+Image.swift */; };
 		CF7CE94A2024FEBF00677448 /* AddCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */; };
@@ -108,6 +109,7 @@
 		81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		81C4A349202CAEA40023B5D8 /* TextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldView.swift; sourceTree = "<group>"; };
 		81C4A34B202CAFD30023B5D8 /* AddCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableView.swift; sourceTree = "<group>"; };
+		81DE4D9A202D34A300FFC969 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		81E62288201FE3AD00A00F93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81FBF094202A581C00E0179D /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		CF7CE9492024FEBF00677448 /* AddCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				81C4A347202CAE280023B5D8 /* AddCommentViewController.swift */,
 				817C8BE1202519AB00660FA8 /* PoppinViewController.swift */,
 				81BA30E4202663180097D3BF /* CreatePostViewController.swift */,
+				81DE4D9A202D34A300FFC969 /* CreatePostView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				81AA2078202A43FC00E80BAC /* DBService+AppUser.swift in Sources */,
 				81B7973420277636001A002E /* ProfileInfoCell.swift in Sources */,
 				816DCFB72027E1B300D263D9 /* UserActivityCollectionViewCell.swift in Sources */,
+				81DE4D9B202D34A300FFC969 /* CreatePostView.swift in Sources */,
 				816DCFC9202819A500D263D9 /* HMSegmentedControl.m in Sources */,
 				81C4A31B202A73870023B5D8 /* EntryViewTableViewCell.swift in Sources */,
 				81AA2081202A442B00E80BAC /* Comment.swift in Sources */,

@@ -12,6 +12,8 @@ import Material
 
 class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var createPostView = CreatePostView()
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postTitle: UITextField!

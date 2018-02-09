@@ -198,8 +198,10 @@ extension UserActivityViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: return the corresponding correct amount of cells
-        if selectedSegment == 0 || selectedSegment == 1 {
+        if selectedSegment == 0 {
             return posts.count
+        } else if selectedSegment == 1 {
+            return comments.count
         } else if selectedSegment == 2{
             return about.count
         }

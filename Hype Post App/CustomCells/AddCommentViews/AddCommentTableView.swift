@@ -17,6 +17,8 @@ class AddCommentTableView: UIView {
         let tv = UITableView()
         tv.register(AddCommentTableViewCell.self, forCellReuseIdentifier: "CommentCell")
         tv.backgroundColor = UIColor.groupTableViewBackground
+        tv.estimatedRowHeight = UITableViewAutomaticDimension
+        tv.rowHeight = UITableViewAutomaticDimension
         return tv
     }()
     

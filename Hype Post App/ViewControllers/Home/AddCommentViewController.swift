@@ -29,8 +29,18 @@ class AddCommentViewController: UIViewController {
     let tView = AddCommentTableView()
     var textfieldView = TextfieldView()
     
-    var addComments = ["hellojhkfzsdmkfdzjs.bzjhlzkf,nzsbjfgkjvhzdhfjskdzgkzdfbgmnxdfghjxbjzkdghx,", "world", "hello", "world"]
     
+    
+    var comments = [Comment]() {
+        didSet {
+            self.tView.tableView.reloadData()
+        }
+    }
+    func loadComments() {
+        DBService.manager.getCommentsFromPost(from: posts.postID) { (postComments) in
+            self.comments = postComments
+        }
+    }
     var keyboardHeight: CGFloat = 0
     
     @objc func dismissKeyboard() {
@@ -49,7 +59,7 @@ class AddCommentViewController: UIViewController {
         view.backgroundColor = Color.grey.lighten5
         view.addSubview(tView)
         view.addSubview(textfieldView)
-        
+        loadComments()
         
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -102,7 +112,7 @@ class AddCommentViewController: UIViewController {
 extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,8 +123,8 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
-        let addComment = self.addComments[indexPath.row - 1]
-        cell.commentTF.text = addComment
+        let comment = comments[indexPath.row]
+        cell.commentTF.text = comment.text
         
         return cell
         
@@ -130,7 +140,11 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AddCommentViewController: TextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text {
+        DBService.manager.newComment(text: text, postID: self.posts.postID)
         textField.resignFirstResponder()
+       
+        }
         return true
     }
 }

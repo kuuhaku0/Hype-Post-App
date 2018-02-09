@@ -29,13 +29,15 @@ pod install
 * Hype Post entry screen will appear, you have the option of signing in or creating an account.
 
 #### Create an Account
-Insert gif here
+<a href="https://imgflip.com/gif/24a19o"><img src="https://i.imgflip.com/24a19o.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/24a1e2"><img src="https://i.imgflip.com/24a1e2.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/24a1fx"><img src="https://i.imgflip.com/24a1fx.gif" title="made at imgflip.com"/></a>
 #### Browser Recent feed and Popular feed
-Insert gif here 
+<a href="https://imgflip.com/gif/24a1ng"><img src="https://i.imgflip.com/24a1ng.gif" title="made at imgflip.com"/></a>
 #### Hype a Post up and/or leave a comment
 
 #### Create a post
-
+<a href="https://imgflip.com/gif/24a1vo"><img src="https://i.imgflip.com/24a1vo.gif" title="made at imgflip.com"/></a>
 #### View User Profile
 
 

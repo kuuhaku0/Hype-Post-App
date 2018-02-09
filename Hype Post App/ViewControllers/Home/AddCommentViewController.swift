@@ -152,13 +152,21 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
            
             cell.configureCell(post: post!)
             return cell
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
+        } else {
+        let cell = UITableViewCell()
         let comment = comments[indexPath.row - 1]
-        cell.userNameLabel.text = comment.userName
-        cell.textLabel?.text = comment.text
+        cell.textLabel?.text = comment.userName
+        cell.detailTextLabel?.text = comment.text
+        cell.imageView?.image = #imageLiteral(resourceName: "profilePlaceholder")
         return cell
-        
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return UITableViewAutomaticDimension
+        }
+        return 100
     }
     
    

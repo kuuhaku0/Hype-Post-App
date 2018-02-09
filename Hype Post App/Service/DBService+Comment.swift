@@ -48,6 +48,7 @@ extension DBService {
             guard let commentData = dataSnapshots.children.allObjects as? [DataSnapshot] else {return}
             var comments = [Comment]()
             for commentSnapshot in commentData {
+                print(commentData)
                 guard let commentObject = commentSnapshot.value as? [String:Any] else {return}
                 
                 guard let commentID = commentObject["commentID"] as? String,
@@ -58,7 +59,6 @@ extension DBService {
                     let upVotes = commentObject["upVotes"] as? Int,
                    let downVotes = commentObject["downVotes"] as? Int,
                   let flags = commentObject["flags"] as? UInt
-                    
                     else {return}
                 
                 if postID != certainPostID {
@@ -111,7 +111,8 @@ extension DBService {
                       "text": comment.text,
                       "time": comment.time,
                       "upVotes": comment.upVotes,
-                      "downVotes": comment.downVotes])
+                      "downVotes": comment.downVotes,
+                      "flags": comment.flags])
         print("new comment added")
     }
     

@@ -39,6 +39,7 @@ class AddCommentViewController: UIViewController {
     func loadComments() {
         DBService.manager.getCommentsFromPost(from: posts.postID) { (postComments) in
             self.comments = postComments
+            print(self.comments.first?.text)
         }
     }
     var keyboardHeight: CGFloat = 0
@@ -124,7 +125,8 @@ extension AddCommentViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! AddCommentTableViewCell
         let comment = comments[indexPath.row]
-        cell.commentTF.text = comment.text
+        cell.userNameLabel.text = comment.text
+       
         
         return cell
         

@@ -2,6 +2,11 @@
 
 An app that allows you to share and hype up the post of people when you want.
 
+## Main Contributors 
+ * **Tyler Zhao** - [Github](https://github.com/kuuhaku0)
+ * **Alan Holguin** - [Githhub](https://github.com/lynksdomain)
+ * **Iram Fattah** - [Github](https://github.com/Ifattah94)
+ * **Caroline Cruz** - [Github](https://github.com/caroline608)
 
 ## Getting Started 
 
@@ -75,9 +80,3 @@ It is possible to sideload this project app into your iOS device by following th
 * [ImagePicker](https://cocoapods.org/pods/ImagePicker)
 * [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl)
 * [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)
-
-## Authors 
- * **Caroline Cruz** - [Github](https://github.com/caroline608)
- * **Iram Fattah** - [Github](https://github.com/Ifattah94)
- * **Alan Holguin** - [Githhub](https://github.com/lynksdomain)
- * **Tyler Zhao** - [Github](https://github.com/kuuhaku0)

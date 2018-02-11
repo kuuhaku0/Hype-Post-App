@@ -2,7 +2,7 @@
 
 An app that allows you to share and hype up the post of people when you want.
 
-## Main Contributors 
+## Contributors 
  * **Tyler Zhao** - [Github](https://github.com/kuuhaku0)
  * **Alan Holguin** - [Githhub](https://github.com/lynksdomain)
  * **Iram Fattah** - [Github](https://github.com/Ifattah94)
